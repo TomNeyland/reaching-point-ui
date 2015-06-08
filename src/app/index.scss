@@ -1,8 +1,11 @@
 //Code right here, y'all
-//@import 'debut';
+@import 'debut';
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
    all your sass files automatically */
 
-h1{color:#ccc !important; font-size:100px;}
+h1 {
+    color:#ccc !important;
+    font-size:100px;
+}
 // injector
 // endinjector
