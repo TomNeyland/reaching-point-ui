@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+	<title>Debut UI - Angularjs + Bootstrap</title>
+ 	<meta name="description" content="Full featured Responsive Angular/Bootstrap Admin Panel without jQuery">
+	<meta name="author" content="webHiro.com">
+	<meta name="copyright" content="webHiro.com">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2015-02-26T00:00:00+01:00">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/documenter_style.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+	
+	<style>
+		html, body{background-color:#EDF6EE;color:#412E28;}
+		h1,h2,h3,h4,h5,h6{color:#412E28;}
+		section table{background-color:#EDF6EE;}
+		::-moz-selection{background:#2B2302;color:#B3204D;}
+		::selection{background:#2B2302;color:#B3204D;}
+		a.brand{background-image:url(assets/images/image_1.png);}
+		a, a:hover, a:active{color:#B3204D;}
+		hr{border-top:1px solid #DBE3DC;border-bottom:1px solid #F6FFF7;}
+		div.navbar-inner, .navbar .nav li ul{background:#261F02;color:#EDF6EE;}
+		a.btn-navbar{background:#261F02;color:#EDF6EE;}
+		.navbar .nav li a{color:#EDF6EE;text-shadow:1px 1px 0px #382E03;}
+		.navbar .nav li a:hover, .navbar .nav li.active a{text-shadow:none;}
+		div.navbar-inner ul{}
+		.marketing-byline{color:#F6FFF7;}
+		.navbar .nav > li a{color:#EDF6EE;}
+		.navbar .nav > li a:hover, a.btn-navbar:hover{background:#2B2302;color:#B3204D;}
+		.navbar .nav .active > a, .navbar .nav .active > a:hover, a.btn-navbar:active{background-color:#2B2302;color:#B3204D;}
+		.navbar .nav li ul li a:hover{background:#2B2302;color:#B3204D;}
+		.navbar .nav li ul li a:active{background:#2B2302;color:#B3204D;}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #B3204D, #7D1636);
+			  background-image: -ms-linear-gradient(top, #B3204D, #7D1636);
+			  background-image: -webkit-gradient(linear, 0 0, 0 B3204D%, from(#261F02), to(#7D1636));
+			  background-image: -webkit-linear-gradient(top, #B3204D, #7D1636);
+			  background-image: -o-linear-gradient(top, #B3204D, #7D1636);
+			  background-image: linear-gradient(top, #B3204D, #7D1636);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B3204D', endColorstr='#7D1636', GradientType=0);
+			  border-color: #7D1636 #7D1636 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  background-color: #7D1636;
+		}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+	
+	
+    </head>
+    
+<body class="documenter-project-debut-ui" data-spy="scroll" id="top">
+
+<!-- Documentation Navbar -->
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> 
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
+			<a class="brand" href="#">Debut UI - Angularjs + Bootstrap</a>
+			<div class="nav-collapse">
+			<ul class="nav">
+					
+			<li><a href="#installation" title="Installation">Installation</a></li>
+			<li><a href="#gulp_js" title="Gulp.js">Gulp.js</a>
+				<ul>
+					<li><a href="#gulp_js_strongdevelopment_mode_nbsp_strong">Development mode&nbsp;</a>
+					<li><a href="#gulp_js_strongproduction_mode_strong">Production mode</a>
+					<li><a href="#gulp_js_stronggo_public!_strong">Go public!</a>
+				</ul>
+			</li>
+			<li><a href="#structure" title="Structure">Structure</a>
+				<ul>
+					<li><a href="#structure_1_assets">1. Assets</a>
+					<li><a href="#structure_2_partials">2. Partials</a>
+					<li><a href="#structure_3_html_structure">3. HTML structure</a>
+				</ul>
+			</li>
+			<li><a href="#source" title="Source">Source</a></li>
+			<li><a href="#credits" title="Credits">Credits</a></li>
+
+			</ul>
+			</div>
+		</div>
+	</div>
+</div> <!-- End of Navbar -->
+
+<!-- Main Container Beginning -->			
+			
+<div class="container" id="documenter_content">
+    
+	<div id="documenter-cover">
+	<div class="masthead">
+	    <h1>Debut UI - Angularjs + Bootstrap</h1>
+	    <p>Full featured Responsive Angular/Bootstrap Admin Panel without jQuery</p>
+	    <ul class="marketing-byline">
+			<li>created: 20/01/2015</li>
+			<li>latest update: 02/26/2015</li>
+			<li>by: webHiro.com</li>
+			<li><a href=""></a></li>
+		</ul>
+	    <p class="download-info">
+			<a href="#installation" class="btn btn-primary btn-large">Lets start!</a> 
+		</p>
+		
+	</div> <!-- masthead -->
+	
+   <div id="intro">
+    <p class="highlight hero-unit">Thank You for purchesing this Admin Panel. If You have any questions or suggestions about this app let us know! Thanks, have fun.</p>
+   </div> <!-- intro -->
+   
+	</div>
+      
+  <section id="installation">
+	<div class="page-header"><h3>Installation</h3><hr class="notop"></div>
+<p>
+	<span style="font-size: 12px;">First of all to run this application You will need Node.js and Gulp.js. You can find Nodejs installation for Linux/Windows/MacOs tutorial </span><a href="http://github.com/joyent/node/wiki/installing-node.js-via-package-manager" style="font-size: 12px;">here</a><span style="font-size: 12px;">.</span></p>
+<h3>
+	I. Ubuntu installation:</h3>
+<p>
+	1. Install Node.js ( if already installed, skip this step):</p>
+<pre class="prettyprint lang-plain linenums">
+apt-get install nodejs</pre>
+<p>
+	2. Install Gulp.js:</p>
+<pre class="prettyprint lang-plain linenums">
+npm install -g gulp</pre>
+<p>
+	3. Install Bower:</p>
+<pre class="prettyprint lang-plain linenums">
+npm install -g bower</pre>
+<p>
+	4. Inside the application folder run npm budle installation:</p>
+<pre class="prettyprint lang-plain linenums">
+npm install</pre>
+<p>
+	5. Run bower bundle installation:</p>
+<pre class="prettyprint lang-plain linenums">
+bower install</pre>
+<p>
+	&nbsp;</p>
+<h3>
+	II. MacOs installation:</h3>
+<p>
+	1. First of all you need <a href="http://brew.sh/">brew</a> ( if already have it, skip this step ):</p>
+<pre class="prettyprint lang-plain linenums">
+ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</pre>
+<p>
+	2. Install Nodejs using brew:</p>
+<pre class="prettyprint lang-plain linenums">
+brew install nodejs</pre>
+<p>
+	3. Install gulp.js:</p>
+<pre class="prettyprint lang-plain linenums">
+npm install -g gulp</pre>
+<p>
+	4. Install bower:</p>
+<pre class="prettyprint lang-plain linenums">
+npm install -g bower</pre>
+<p>
+	5. Inside the application folder run npm budle installation:</p>
+<pre class="prettyprint lang-plain linenums">
+npm install</pre>
+<p>
+	6. Run bower bundle installation:</p>
+<pre class="prettyprint lang-plain linenums">
+bower install</pre>
+<div>
+	&nbsp;</div>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="gulp_js">
+	<div class="page-header"><h3>Gulp.js</h3><hr class="notop"></div>
+<p>
+	Why <a href="http://gulpjs.com/">G</a><a href="http://gulpjs.com">ulp.js</a> and not <a href="http://gruntjs.com/">Grunt.js</a> or npm ? Because it&#39;s faster! &nbsp;and soooo much easier.</p>
+<div>
+	This application is desing with two most wanted and basic functions for building production or development application. Feel free to check the gruntfile.js for and improvement or personalization to You needs.</div>
+<h4 id="gulp_js_strongdevelopment_mode_nbsp_strong"><strong>Development mode&nbsp;</strong></h4>
+<pre class="prettyprint lang-plain linenums">
+gulp serve</pre>
+<p>
+	The most common CLI command, that prepare Your application for development with livereloading, image optimalization, javascript contacation or/and minification. This gulp task will run your application in the browser in few seconds time and will update it when you change something in you application. Really usefull, will prevent from raping that refresh button :)&nbsp;</p>
+<h4 id="gulp_js_strongproduction_mode_strong"><strong>Production mode</strong></h4>
+<pre class="prettyprint lang-plain linenums">
+gulp build</pre>
+<p>
+	Second most usefull CLI command. This simply runs the same tasks that gulp serve will load with all the minification and concatanation and will copy the outputed application in <strong>build</strong> folder where ready-for-production app will be.</p>
+<h4 id="gulp_js_stronggo_public!_strong"><strong>Go public!</strong></h4>
+<pre class="prettyprint lang-plain linenums">
+gulp deploy</pre>
+<p>
+	This command allows You to deploy your application on remote server via FTP. It&#39;s super easy, just create a file named</p>
+<pre class="prettyprint lang-plain linenums">
+.ftppass</pre>
+<p>
+	in root folder (next to bower.json and gulpfile.js ). Pass these script inside ftppass,</p>
+<pre class="prettyprint lang-plain linenums">
+{
+&quot;devAuth&quot;: {
+   &quot;user&quot;: &quot;YOUR_FTP_USER&quot;,
+   &quot;pass&quot;: &quot;YOUR_FTP_PASS&quot;
+   }
+}</pre>
+<p>
+	Replace YOUR_FTP_USER and YOUR_FTP_PASS with yours FTP server credentials, and you are done. Run it! It will build Your application in production enviroment and it will push your outputed app to remote server.</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="structure">
+	<div class="page-header"><h3>Structure</h3><hr class="notop"></div>
+<h3>
+	I. Application structure</h3>
+<p>
+	The application is stored in <strong>/app&nbsp;</strong>directory. As You can see there are 3 items:</p>
+<p>
+	1. Assets - this is where we store all the static files like stylesheets, javascripts, images or fonts.</p>
+<pre class="prettyprint lang-plain linenums">
+/app/assets
+</pre>
+<p>
+	2. Partials - this is where we keep all the partials - they are loaded by Angular.js (if needed)</p>
+<pre class="prettyprint lang-plain linenums">
+/app/partials</pre>
+<p>
+	3. index.html - this is the root .html file.</p>
+<div>
+	&nbsp;</div>
+<h4 id="structure_1_assets">1. Assets</h4>
+<p>
+	This folder contains all the assets used in this application like css, js, fonts, images.&nbsp;</p>
+<pre class="prettyprint lang-plain linenums">
+/app/assets/css
+/app/assets/js
+/app/assets/fonts
+/app/assets/img</pre>
+<div>
+	&nbsp;</div>
+<h4 id="structure_2_partials">2. Partials</h4>
+<pre class="prettyprint lang-plain linenums">
+/app/partials/admin
+/app/partials/bootstrap
+/app/partials/charts
+... etc</pre>
+<p>
+	Partials folder, as the name states, contains all the partial html files like modals, sidebars, mail etc etc, There are categorized so it should be easy to find the file that you need. There are pulled from server if needed for example if you are on the mail page the application will pull the <strong>index.html</strong>, <strong>sidebar.html</strong> and <strong>subside.html</strong> folder:&nbsp;</p>
+<pre class="prettyprint lang-plain linenums">
+/app/partials/mail/</pre>
+<div>
+	It because of the lazyLoad module (called <a href="https://github.com/ocombe/ocLazyLoad">ocLazyLoad</a> for for Angular.js) we can get only what we currently need. That makes the aplication very lightwaight and super fast.</div>
+<h4 id="structure_3_html_structure">3. HTML structure</h4>
+<pre class="prettyprint lang-html linenums">
+&lt;head&gt;
+   &lt;meta charset=&quot;UTF-8&quot;&gt;
+   &lt;title&gt;Debut UI | Bootstrap AngularJs UI kit&lt;/title&gt;
+   &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
+   &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+
+   &lt;!-- @if NODE_ENV=&#39;DEVELOPMENT&#39; --&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/application.css&quot;&gt;
+   &lt;!-- @endif --&gt;
+
+   &lt;!-- @if NODE_ENV=&#39;PRODUCTION&#39; --&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/application.min.css&quot;&gt;
+   &lt;!-- @endif --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div ui-view&gt;&lt;/div&gt;
+
+   &lt;!-- remove this section to prevent loading splash --&gt;
+   &lt;div class=&quot;page loading&quot;&gt;
+     &lt;div class=&quot;slice1&quot;&gt;&lt;/div&gt;
+     &lt;div class=&quot;slice2&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;!-- @if NODE_ENV=&#39;DEVELOPMENT&#39; --&gt;
+   &lt;!-- build:js assets/js/application.js --&gt;
+      &lt;script src=&quot;../bower_components/angular/angular.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;../bower_components/angular-animate/angular-animate.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;../bower_components/angular-sanitize/angular-sanitize.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;../bower_components/angular-touch/angular-touch.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;../bower_components/angular-ui-router/release/angular-ui-router.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;../bower_components/oclazyload/dist/ocLazyLoad.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;assets/js/router/routes.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;assets/js/application.js&quot;&gt;&lt;/script&gt;
+   &lt;!-- endbuild --&gt;
+   &lt;!-- @endif --&gt;
+
+   &lt;!-- @if NODE_ENV=&#39;PRODUCTION&#39; --&gt;
+   &lt;!-- build:js assets/js/application.min.js --&gt;
+      &lt;script src=&quot;../bower_components/angular/angular.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;../bower_components/angular-animate/angular-animate.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;../bower_components/angular-sanitize/angular-sanitize.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;../bower_components/angular-touch/angular-touch.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;../bower_components/angular-ui-router/release/angular-ui-router.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;../bower_components/oclazyload/dist/ocLazyLoad.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;assets/js/router/routes.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;assets/js/application.js&quot;&gt;&lt;/script&gt;
+   &lt;!-- endbuild --&gt;
+   &lt;!-- @endif --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>
+	This is the main HTML file, it&#39;s pretty basic with few exeptions.&nbsp;</p>
+<p>
+	<strong>3.1. Loading dynamic content</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div ui-view&gt;&lt;/div&gt;</pre>
+<p>
+	This is an root view element from ui-routers directive where will all the top-level content renders. Like sidebar partial or top menu partial and even main page partial it depends on the route that You the user will change browsing the application. This is very importat, without this container the html will not load and you will see a blank page.</p>
+<p>
+	<strong>3.2. Enviroment variables</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- @if NODE_ENV=&#39;DEVELOPMENT&#39; --&gt;</pre>
+<p>
+	and&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- @if NODE_ENV=&#39;PRODUCTION&#39; --&gt;</pre>
+<p>
+	When You run <strong>gulp serve</strong> command the application is in Development mode - that means that it&#39;s not production ready, or in other words all the CSS and JS files are not concataneted and minified. Also you application that is pre-build in development mode is in .tmp directory.</p>
+<p>
+	These if statments simply removed or show inner html based on current enviroment ex. if Production mode is enabled the all the scripts and css files will be present in outputed index.html file.&nbsp;</p>
+<p>
+	<strong>3.3. Minification and contacation</strong></p>
+<pre class="prettyprint lang-html linenums">
+<span style="line-height: 19px;"> &lt;!-- build:js path/and/file --&gt;</span></pre>
+<p>
+	These comnent is for gulp.js application only. It will not be showed in outputed index.html in any case. This simply tells gulp.js that all this css/js files in this wrapped comment will be preproccesed and outputed in a sigle file ex. /path/to/file</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="source">
+	<div class="page-header"><h3>Source</h3><hr class="notop"></div>
+<p>
+	This is a list of packages (the same as in bower.json file) used in this application.</p>
+<ul>
+	<li>
+		<a href="https://angularjs.org/">angular</a></li>
+	<li>
+		<a href="https://docs.angularjs.org/guide/animations">angular-animate</a></li>
+	<li>
+		<a href="https://github.com/angular-ui/ui-router">angular-ui-router</a></li>
+	<li>
+		<a href="https://docs.angularjs.org/api/ngTouch">angular-touch</a></li>
+	<li>
+		<a href="https://github.com/ocombe/ocLazyLoad">oclazyload</a></li>
+	<li>
+		<a href="http://mgcrea.github.io/angular-strap/">angular-strap</a></li>
+	<li>
+		<a href="https://docs.angularjs.org/api/ngSanitize/service/$sanitize">angular-sanitize</a></li>
+	<li>
+		<a href="https://github.com/killercodemonkey/ngQuill">ngquill</a></li>
+	<li>
+		<a href="https://github.com/mattbalmer/mb-scrollbar">mb-scrollbar</a></li>
+	<li>
+		<a href="http://chieffancypants.github.io/angular-loading-bar/">angular-loading-bar</a></li>
+	<li>
+		<a href="http://c3js.org/">c3</a></li>
+	<li>
+		<a href="https://lodash.com/">lodash</a></li>
+	<li>
+		<a href="http://momentjs.com/">moment</a></li>
+	<li>
+		<a href="http://quilljs.com/">quill</a></li>
+	<li>
+		<a href="https://github.com/chjj/marked">marked</a></li>
+	<li>
+		<a href="http://angular-nvd3">angular-nvd3</a></li>
+	<li>
+		<a href="https://github.com/angular-ui-tree/angular-ui-tree">angular-ui-tree</a></li>
+	<li>
+		<a href="https://github.com/alexcrack/angular-ui-notification">angular-ui-notification</a></li>
+	<li>
+		<a href="http://angular-ui.github.io/angular-google-maps/#!/">angular-google-maps</a></li>
+	<li>
+		<a href="http://getbootstrap.com/">bootstrap</a></li>
+</ul>
+</section>
+<section id="credits">
+	<div class="page-header"><h3>Credits</h3><hr class="notop"></div>
+<p>
+	Thank You for purchesing this Admin Panel hope it will be super usfull. It You have any questions or improvments pealse write as via the contact from on ThemeForest, will be glad to help. Thanks again! See you soon with another update!</p>
+<p>
+	&nbsp;</p>
+<p>
+	All the best,&nbsp;<br>
+	<a href="http://www.webhiro.com">webhiro.com</a> team.</p>
+</section>
+
+
+
+    <hr />
+
+<footer>
+    <p>Copyright webHiro.com 2015 made with the <a href="http://rxa.li/documenter">Documenter v2.0</a></p>
+</footer>
+
+</div><!-- /container --> 
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script>document.createElement('section');var duration='500',easing='swing';</script>
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/jquery.scrollTo.js"></script>
+<script src="assets/js/jquery.easing.js"></script>
+<script src="assets/js/scripts.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-min.js"></script> 
+</body>
+</html>
