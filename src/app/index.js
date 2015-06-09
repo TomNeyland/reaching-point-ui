@@ -3,19 +3,15 @@
 angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangular', 'ui.router'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
+      .state('login', {
         url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'app/login/login.html',
+        controller: 'LoginCtrl'
       })
-      .state('dashboard', {
-        url: '/dashboard',
-        views: {
-            "sideBar": { templateUrl: "app/dash/sideBar.html" },
-            "dash": { templateUrl: "app/dash/dashboard.html" }
-        }
-        templateUrl: 'app/dash/dash.html',
-        controller: 'DashCtrl'
+      .state('home', {
+        url: '/home',
+        templateUrl: 'app/home/home.html',
+        controller: 'HomeCtrl'
       })
       .state('Hamster', {
         url: '/Hamster',
