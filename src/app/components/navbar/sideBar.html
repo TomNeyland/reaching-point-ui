@@ -1,99 +1,88 @@
-<nav class="side-bar" ui-side-menu mb-scrollbar="scrollbarConfig">hello</nav>
-<!--    <a class="brand" href ui-sref="app.admin.dashboard" title="Debut UI Kit">
-        <img src="assets/img/logo_dashboard.svg" alt="Debut UI Kit" class="large">
-        <img src="assets/img/logo_dashboard_small.svg" alt="Debut UI Kit" class="small">
-    </a>
-    <ul class="nav-menu">
-        <li data-state="close">
-            <a href ui-sref="app.admin.dashboard" ui-sref-active="active" class="icon-monitor" genie-wish="Home / Dashboard"><span>Dashboard</span></a>
-        </li>
-        <li data-state="close">
-            <a href class="icon-calc">
-                <span>UI Elements</span>
-                <small class="badge pull-right">13</small>
-            </a>
-            <ul>
-                <li class="title">UI Elements</li>
-                <li><a href ui-sref="app.admin.ui.typography" ui-sref-active="active" genie-wish="UI Elements / Typography">Typography</a></li>
-                <li><a href ui-sref="app.admin.ui.tables" ui-sref-active="active" genie-wish="UI Elements / Tables">Tables</a></li>
-                <li><a href ui-sref="app.admin.ui.panels" ui-sref-active="active" genie-wish="UI Elements / Panels">Panels</a></li>
-                <li><a href ui-sref="app.admin.ui.forms" ui-sref-active="active" genie-wish="UI Elements / Forms">Forms</a></li>
-                <li><a href ui-sref="app.admin.ui.buttons" ui-sref-active="active" genie-wish="UI Elements / Buttons">Buttons</a></li>
-                <li><a href ui-sref="app.admin.ui.grids" ui-sref-active="active" genie-wish="UI Elements / Grid">Grid</a></li>
-                <li><a href ui-sref="app.admin.ui.components" ui-sref-active="active" genie-wish="UI Elements / Components">Components</a></li>
-                <li><a href ui-sref="app.admin.ui.icons" ui-sref-active="active" genie-wish="UI Elements / Icons">Icons</a></li>
-                <li><a href ui-sref="app.admin.ui.editors" ui-sref-active="active" genie-wish="UI Elements / Editors">Editors</a></li>
-            </ul>
-        </li>
-        <li data-state="close">
-            <a href class="icon-globe">
-                <span>Extras</span>
-                <small class="badge pull-right">5</small>
-            </a>
-            <ul>
-                <li class="title">Extras</li>
-                <li><a href ui-sref="app.admin.extras.sortable" ui-sref-active="active" genie-wish="UI Elements / Sortable">Sortable</a></li>
-                <li><a href ui-sref="app.admin.extras.invoice" ui-sref-active="active" genie-wish="UI Elements / Invoice">Invoice</a></li>
-                <li><a href ui-sref="app.admin.extras.wizard" ui-sref-active="active" genie-wish="UI Elements / Wizard">Wizard</a></li>
-                <li><a href ui-sref="app.admin.extras.timeline" ui-sref-active="active" genie-wish="UI Elements / Timeline">Timeline</a></li>
-            </ul>
-        </li>
-        <li data-state="close" ui-sref-active="active">
-            <a href ui-sref="app.admin.widgets" class="icon-apps" genie-wish="Widgets"><span>Widgets</span></a>
-        </li>
-        <li data-state="close">
-            <a href class="icon-chart"><span>Charts</span></a>
-            <ul>
-                <li class="title">Charts</li>
-                <li><a href ui-sref="app.admin.charts.nvd3" ui-sref-active="active" genie-wish="Charts / NvD3">NvD3 Charts</a></li>
-                <li><a href ui-sref="app.admin.charts.c3" ui-sref-active="active" genie-wish="Charts / C3">C3 Charts</a></li>
-            </ul>
-        </li>
-        <li data-state="close">
-            <a href class="icon-map"><span>Maps</span></a>
-            <ul>
-                <li class="title">Maps</li>
-                <li><a href ui-sref="app.admin.maps.gmaps" ui-sref-active="active" genie-wish="Maps / Google Maps">Google Maps</a></li>
-            </ul>
-        </li>
-        <li data-state="close">
-            <a href ui-sref="app.admin.tasks" class="icon-sheet" genie-wish="Tasks / ToDos"><span>Tasks</span></a>
-        </li>
-        <li data-state="close">
-            <a href class="icon-cross"><span>Pages</span></a>
-            <ul>
-                <li class="title">Pages</li>
-                <li><a href ui-sref="app.page.lock" genie-wish="Pages / Lock Screen">Lock Screen</a></li>
-                <li><a href ui-sref="app.page.login" genie-wish="Pages / Login">Login</a></li>
-                <li><a href ui-sref="app.page.register" genie-wish="Pages / Registration">Registration</a></li>
-                <li><a href ui-sref="app.page.loading" genie-wish="Pages / Loading page">Loading page</a></li>
-                <li><a href ui-sref="app.page.404" genie-wish="Pages / 404">404</a></li>
-                <li><a href ui-sref="app.page.500" genie-wish="Pages / 500">500</a></li>
-                <li><a href ui-sref="app.page.blank" genie-wish="Pages / Blank page">Blank page</a></li>
-            </ul>
-        </li>
-        <li data-state="close">
-            <a href class="icon-paper-plane"><span>Mail</span></a>
-            <ul>
-                <li class="title">Mail</li>
-                <li><a href ui-sref="app.mail.inbox" genie-wish="Mail / Inbox">Inbox</a></li>
-                <li><a href ui-sref="app.mail.new" genie-wish="Mail / Componser">Componser</a></li>
-                <li><a href ui-sref="app.mail.inbox.read({ id: 1 })" genie-wish="Mail / Read mail">Read mail</a></li>
-            </ul>
-        </li>
-        <li data-state="close">
-            <a href ui-chat-toggle class="icon-chat"><span>Chat</span></a>
-        </li>
-            </ul>
-            <div class="mini-charts">
-        <div ui-mini-chart="miniChartDemo1"></div>
-        <p>Server uptime</p>
-        <small class="text-danger">12 123 days</small>
-            </div>
-            <div class="mini-charts">
-        <div ui-mini-chart="miniChartDemo2"></div>
-        <p>Disk usage</p>
-        <small class="text-primary">82.32%</small>
-            </div>
-        </nav>
- -->
+<aside role="navigation">
+    <nav class="side-bar">
+        <a class="brand" href>
+            <img src="../../../assets/images/reaching-point-logo.png" alt="Debut UI Kit" class="rp-dash-logo">
+            <!-- <img src="../../../assets/images/reaching-point-logo.png" alt="Debut UI Kit" class="small"> -->
+        </a>
+
+
+
+                <!-- <aside class="chat">
+                    <div class="chat-content">
+                        <div class="chat-wrapper">
+
+                            <button class="btn btn-link close" ui-chat-toggle><span class="fa fa-times fa-lg text-info"></span></button>
+                 -->
+                            <svg x="0px" y="0px" viewBox="0 0 250 180">
+                                <defs>
+                                    <mask id="mask_bg" x="0" y="0" with="250px" height="160px">
+                                        <path fill="#fff" d="M0,0 L250,0 L 250,140 C 165 130 55 130 0 140 Z"/>
+                                    </mask>
+                                    <mask id="mask_avatar" x="0" y="0" width="250" height="250" maskUnits="userSpaceOnUse">
+                                        <path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+                                    </mask>
+                                    <filter id="blur">
+                                        <feGaussianBlur stdDeviation="2"/>
+                                    </filter>
+                                </defs>
+                                <g style="filter:url(#blur);mask:url(#mask_bg);">
+                                    <image x="0" y="-40px" width="250px" height="250px" xlink:href="../../../assets/images/avatar200.png" />
+                                </g>
+                                <g transform="translate(50,30)">
+                                    <image x="0"  y="0" transform="scale(0.7)" style="fill:#F4F2FB;mask:url(#mask_avatar)" width="230" height="230" xlink:href="../../../assets/images/avatar200.png" />
+                                </g>
+                            </svg>
+
+                            <h4 class="chat-owner text-center">John Smith</h4>
+                        <!-- </div>
+                                                </div>
+                                            </aside> -->
+        
+
+        <ul class="nav-menu">
+
+            <li>
+                <a href>
+                    <i class="fa fa-user"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href>
+                    <i class="fa fa-wrench"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href>
+                    <i class="fa fa-spinner fa-spin"></i>
+                    <span>Campaigns</span>
+                </a>
+            </li>
+            <li>
+                <a href>
+                    <i class="fa fa-venus-double"></i>
+                    <span>Influencers</span>
+                </a>
+            </li>
+            <li>
+                <a href>
+                    <i class="fa fa-wheelchair fa-spin"></i>
+                    <span>Analytics</span>
+                </a>
+            </li>
+            <li>
+                <a href>
+                    <i class="fa fa-tree"></i>
+                    <span>Notifications</span>
+                </a>
+            </li>
+            <li>
+                <a href>
+                    <i class="fa fa-trophy fa-spin"></i>
+                    <span>Affiliates</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>

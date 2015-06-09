@@ -1,14 +1,28 @@
 //Code right here, y'all
 @import 'debut';
+//Importing all styles from the theme
 
-//BEGIN LOGIN PAGE MAIN.HTML
 
 .home-rpLogo {
     width: 10em;
     margin-left: -.2em;
 }
 
+.rp-dash-logo {
+    width: 10em;
+}
 
+nav.side-bar ul.nav-menu>li>a>i {
+     color: #6c669a ;
+     margin: 0;
+     width: 48px;
+     font-size: 20px;
+     text-align: center;
+ }
+
+.chat-owner {
+    color: white;
+}
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
    all your sass files automatically */
 // injector
