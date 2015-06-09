@@ -1,11 +1,16 @@
 //Code right here, y'all
 @import 'debut';
+
+//BEGIN LOGIN PAGE MAIN.HTML
+.login-container {
+    background-color: aqua;
+    margin: 0 auto;
+    padding: 2em;
+    max-width: 50em;
+}
+
+
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
    all your sass files automatically */
-
-h1 {
-    color:#ccc !important;
-    font-size:100px;
-}
 // injector
 // endinjector
