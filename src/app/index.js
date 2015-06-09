@@ -10,6 +10,10 @@ angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangu
       })
       .state('dashboard', {
         url: '/dashboard',
+        views: {
+            "sideBar": { templateUrl: "app/dash/sideBar.html" },
+            "dash": { templateUrl: "app/dash/dashboard.html" }
+        }
         templateUrl: 'app/dash/dash.html',
         controller: 'DashCtrl'
       })
