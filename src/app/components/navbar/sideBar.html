@@ -2,42 +2,32 @@
     <nav class="side-bar">
         <a class="brand" href>
             <img src="../../../assets/images/reaching-point-logo.png" alt="Debut UI Kit" class="rp-dash-logo">
-            <!-- <img src="../../../assets/images/reaching-point-logo.png" alt="Debut UI Kit" class="small"> -->
         </a>
 
 
+        <svg x="0px" y="0px" viewBox="0 0 250 180">
+            <defs>
+                <mask id="mask_bg" x="0" y="0" with="250px" height="160px">
+                    <path fill="#fff" d="M0,0 L250,0 L 250,140 C 165 130 55 130 0 140 Z"/>
+                </mask>
+                <mask id="mask_avatar" x="0" y="0" width="250" height="250" maskUnits="userSpaceOnUse">
+                    <path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+                </mask>
+                <filter id="blur">
+                    <feGaussianBlur stdDeviation="2"/>
+                </filter>
+            </defs>
+            <g style="filter:url(#blur);mask:url(#mask_bg);">
+                <image x="0" y="-40px" width="250px" height="250px" xlink:href="../../../assets/images/avatar200.png" />
+            </g>
+            <g transform="translate(50,30)">
+                <image x="0"  y="0" transform="scale(0.7)" style="fill:#F4F2FB;mask:url(#mask_avatar)" width="230" height="230" xlink:href="../../../assets/images/avatar200.png" />
+            </g>
+        </svg>
 
-                <!-- <aside class="chat">
-                    <div class="chat-content">
-                        <div class="chat-wrapper">
+        <h4 class="chat-owner text-center">John Smith</h4>
 
-                            <button class="btn btn-link close" ui-chat-toggle><span class="fa fa-times fa-lg text-info"></span></button>
-                 -->
-                            <svg x="0px" y="0px" viewBox="0 0 250 180">
-                                <defs>
-                                    <mask id="mask_bg" x="0" y="0" with="250px" height="160px">
-                                        <path fill="#fff" d="M0,0 L250,0 L 250,140 C 165 130 55 130 0 140 Z"/>
-                                    </mask>
-                                    <mask id="mask_avatar" x="0" y="0" width="250" height="250" maskUnits="userSpaceOnUse">
-                                        <path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
-                                    </mask>
-                                    <filter id="blur">
-                                        <feGaussianBlur stdDeviation="2"/>
-                                    </filter>
-                                </defs>
-                                <g style="filter:url(#blur);mask:url(#mask_bg);">
-                                    <image x="0" y="-40px" width="250px" height="250px" xlink:href="../../../assets/images/avatar200.png" />
-                                </g>
-                                <g transform="translate(50,30)">
-                                    <image x="0"  y="0" transform="scale(0.7)" style="fill:#F4F2FB;mask:url(#mask_avatar)" width="230" height="230" xlink:href="../../../assets/images/avatar200.png" />
-                                </g>
-                            </svg>
 
-                            <h4 class="chat-owner text-center">John Smith</h4>
-                        <!-- </div>
-                                                </div>
-                                            </aside> -->
-        
 
         <ul class="nav-menu">
 
