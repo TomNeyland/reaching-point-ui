@@ -23,6 +23,16 @@ nav.side-bar ul.nav-menu>li>a>i {
 .chat-owner {
     color: white;
 }
+
+@media (min-width: 768px) {
+    .navbar-right {
+        margin-right: 0;
+    }
+}
+
+
+
+
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
    all your sass files automatically */
 // injector
