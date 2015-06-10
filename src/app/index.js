@@ -13,6 +13,16 @@ angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangu
           templateUrl: 'app/chooseaccount/chooseaccount.html',
           controller: 'ChooseCtrl'
       })
+      .state('brandregister', {
+          url: '/brandregister',
+          templateUrl: 'app/registration/brandregister.html',
+          controller: 'BrandCtrl'
+      })
+      .state('influenceregister', {
+          url: '/influenceregister',
+          templateUrl: 'app/registration/influencer.html',
+          controller: 'InfluenceRegisterCtrl'
+      })
       .state('home', {
         url: '/home',
         templateUrl: 'app/home/home.html',

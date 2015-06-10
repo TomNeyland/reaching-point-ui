@@ -53,7 +53,7 @@ nav.side-bar ul.nav-menu>li>a>i {
     padding-right: 1.3em;
 }
 
-//Registration page
+//Registration choice page
 .acct-wrap {
     margin-top: 5em;
     text-align: center;
@@ -74,6 +74,42 @@ nav.side-bar ul.nav-menu>li>a>i {
         }
     }
 }
+
+
+//Register as influencer
+.super-wrap {
+    margin-top: -4em;
+}
+
+.social-login {
+    text-align: center;
+    margin-top: -.5em;
+    margin-bottom: .5em;
+    color: white;
+
+    .soc-icons {
+        width: 90%;
+        padding: .5em;
+        margin: .3em;
+    }
+
+    .fb-button {
+        background-color: #3b5998;
+    }
+
+    .tweet-button{
+        background-color: #00aced;
+    }
+
+    .goog-button {
+        background-color: #dd4b39;
+    }
+
+    .li-button {
+        background-color: #007bb6;
+    }
+}
+
 
 
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
