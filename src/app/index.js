@@ -13,16 +13,16 @@ angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangu
         templateUrl: 'app/home/home.html',
         controller: 'HomeCtrl'
       })
-      .state('Hamster', {
-        url: '/Hamster',
-        templateUrl: 'app/hamster/hamster.html',
-        controller: 'HmstrCtrl'
-      })
-      .state('Mouse', {
-        url: '/Mouse',
-        templateUrl: 'app/mouse/mouse.html',
-        controller: 'MouseCtrl'
-      });
+          .state('home.dashboard', {
+            url: '/home/dashboard',
+            templateUrl: 'app/dashboard/dashboard.html',
+            controller: 'DashCtrl'
+          })
+          .state('home.profile', {
+            url: '/home/profile',
+            templateUrl: 'app/profile/profile.html',
+            controller: 'ProfileCtrl'
+          });
 
       //Access states in html via `ui-sref={stateName}`
 

@@ -1,7 +1,9 @@
+'use strict';
+
 angular.module('baseangular')
 
-.controller('HmstrCtrl', function($scope) {
-  'use strict';
+.controller('DashCtrl', function($scope) {
 
-  
+
+
 });
