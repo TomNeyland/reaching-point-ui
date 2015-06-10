@@ -2,6 +2,14 @@
 @import 'debut';
 //Importing all styles from the theme
 
+//SCSS specific media queries
+
+$desktop-width: 768px;
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
 
 .home-rpLogo {
     width: 10em;
@@ -31,6 +39,18 @@ nav.side-bar ul.nav-menu>li>a>i {
 }
 
 
+.nested-home-views {
+    margin-top: 4.5em;
+    @include desktop {
+        margin-left: 18em;
+    }
+}
+
+
+.drop-list {
+    padding-left: .7em;
+    padding-right: 1.3em;
+}
 
 
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject

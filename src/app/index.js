@@ -14,14 +14,49 @@ angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangu
         controller: 'HomeCtrl'
       })
           .state('home.dashboard', {
-            url: '/home/dashboard',
+            url: '/dashboard',
             templateUrl: 'app/dashboard/dashboard.html',
             controller: 'DashCtrl'
           })
           .state('home.profile', {
-            url: '/home/profile',
+            url: '/profile',
             templateUrl: 'app/profile/profile.html',
             controller: 'ProfileCtrl'
+          })
+          .state('home.campaigns', {
+              url: '/campaigns',
+              templateUrl: 'app/campaigns/campaigns.html',
+              controller: 'CampaignsCtrl'
+          })
+          .state('home.influencers', {
+              url: '/influencers',
+              templateUrl: 'app/influencers/influencers.html',
+              controller: 'InfluencersCtrl'
+          })
+          .state('home.analytics', {
+              url: '/analytics',
+              templateUrl: 'app/analytics/analytics.html',
+              controller: 'AnalyticsCtrl'
+          })
+          .state('home.notifications', {
+              url: '/notifications',
+              templateUrl: 'app/notifications/notifications.html',
+              controller: 'NotificationsCtrl'
+          })
+          .state('home.affiliates', {
+              url: '/affiliates',
+              templateUrl: 'app/affiliates/affiliates.html',
+              controller: 'AffiliatesCtrl'
+          })
+          .state('home.addaccount', {
+              url: '/addaccount',
+              templateUrl: 'app/addaccount/addaccount.html',
+              controller: 'AddaccountCtrl'
+          })
+          .state('home.settings', {
+              url: '/settings',
+              templateUrl: 'app/settings/settings.html',
+              controller: 'SettingsCtrl'
           });
 
       //Access states in html via `ui-sref={stateName}`
