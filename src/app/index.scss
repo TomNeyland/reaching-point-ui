@@ -43,6 +43,7 @@ nav.side-bar ul.nav-menu>li>a>i {
     margin-top: 4.5em;
     @include desktop {
         margin-left: 18em;
+        margin-top: 0;
     }
 }
 
