@@ -53,6 +53,28 @@ nav.side-bar ul.nav-menu>li>a>i {
     padding-right: 1.3em;
 }
 
+//Registration page
+.acct-wrap {
+    margin-top: 5em;
+    text-align: center;
+
+    @include desktop {
+        margin-top: 30vh;
+    }
+
+    .acct-buttons {
+        width: 90%;
+        padding: 1em;
+        margin-top: 1.5em;
+
+        @include desktop {
+            width: 20%;
+            padding: 1em;
+            font-size: 1.5em;
+        }
+    }
+}
+
 
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
    all your sass files automatically */

@@ -8,6 +8,11 @@ angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangu
         templateUrl: 'app/login/login.html',
         controller: 'LoginCtrl'
       })
+      .state('pickreg', {
+          url: '/chooseaccount',
+          templateUrl: 'app/chooseaccount/chooseaccount.html',
+          controller: 'ChooseCtrl'
+      })
       .state('home', {
         url: '/home',
         templateUrl: 'app/home/home.html',
