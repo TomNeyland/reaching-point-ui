@@ -11,6 +11,10 @@ $desktop-width: 768px;
   }
 }
 
+@mixin changeColor($color) {
+    background-color: darken($color, 8%);
+}
+
 .home-rpLogo {
     width: 10em;
     margin-left: -.2em;
@@ -91,24 +95,55 @@ nav.side-bar ul.nav-menu>li>a>i {
         width: 90%;
         padding: .5em;
         margin: .3em;
+
+        &:hover {
+            color: white;
+        }
+
+        @include desktop {
+            width: 45%;
+            margin-bottom: 1em;
+        }
     }
 
     .fb-button {
         background-color: #3b5998;
+
+        &:hover {
+            @include changeColor(#3b5998);
+        }
     }
 
     .tweet-button{
         background-color: #00aced;
+
+        &:hover {
+            @include changeColor(#00aced);
+        }
     }
 
     .goog-button {
         background-color: #dd4b39;
+
+        &:hover {
+            @include changeColor(#dd4b39);
+        }
     }
 
     .li-button {
         background-color: #007bb6;
+
+        &:hover {
+            @include changeColor(#007bb6);
+        }
     }
 }
+
+//Sidebar extra styles
+nav.side-bar ul.nav-menu > li:hover > a > i {
+    color: #38ddcc;
+}
+
 
 
 
