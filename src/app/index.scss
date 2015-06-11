@@ -43,12 +43,21 @@ nav.side-bar ul.nav-menu>li>a>i {
 }
 
 
+body.offcanvas .nested-home-views {
+    margin-left: 225px;
+
+}
+
+body.contract .nested-home-views {
+    margin-left: 5em;
+}
 .nested-home-views {
     margin-top: 4.5em;
     @include desktop {
         margin-left: 18em;
         margin-top: 0;
     }
+
 }
 
 
@@ -143,6 +152,18 @@ nav.side-bar ul.nav-menu>li>a>i {
 nav.side-bar ul.nav-menu > li:hover > a > i {
     color: #38ddcc;
 }
+
+.side-bar > .brand {
+    background-color: #191547 !important;
+
+    .main-logo {
+        width: 12em;
+        margin-top: .2em;
+        margin-left: 1em;
+    }
+}
+
+
 
 
 
