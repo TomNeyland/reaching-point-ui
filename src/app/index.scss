@@ -4,6 +4,7 @@
 
 //SCSS specific media queries
 
+
 $desktop-width: 768px;
 @mixin desktop {
   @media (min-width: #{$desktop-width}) {
@@ -78,12 +79,12 @@ body.offcanvas .nested-home-views {
 }
 
 body.contract .nested-home-views {
-    margin-left: 5em;
+    margin-left: 3.9em;
 }
 .nested-home-views {
     margin-top: 4.5em;
     @include desktop {
-        margin-left: 18em;
+        margin-left: 17em;
         margin-top: 0;
     }
 
