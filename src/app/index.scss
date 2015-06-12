@@ -15,14 +15,30 @@ $desktop-width: 768px;
     background-color: darken($color, 8%);
 }
 
+//LOGIN PAGE
+
+.login-wrapper {
+    background-image: url('../assets/images/header_bg_gradient.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+
 .home-rpLogo {
     width: 10em;
     margin-left: -.2em;
+
+    @include desktop {
+        margin-top: 10vh;
+    }
 }
 
 .rp-dash-logo {
     width: 10em;
 }
+
+
 
 .navbar-nav > li > .dropdown-menu {
     @media (max-width: 768px) {
@@ -76,12 +92,27 @@ body.contract .nested-home-views {
 }
 
 //Registration choice page
+.choose-acct-wrapper {
+    background-image: url('../assets/images/header_bg_gradient.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
 .acct-wrap {
     margin-top: 5em;
     text-align: center;
 
     @include desktop {
         margin-top: 30vh;
+    }
+
+    .pick-acct-heading {
+        color: white;
+    }
+
+    .pick-acct-subhead {
+        color: white;
     }
 
     .acct-buttons {
@@ -99,6 +130,13 @@ body.contract .nested-home-views {
 
 
 //Register as influencer
+.bg-img-wrap {
+    background-image: url('../assets/images/header_bg_gradient.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
 .super-wrap {
     margin-top: -4em;
 }

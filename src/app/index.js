@@ -23,6 +23,11 @@ angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangu
           templateUrl: 'app/registration/influencer.html',
           controller: 'InfluenceRegisterCtrl'
       })
+      .state('forgotpassword', {
+          url: '/forgotpassword',
+          templateUrl: 'app/passreset/passreset.html',
+          controller: 'PassResetCtrl' 
+      })
       .state('home', {
         url: '/home',
         templateUrl: 'app/home/home.html',
