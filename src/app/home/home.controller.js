@@ -10,6 +10,9 @@ var $body = $('body');
         if (windowCheck.isMobile()) {
             $body.removeClass('contract');
         }
+        if (!windowCheck.isMobile()) {
+            $body.removeClass('offcanvas');
+        }
         console.log('Yo');
     });
 
