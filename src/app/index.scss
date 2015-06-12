@@ -1,11 +1,226 @@
 //Code right here, y'all
 @import 'debut';
+//Importing all styles from the theme
+
+//SCSS specific media queries
+
+
+$desktop-width: 768px;
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin changeColor($color) {
+    background-color: darken($color, 8%);
+}
+
+//LOGIN PAGE
+
+.login-wrapper {
+    background-image: url('../assets/images/header_bg_gradient.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+
+.home-rpLogo {
+    width: 10em;
+    margin-left: -.2em;
+
+    @include desktop {
+        margin-top: 10vh;
+    }
+}
+
+.rp-dash-logo {
+    width: 10em;
+}
+
+//Forgot Password page
+.reset-pass-text {
+    font-size: .8em;
+    margin: 1.5em auto -1em;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    @media (max-width: 768px) {
+        width:100% !important;
+    }
+    /* @include desktop {
+        width: inherit;
+    } */
+}
+
+nav.side-bar ul.nav-menu>li>a>i {
+     color: #6c669a ;
+     margin: 0;
+     width: 48px;
+     font-size: 20px;
+     text-align: center;
+ }
+
+.chat-owner {
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .navbar-right {
+        margin-right: 0;
+    }
+}
+
+
+body.offcanvas .nested-home-views {
+    margin-left: 220px;
+
+}
+
+body.contract .nested-home-views {
+    margin-left: 3.9em;
+}
+.nested-home-views {
+    margin-top: 4.5em;
+    @include desktop {
+        margin-left: 17em;
+        margin-top: 0;
+    }
+
+}
+
+
+.drop-list {
+    padding-left: .7em;
+    padding-right: 1.3em;
+}
+
+//Registration choice page
+.choose-acct-wrapper {
+    background-image: url('../assets/images/header_bg_gradient.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.acct-wrap {
+    margin-top: 5em;
+    text-align: center;
+
+    @include desktop {
+        margin-top: 30vh;
+    }
+
+    .pick-acct-heading {
+        color: white;
+    }
+
+    .pick-acct-subhead {
+        color: white;
+    }
+
+    .acct-buttons {
+        width: 90%;
+        padding: 1em;
+        margin-top: 1.5em;
+
+        @include desktop {
+            width: 20%;
+            padding: 1em;
+            font-size: 1.5em;
+        }
+    }
+}
+
+
+//Register as influencer
+.bg-img-wrap {
+    background-image: url('../assets/images/header_bg_gradient.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.super-wrap {
+    margin-top: -4em;
+}
+
+.social-login {
+    text-align: center;
+    margin-top: -.5em;
+    margin-bottom: .5em;
+    color: white;
+
+    .soc-icons {
+        width: 90%;
+        padding: .5em;
+        margin: .3em;
+
+        &:hover {
+            color: white;
+        }
+
+        @include desktop {
+            width: 45%;
+            margin-bottom: 1em;
+        }
+    }
+
+    .fb-button {
+        background-color: #3b5998;
+
+        &:hover {
+            @include changeColor(#3b5998);
+        }
+    }
+
+    .tweet-button{
+        background-color: #00aced;
+
+        &:hover {
+            @include changeColor(#00aced);
+        }
+    }
+
+    .goog-button {
+        background-color: #dd4b39;
+
+        &:hover {
+            @include changeColor(#dd4b39);
+        }
+    }
+
+    .li-button {
+        background-color: #007bb6;
+
+        &:hover {
+            @include changeColor(#007bb6);
+        }
+    }
+}
+
+//Sidebar extra styles
+nav.side-bar ul.nav-menu > li:hover > a > i {
+    color: #38ddcc;
+}
+
+.side-bar > .brand {
+    background-color: #191547 !important;
+
+    .main-logo {
+        width: 12em;
+        margin-top: .2em;
+        margin-left: 1em;
+    }
+}
+
+
+
+
+
+
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
    all your sass files automatically */
-
-h1 {
-    color:#ccc !important;
-    font-size:100px;
-}
 // injector
 // endinjector

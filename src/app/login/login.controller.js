@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('baseangular')
-  .controller('MainCtrl', function ($scope) {
+  .controller('LoginCtrl', function ($scope) {
 
-  
+
   });

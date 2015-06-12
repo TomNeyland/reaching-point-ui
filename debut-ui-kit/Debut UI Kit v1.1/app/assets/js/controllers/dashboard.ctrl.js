@@ -24,7 +24,7 @@
 				padding: {
 					top: 15,
 					bottom: 15,
-					left: 15, 
+					left: 15,
 					right: 15
 				},
 				legend: {
@@ -61,7 +61,7 @@
 					top: 0,
 					bottom: 0,
 					left: 0,
-					right: 0		
+					right: 0
 				},
 				legend: { show: false },
 				tooltip: { show: true },

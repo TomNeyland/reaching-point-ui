@@ -3,34 +3,81 @@
 angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangular', 'ui.router'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
+      .state('login', {
         url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'app/login/login.html',
+        controller: 'LoginCtrl'
       })
-      .state('home.test1', {
-        url: 'home/test1',
-        templateUrl: 'app/main/block.html'
+      .state('pickreg', {
+          url: '/chooseaccount',
+          templateUrl: 'app/chooseaccount/chooseaccount.html',
+          controller: 'ChooseCtrl'
       })
-      .state('home.test2', {
-        url: 'home/test2',
-        templateUrl: 'app/main/circle.html'
+      .state('brandregister', {
+          url: '/brandregister',
+          templateUrl: 'app/registration/brandregister.html',
+          controller: 'BrandCtrl'
       })
-      .state('Guinea Pig', {
-        url: '/GP',
-        templateUrl: 'app/GP/GP.html',
-        controller: 'GPCtrl'
+      .state('influenceregister', {
+          url: '/influenceregister',
+          templateUrl: 'app/registration/influencer.html',
+          controller: 'InfluenceRegisterCtrl'
       })
-      .state('Hamster', {
-        url: '/Hamster',
-        templateUrl: 'app/hamster/hamster.html',
-        controller: 'HmstrCtrl'
+      .state('forgotpassword', {
+          url: '/forgotpassword',
+          templateUrl: 'app/passreset/passreset.html',
+          controller: 'PassResetCtrl' 
       })
-      .state('Mouse', {
-        url: '/Mouse',
-        templateUrl: 'app/mouse/mouse.html',
-        controller: 'MouseCtrl'
-      });
+      .state('home', {
+        url: '/home',
+        templateUrl: 'app/home/home.html',
+        controller: 'HomeCtrl'
+      })
+          .state('home.dashboard', {
+            url: '/dashboard',
+            templateUrl: 'app/dashboard/dashboard.html',
+            controller: 'DashCtrl'
+          })
+          .state('home.profile', {
+            url: '/profile',
+            templateUrl: 'app/profile/profile.html',
+            controller: 'ProfileCtrl'
+          })
+          .state('home.campaigns', {
+              url: '/campaigns',
+              templateUrl: 'app/campaigns/campaigns.html',
+              controller: 'CampaignsCtrl'
+          })
+          .state('home.influencers', {
+              url: '/influencers',
+              templateUrl: 'app/influencers/influencers.html',
+              controller: 'InfluencersCtrl'
+          })
+          .state('home.analytics', {
+              url: '/analytics',
+              templateUrl: 'app/analytics/analytics.html',
+              controller: 'AnalyticsCtrl'
+          })
+          .state('home.notifications', {
+              url: '/notifications',
+              templateUrl: 'app/notifications/notifications.html',
+              controller: 'NotificationsCtrl'
+          })
+          .state('home.affiliates', {
+              url: '/affiliates',
+              templateUrl: 'app/affiliates/affiliates.html',
+              controller: 'AffiliatesCtrl'
+          })
+          .state('home.addaccount', {
+              url: '/addaccount',
+              templateUrl: 'app/addaccount/addaccount.html',
+              controller: 'AddaccountCtrl'
+          })
+          .state('home.settings', {
+              url: '/settings',
+              templateUrl: 'app/settings/settings.html',
+              controller: 'SettingsCtrl'
+          });
 
       //Access states in html via `ui-sref={stateName}`
 

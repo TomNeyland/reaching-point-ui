@@ -1,9 +1,10 @@
-<main class="page login">
+<div class="bg-img-wrap">
+<main class="page login super-wrap">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
 				<h1 class="text-center form-group">
-					<img src="assets/img/logo3.svg" alt="Logotype">
+					<img class="home-rpLogo" src="../../assets/images/reachingpoint-logo-white.png" alt="Logotype">
 				</h1>
 			</div>
 		</div>
@@ -12,17 +13,19 @@
 				<div class="panel">
 					<div class="panel-heading">
 						<div class="text-center">
-							<h3>Sing in</h3>
+							<h3>Register as Influencer</h3>
 						</div>
 					</div>
 					<div class="panel-body">
 
-						<div class="form-group">
-							<div class="input-group plain-addon">
-								<div class="input-group-addon"><span class="fa fa-user fa-fw"></span></div>
-								<input type="text" class="form-control" placeholder="Username">
-							</div>
-						</div>
+                        <div class="social-login">
+                            <button ui-sref="home.dashboard" class="btn soc-icons fb-button">Facebook</button>
+                            <button ui-sref="home.dashboard" class="btn soc-icons tweet-button">Twitter</button>
+                            <button ui-sref="home.dashboard" class="btn soc-icons goog-button">Google+</button>
+                            <button ui-sref="home.dashboard" class="btn soc-icons li-button">LinkedIn</button>
+                        </div>
+
+
 						<div class="form-group">
 							<div class="input-group plain-addon">
 								<div class="input-group-addon"><span class="fa fa-envelope-o fa-fw"></span></div>
@@ -42,14 +45,15 @@
 							</div>
 						</div>
 
-						<button type="button" class="btn btn-link">Registered? Log in here!</button>
-						<button type="button" ui-sref="home.dashboard1" class="btn btn-success pull-right">Register me</button>
+						<!-- <button type="button" class="btn btn-link">Registered? Log in here!</button> -->
+						<button type="button" ui-sref="home.dashboard" class="btn btn-success pull-right">Register me</button>
 					</div>
 					<div class="panel-footer">
-						<span class="text-center">Already registered? <a href ui-sref="page.login" class="text-success"><strong>Login now!</strong></a></span>
+						<span class="text-center">Already registered? <a href ui-sref="login" class="text-success"><strong>Login now!</strong></a></span>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </main>
+</div>
