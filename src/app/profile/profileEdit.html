@@ -3,9 +3,12 @@
 </div>
 <form>
 <div class="publisher widget widget-lg">
-    <div class="widget-heading" style="background-image:url('../../assets/images/avatar200.png')">
 
+    <div class="widget-heading" style="background-image:url('../../assets/images/avatar200.png')"></div>
+    <div class="banner-img-edit">
+        <i class="edit-banner-photo fa fa-camera"></i>
     </div>
+
     <div class="widget-body">
         <div class="row">
             <div class="col-md-3 col-xs-4 text-center title">
@@ -24,50 +27,53 @@
                             C218.5,102,131,10.333,116.166,10.333L116.166,10.333z" stroke-width="2" stroke="#fff" />
                     </g>
                 </svg>
-                <h4 class="text-info">John Smith</h4>
-                <p class="text-muted"><span class="fa fa-clock-o"></span> 14.05.2014 12:20</p>
+                <input id="username" type="text" value="John Smith">
+                <input id="userlocation" type="text" value="John's House">
             </div>
             <div class="col-md-9 col-xs-8 content">
-                <div class="col-xs-12 edit-profile"><span class="btn btn-primary">Save Changes</span></div>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae unde sapiente ...</p>
+                <div class="col-xs-12 edit-profile"><span ui-sref="home.profile" class="cancel-edit btn btn-blocked">Cancel</span><span ui-sref="home.profile" class="btn btn-primary">Save Changes</span></div>
+                <textarea id="userbio" class="form-control" rows="2" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae unde sapiente ..."></textarea>
             </div>
         </div>
-    </div> <!-- End widget body -->
+    </div>
+    <!-- End widget body -->
 </div>
 
 <div class="social-count col-xs-4 col-md-3">
-    <div class="panel panel-default">
-        <div class="panel-body text-center">Total Reach: <b>4.5K</b></div>
-    </div>
 
     <div class="indicator widget bg-info">
         <span class="icon icon-paper-plane icon-fw icon-4x"></span>
         <p class="title">4,234</p>
         <span class="subtitle">Followers</span>
+        <span class="log-out fa fa-times"></span>
     </div>
 
     <div class="indicator widget bg-blocked">
         <span class="icon icon-paper-plane icon-fw icon-4x"></span>
         <p class="title">128</p>
         <span class="subtitle">New topics published</span>
+        <span class="log-out fa fa-times"></span>
     </div>
 
     <div class="indicator widget bg-primary">
         <span class="icon icon-paper-plane icon-fw icon-4x"></span>
         <p class="title">2,343</p>
         <span class="subtitle">Tweets</span>
+        <span class="log-out fa fa-times"></span>
     </div>
 
     <div class="indicator widget bg-success">
         <span class="icon icon-paper-plane icon-fw icon-4x"></span>
         <p class="title">28</p>
         <span class="subtitle">Things</span>
+        <span class="log-out fa fa-times"></span>
     </div>
 
     <div class="indicator widget bg-danger">
         <span class="icon icon-paper-plane icon-fw icon-4x"></span>
         <p class="title">1,935</p>
         <span class="subtitle">Followers</span>
+        <span class="log-out fa fa-times"></span>
     </div>
 </div> <!-- Social media reports -->
 
@@ -154,12 +160,131 @@
 
 <div class="interests col-xs-8 col-md-9">
     <div class="panel panel-default">
-        <div class="panel-heading">Demographics</div>
+        <div class="panel-heading interests-heading">Demographics</div>
         <div class="panel-body">
 
+            <div class="row">
+                <div class="demographics-headers col-xs-12">Life Stage</div>
 
+                <div class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Single Adult</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Married Adult</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Kids in Elementary</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Kids in High School</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Kids in College</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="demographics-headers col-xs-12">Annual Income</div>
+
+                <div class="col-md-4 form-checks">
+                    <label class="radio-inline"><input type="radio" name="income">Under $20K</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="radio-inline"><input type="radio" name="income">$20K - $40K</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="radio-inline"><input type="radio" name="income">$40K - $50K</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="radio-inline"><input type="radio" name="income">$50K - $75K</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="radio-inline"><input type="radio" name="income">$75K - $100K</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="radio-inline"><input type="radio" name="income">$100K +</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="demographics-headers col-xs-12">Education</div>
+
+                <div class="col-md-3 form-checks">
+                    <label class="radio-inline"><input type="radio" name="education">High School</label>
+                </div>
+                <div class="col-md-3 form-checks">
+                    <label class="radio-inline"><input type="radio" name="education">Some College</label>
+                </div>
+                <div class="col-md-3 form-checks">
+                    <label class="radio-inline"><input type="radio" name="education">College Degree</label>
+                </div>
+                <div class="col-md-3 form-checks">
+                    <label class="radio-inline"><input type="radio" name="education">Graduate Degree</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="demographics-headers col-xs-12">Ethnicity</div>
+
+                <div class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">White</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Black/African American</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Hispanic/Latino</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Native American/Alaskan Native</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Asian</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Hawaiian Native</label>
+                </div>
+                <div class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Other</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="demographics-headers col-xs-12">Language</div>
+
+                <div class="col-md-3 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Arabic</label>
+                </div>
+                <div class="col-md-3 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Chinese</label>
+                </div>
+                <div class="col-md-3 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">English</label>
+                </div>
+                <div class="col-md-3 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">French</label>
+                </div>
+                <div class="col-md-3 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">German</label>
+                </div>
+                <div class="col-md-3 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Hindi</label>
+                </div>
+                <div class="col-md-3 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Japanese</label>
+                </div>
+                <div class="col-md-3 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Portugese</label>
+                </div>
+                <div class="col-md-3 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Russian</label>
+                </div>
+                <div class="col-md-3 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">Spanish</label>
+                </div>
+            </div>
 
         </div>
     </div>
-</form> <!-- Change the data -->
 </div>
+</form>

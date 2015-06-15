@@ -228,6 +228,39 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
     }
 }
 
+.banner-img-edit {
+    @extend .widget-heading;
+
+    width: 100%;
+    position: absolute !important;
+    top: 0;
+    background-color: rgba(0,0,0,.5);
+}
+
+.edit-banner-photo {
+    font-size: 2em;
+    color: white;
+}
+
+.cancel-edit {
+    margin-right: .5em;
+}
+
+#username {
+    margin-top: 1em;
+}
+#userlocation {
+    margin-top: .5em;
+}
+
+.log-out {
+    font-size: 2em !important;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    opacity: .7;
+}
+
 .profile-labels {
     font-size: 1.8em;
 }
@@ -243,6 +276,13 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
 //Profile edit
 .form-checks {
     margin-bottom: 2em;
+}
+
+
+.demographics-headers {
+    font-size: 1.4em;
+    @extend .text-muted;
+    margin-bottom: .8em;
 }
 
 
