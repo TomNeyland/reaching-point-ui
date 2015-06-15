@@ -43,6 +43,11 @@ angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangu
             templateUrl: 'app/profile/profile.html',
             controller: 'ProfileCtrl'
           })
+          .state('home.profileEdit', {
+              url: '/profileEdit',
+              templateUrl: 'app/profile/profileEdit.html',
+              controller: 'ProfileEditCtrl'
+          })
           .state('home.campaigns', {
               url: '/campaigns',
               templateUrl: 'app/campaigns/campaigns.html',
