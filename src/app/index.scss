@@ -109,7 +109,7 @@ body.contract .nested-home-views {
     text-align: center;
 
     @include desktop {
-        margin-top: 30vh;
+        /*margin-top: 30vh;*/
     }
 
     .pick-acct-heading {
@@ -202,7 +202,7 @@ body.contract .nested-home-views {
 
 //Sidebar extra styles
 nav.side-bar ul.nav-menu > li:hover > a > i {
-    color: #38ddcc;
+    color: $success;
 }
 
 .side-bar > .brand {
