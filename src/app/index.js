@@ -26,7 +26,7 @@ angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangu
       .state('forgotpassword', {
           url: '/forgotpassword',
           templateUrl: 'app/passreset/passreset.html',
-          controller: 'PassResetCtrl' 
+          controller: 'PassResetCtrl'
       })
       .state('home', {
         url: '/home',
