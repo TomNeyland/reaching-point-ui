@@ -237,9 +237,21 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
     background-color: rgba(0,0,0,.5);
 }
 
-.edit-banner-photo {
-    font-size: 2em;
+.edit-banner-wrap {
+    position: absolute;
+    top: 30%;
+    left: 50%;
     color: white;
+
+    .edit-banner-photo {
+        font-size: 2em !important;
+    }
+
+    p {
+        margin-top:.5em;
+        margin-left: -1.7em;
+        font-size: 1.8em;
+    }
 }
 
 .cancel-edit {
