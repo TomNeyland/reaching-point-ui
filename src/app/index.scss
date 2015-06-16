@@ -216,12 +216,18 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
 }
 
 //PROFILE VIEW
+.widget.widget-lg {
+    height: 340px !important;
+}
+
 .edit-profile {
-    /* background-color: blue; */
     padding: .3em;
-    text-align: right;
-    margin-top: -1.5em;
+    text-align: center;
     margin-bottom: 1.5em;
+
+    @include desktop {
+        margin-top: -1.5em;
+    }
 
     span {
         padding: .5em 1em;
