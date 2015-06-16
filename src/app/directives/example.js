@@ -3,7 +3,11 @@ angular.module('baseangular')
 .directive('example', function() {
     return {
         restrict: 'A',
-        templateUrl: 'xyz.html'
+        link: function(scope, element, attrs) {
+            element.click(function(){
+                alert("hey yall");
+            });
+        }
     }
 
 })
