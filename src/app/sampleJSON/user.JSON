@@ -1,0 +1,15 @@
+{
+    "user": {
+        "name": "",
+        "location": "",
+        "bio": "",
+        "interests": [],
+        "demographics": {
+            "lifeStage": [],
+            "income": "",
+            "education": "",
+            "ethnicity": [],
+            "language": []
+        }
+    }
+}
