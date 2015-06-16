@@ -13,15 +13,15 @@ angular.module('baseangular')
             console.log(error)
         });
 
-    $scope.updateUser = function() {
-        $http.post('app/sampleJSON/user.JSON', $scope.user)
-            .success(function(data){
-                console.log(data);
-            })
-            .error(function(error){
-                console.log(error);
-            })
-    };
+    // $scope.updateUser = function() {
+    //     $http.post('MYSTERIOUS PLACES', $scope.user)
+    //         .success(function(data){
+    //             console.log(data);
+    //         })
+    //         .error(function(error){
+    //             console.log(error);
+    //         })
+    // };
 
     $scope.cancelUser = function() {
         console.log($scope.user);
