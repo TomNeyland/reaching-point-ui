@@ -228,7 +228,9 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
     }
 }
 
-
+#banner-upload {
+    display: none;
+}
 
 .banner-img-edit {
     @extend .widget-heading;
