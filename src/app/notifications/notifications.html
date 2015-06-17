@@ -1,33 +1,109 @@
 <div id="page-heading">
-    <h3 class="page-title">Welcome to your Notifications board, coming soon...</h3>
+    <h3 class="page-title">Notifications</h3>
 </div>
-
 <div class="container-fluid">
-    <div class="msg-container col-md-4">
-        <input type="text" placeholder="Search Notifications">
-        <button class="btn btn-primary">Search</button>
-
-        <div class="tab-wrap">
-            <p class="tab-inbox">Inbox</p>
-            <p class="tab-sent">Sent</p>
-            <p class="tab-trash">Trash</p>
-        </div>
-
-        <div class="msgs-box">
-            <div class="msg-pane panel panel-content">
-                <img class="msg-avatar" src="../../assets/images/avatar200.png" alt="">
-                <div class="msg-wrap">
-                    <p class="msg-sender">Sender Name</p>
-                    <p class="msg-title">Message Title</p>
-                    <p class="msg-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum lectus vel eros consectetur, vel porta nisi fermentum. Proin dolor lacus, commodo non bibendum vel, volutpat sit amet elit. Ut ipsum quam, bibendum nec aliquam at, egestas ut est. </p>
-                    <p class="msg-date">Date</p>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="msg-container ">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search Notifications">
+                            </div>
+                            <button class="btn btn-primary">Search</button>
+                        </form>
+                        <div class="btn-group btn-group-justified" style="margin: 10px 0;">
+                            <p class="btn btn-default">Inbox</p>
+                            <p class="btn btn-default">Sent</p>
+                            <p class="btn btn-default">Trash</p>
+                        </div>
+                        <!-- <div class="msgs-box"> -->
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <img class="msg-avatar" src="../../assets/images/avatar200.png" alt="">
+                                <div class="msg-wrap">
+                                    <p class="msg-sender">Sender Name</p>
+                                    <p class="msg-title">Message Title</p>
+                                    <p class="msg-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum lectus vel eros consectetur, vel porta nisi fermentum.</p>
+                                    <p class="msg-date">Date</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <img class="msg-avatar" src="../../assets/images/avatar200.png" alt="">
+                                <div class="msg-wrap">
+                                    <p class="msg-sender">Sender Name</p>
+                                    <p class="msg-title">Message Title</p>
+                                    <p class="msg-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum lectus vel eros consectetur, vel porta nisi fermentum.</p>
+                                    <p class="msg-date">Date</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <img class="msg-avatar" src="../../assets/images/avatar200.png" alt="">
+                                <div class="msg-wrap">
+                                    <p class="msg-sender">Sender Name</p>
+                                    <p class="msg-title">Message Title</p>
+                                    <p class="msg-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum lectus vel eros consectetur, vel porta nisi fermentum.</p>
+                                    <p class="msg-date">Date</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <img class="msg-avatar" src="../../assets/images/avatar200.png" alt="">
+                                <div class="msg-wrap">
+                                    <p class="msg-sender">Sender Name</p>
+                                    <p class="msg-title">Message Title</p>
+                                    <p class="msg-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum lectus vel eros consectetur, vel porta nisi fermentum.</p>
+                                    <p class="msg-date">Date</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- <div class="msg-pane panel panel-content">
+                            </div>
+                        </div> -->
+                        <!-- </div> -->
+                        <div class="msg-view col-md-8">
+                        </div>
+                    </div>
                 </div>
             </div>
-            
         </div>
-    </div>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                            <div class="btn-group btn-group-sm pull-right" role="group" aria-label="...">
+                            <div class="btn btn-default">Reply</div>
+                            <div class="btn btn-default">Delete</div>
+                        </div>
+                        <div class="clearfix"></div>
 
-    <div class="msg-view col-md-8">
+                            <div class="media-left">
+                                <a href="#">
+                                <img class="media-object" src="http://placehold.it/60x60" alt="...">
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              Date<br>
+                            <strong>From</strong><br>
+                            To
+                            </div><br>
+                            <p><strong>Message Title</strong></p>
 
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            
+                          </div>
+            </div>
+        </div>
     </div>
 </div>
