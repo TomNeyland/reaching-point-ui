@@ -16,7 +16,7 @@ angular.module('baseangular')
         });
 
     $scope.updateUser = function() {
-        $http.post('https://reaching-point.firebaseio.com/user', $scope.user)
+        $http.post('https://reaching-point.firebaseio.com/user.json', $scope.user)
             .success(function(data){
                 console.log(data);
             })
