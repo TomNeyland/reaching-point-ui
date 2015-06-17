@@ -4,4 +4,4 @@ bower_components/
 .tmp/
 dist/
 wire-prototype/
-src/.strong-pm/
+.strong-pm/

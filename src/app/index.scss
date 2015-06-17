@@ -329,6 +329,55 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
     margin-bottom: .8em;
 }
 
+//Notification view
+.tab-wrap {
+    width: 100%;
+
+    p {
+        display: inline-block;
+        margin: 0 1em;
+        padding: 1em;
+        text-align: center;
+    }
+}
+
+.msg-avatar {
+    height: 50px;
+    width: 50px;
+}
+
+.msgs-box {
+    border: 1px solid #ddd;
+}
+
+.msg-pane {
+    position: relative;
+    padding: 1em;
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid #ddd !important;
+    border-radius: none !important;
+}
+
+.msg-wrap {
+    margin-left: 60px;
+    margin-top: -52px;
+
+    .msg-sender {
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    .msg-title {
+        font-weight: bold;
+    }
+}
+
+.msg-date {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+}
+
 
 
 
