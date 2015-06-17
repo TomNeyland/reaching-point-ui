@@ -341,7 +341,7 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
 }
 
 //Notification view
-.tab-wrap {
+/*.tab-wrap {
     width: 100%;
 
     p {
@@ -350,7 +350,7 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
         padding: 1em;
         text-align: center;
     }
-}
+}*/
 
 .msg-avatar {
     height: 50px;
@@ -387,6 +387,13 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
     position: absolute;
     top: 12px;
     right: 15px;
+}
+
+.form-control.form-control-primary:focus{
+    border-color: $primary;
+  outline: 0;
+  box-shadow: 0 0 4px 1px rgba(0, 172, 238, 0.6);
+
 }
 
 

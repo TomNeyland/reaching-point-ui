@@ -9,51 +9,25 @@
                     <div class="msg-container ">
                         <form class="form-inline">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search Notifications">
+                                <input type="text" class="form-control form-control-primary" placeholder="Search Notifications">
                             </div>
                             <button class="btn btn-primary">Search</button>
                         </form>
                         <div class="btn-group btn-group-justified" style="margin: 10px 0;">
-                            <p class="btn btn-default">Inbox</p>
-                            <p class="btn btn-default">Sent</p>
+                            <p class="btn btn-default active">Inbox</p>
+                            <!-- SENT COMING SOOOOOON -->
+                            <!-- <p class="btn btn-default">Sent</p> -->
                             <p class="btn btn-default">Trash</p>
                         </div>
                         <!-- <div class="msgs-box"> -->
                         <ul class="list-group">
-                            <li class="list-group-item">
+                            <li ng-repeat="n in notifications" class="list-group-item">
                                 <img class="msg-avatar" src="../../assets/images/avatar200.png" alt="">
                                 <div class="msg-wrap">
-                                    <p class="msg-sender">Sender Name</p>
-                                    <p class="msg-title">Message Title</p>
-                                    <p class="msg-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum lectus vel eros consectetur, vel porta nisi fermentum.</p>
-                                    <p class="msg-date">Date</p>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <img class="msg-avatar" src="../../assets/images/avatar200.png" alt="">
-                                <div class="msg-wrap">
-                                    <p class="msg-sender">Sender Name</p>
-                                    <p class="msg-title">Message Title</p>
-                                    <p class="msg-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum lectus vel eros consectetur, vel porta nisi fermentum.</p>
-                                    <p class="msg-date">Date</p>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <img class="msg-avatar" src="../../assets/images/avatar200.png" alt="">
-                                <div class="msg-wrap">
-                                    <p class="msg-sender">Sender Name</p>
-                                    <p class="msg-title">Message Title</p>
-                                    <p class="msg-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum lectus vel eros consectetur, vel porta nisi fermentum.</p>
-                                    <p class="msg-date">Date</p>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <img class="msg-avatar" src="../../assets/images/avatar200.png" alt="">
-                                <div class="msg-wrap">
-                                    <p class="msg-sender">Sender Name</p>
-                                    <p class="msg-title">Message Title</p>
-                                    <p class="msg-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum lectus vel eros consectetur, vel porta nisi fermentum.</p>
-                                    <p class="msg-date">Date</p>
+                                    <p class="msg-sender">{{n.from}}</p>
+                                    <p class="msg-title">{{n.subject}}</p>
+                                    <p class="msg-body">{{n.summary}}</p>
+                                    <p class="msg-date">{{n.created}}</p>
                                 </div>
                             </li>
                         </ul>
