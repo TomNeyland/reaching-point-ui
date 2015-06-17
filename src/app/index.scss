@@ -200,6 +200,14 @@ body.contract .nested-home-views {
     }
 }
 
+.input-help{
+    padding: 7px;
+    font-size: 14px !important;
+}
+.input-help-tooltip{
+    width:200px;
+}
+
 //Sidebar extra styles
 nav.side-bar ul.nav-menu > li:hover > a > i {
     color: $success;
