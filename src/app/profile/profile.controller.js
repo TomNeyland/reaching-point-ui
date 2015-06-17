@@ -13,7 +13,6 @@ angular.module('baseangular')
                 // console.log(data[key]);
                 $scope.user = data[key];
             }
-            console.log($scope.user);
         })
         .error(function(error){
             console.log(error)
