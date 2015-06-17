@@ -231,6 +231,17 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
     height: 340px !important;
 }
 
+.profile-avatar{
+      position: absolute;
+  top: -120px;
+  left: -75px;
+  height: 150px;
+  width: 150px;
+  border-radius: 15px;
+  margin-left: 50%;
+  border: 5px solid #fff;
+}
+
 .edit-profile {
     padding: .3em;
     text-align: center;

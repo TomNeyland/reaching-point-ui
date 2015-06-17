@@ -2,37 +2,33 @@
     <h3 class="page-title">Profile</h3>
 </div>
 
+<div class="col-xs-12">
+    
+
 <div class="publisher widget widget-lg">
-    <div class="widget-heading" style="background-image:url('../../assets/images/avatar200.png')">
+    <!-- No image uploaded yet. Heres a nice pretty color to look at :) -->
+    <div class="widget-heading" style="background-color:#00acee;">
         <!-- <a href class="hashtag">#creative</a> -->
     </div>
     <div class="widget-body">
         <div class="row">
             <div class="col-md-3 col-xs-4 text-center title">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="230px" height="230px" viewBox="0 0 230 230">
-                    <defs>
-                        <mask id="mask1" x="0" y="0" width="200" height="200">
-                            <path fill="#fff" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
-                        </mask>
-                    </defs>
-                    <g>
-                        <image x="0" y="10" width="230" height="230" xlink:href="../../assets/images/avatar200.png" style="mask:url(#mask1);" />
-                        <path fill="#fff" d="M116.128,19.572c5.27,2.409,22.242,15.56,49.901,43.779c23.378,23.852,38.753,42.554,42.787,49.235
-                            c-3.956,6.25-18.6,23.593-43.896,48.868c-25.187,25.167-42.496,39.793-48.803,43.823c-6.436-3.999-24.206-18.657-49.001-43.113
-                            c-27.674-27.295-41.03-44.065-43.919-49.563c2.983-5.978,17.438-24.394,42.817-49.953C92.23,36.246,110.426,22.07,116.128,19.572
-                             M116.166,10.333c-14.834,0-102.333,89-102.333,102.333C13.833,126,105.667,215,116.167,215S218.5,123.333,218.5,112.666
-                            C218.5,102,131,10.333,116.166,10.333L116.166,10.333z" stroke-width="2" stroke="#fff" />
-                    </g>
-                </svg>
-                <h4 class="text-info">{{"user.name"}}</h4>
-                <p class="text-muted">{{"user.location"}}</p>
+                    <img src="../../assets/images/avatar200.png" class="profile-avatar">
+                <h4 ng-if="!user.name" class="text-info">Company Name</h4>
+                <h4 class="text-info" ng-if="user.name">{{user.name}}</h4>
+                <p class="text-muted" ng-if="!user.location">Your location</p>
+                <p class="text-muted" ng-if="user.location">{{user.location}}</p>
             </div>
             <div class="col-md-9 col-xs-8 content">
-                <p class="text-muted col-md-10 col-xs-12">{{"user.bio"}}</p>
+                <p class="text-muted col-md-10 col-xs-12" ng-if="!user.bio">
+                <b>Click that 'Edit Profile' button to the right to tell us about your company!</b> <br>(This is where you you can add your company bio to let influencers know a little about your brand, link to your website and stuff like that!)</p>
+                <p class="text-muted col-md-10 col-xs-12" ng-if="user.bio">{{user.bio}}</p>
                 <div class="col-md-2 col-xs-12 edit-profile"><span ui-sref="home.profileEdit" class="btn btn-primary">Edit Profile</span></div>
             </div>
         </div>
     </div> <!-- End widget body -->
+</div>
+
 </div>
 
 <div class="social-count col-xs-4 col-md-3">
