@@ -9,7 +9,11 @@ angular.module('baseangular')
     $http.get('https://reaching-point.firebaseio.com/user.json')
         .success(function(data){
             console.log("data acquired", data);
-            $scope.user = data.user;
+            for (var key in data) {
+                // console.log(data[key]);
+                $scope.user = data[key];
+            }
+            console.log($scope.user);
         })
         .error(function(error){
             console.log(error)
