@@ -29,6 +29,8 @@ $desktop-width: 768px;
 .home-rpLogo {
     width: 10em;
     margin-left: -.2em;
+    max-width: 100%;
+    padding: 10px;
 
     @include desktop {
         margin-top: 10vh;
@@ -37,6 +39,10 @@ $desktop-width: 768px;
 
 .rp-dash-logo {
     width: 10em;
+}
+
+.login-social-icons{
+    padding: 6px;
 }
 
 //Forgot Password page
@@ -147,22 +153,19 @@ body.contract .nested-home-views {
 }
 
 .social-login {
-    text-align: center;
     margin-top: -.5em;
     margin-bottom: .5em;
     color: white;
 
     .soc-icons {
-        width: 90%;
         padding: .5em;
-        margin: .3em;
+        margin: .3em 0;
 
         &:hover {
             color: white;
         }
 
         @include desktop {
-            width: 45%;
             margin-bottom: 1em;
         }
     }
