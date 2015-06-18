@@ -104,6 +104,7 @@
         <div class="panel-heading interests-heading">Demographics</div>
         <div class="panel-body">
 
+
             <div class="row">
                 <div class="demographics-headers col-xs-12">Life Stage</div>
 
@@ -112,11 +113,12 @@
                 </div>
             </div>
 
+            <!-- <pre>{{income | json}}</pre> -->
             <div class="row">
                 <div class="demographics-headers col-xs-12">Annual Income</div>
 
                 <div ng-repeat="income in info.income" class="col-md-4 form-checks">
-                    <label class="radio-inline"><input type="radio" name="income">{{income}}</label>
+                    <label class="radio-inline"><input ng-model="user.demographics.income" type="radio" name="income" ng-value="income">{{income}}</label>
                 </div>
             </div>
 
@@ -124,15 +126,15 @@
                 <div class="demographics-headers col-xs-12">Education</div>
 
                 <div ng-repeat="education in info.education" class="col-md-3 form-checks">
-                    <label class="radio-inline"><input type="radio" name="education">{{education}}</label>
+                    <label class="radio-inline"><input ng-model="user.demographics.education" type="radio" name="education" ng-value="education">{{education}}</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="demographics-headers col-xs-12">Ethnicity</div>
 
-                <div ng-repeat="ethnic in info.ethnicity" class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">{{ethnic}}</label>
+                <div ng-repeat="ethnic in ethnicity" class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input ng-model="ethnic.selected" type="checkbox">{{ethnic.name}}</label>
                 </div>
             </div>
 

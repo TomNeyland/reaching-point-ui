@@ -43,9 +43,22 @@ angular.module('baseangular')
                     }
                 });
                 $scope.lifeStage.push(lifeStageObj);
-
-                // console.log($scope.lifeStage);
             });
+
+                $scope.ethnicity = [];
+                angular.forEach($scope.info.ethnicity, function(ethnicity) {
+                    var ethnicObj = {
+                        name: ethnicity,
+                        selected: false
+                    };
+                    angular.forEach($scope.user.demographics.ethnicity, function(userEthnicity) {
+                        if(userEthnicity === ethnicity) {
+                            ethnicObj.selected = true;
+                        }
+                    });
+                    $scope.ethnicity.push(ethnicObj);
+                });
+
 
         })
         .error(function(error){
@@ -70,6 +83,16 @@ angular.module('baseangular')
             }
         });
         $scope.user.demographics.lifeStage = newUserLifeStage;
+
+        var newUserEthnicity = [];
+        angular.forEach($scope.ethnicity, function(ethnicity) {
+            if (ethnicity.selected) {
+                newUserEthnicity.push(ethnicity.name);
+            }
+        });
+        $scope.user.demographics.ethnicity = newUserEthnicity;
+
+
 
         console.log("return from put request: ", $scope.user);
 
