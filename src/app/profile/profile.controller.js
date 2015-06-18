@@ -2,7 +2,7 @@
 
 angular.module('baseangular')
 
-.controller('ProfileCtrl', function($scope, $http, userFactory) {
+.controller('ProfileCtrl', function($scope, $http, userFactory, $state) {
 
 
 
@@ -22,6 +22,7 @@ angular.module('baseangular')
         $http.post('https://reaching-point.firebaseio.com/user.json', $scope.user)
             .success(function(data){
                 console.log(data);
+                $state.go('home.profile');
             })
             .error(function(error){
                 console.log(error);
