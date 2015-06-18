@@ -88,74 +88,8 @@
         <div class="panel-body">
 
             <div class="row">
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Advertising</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Celebrity</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Family</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Health</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">DIY/Craft</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Entertainment</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Family</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Fashion</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Food</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Health</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Lifestyle</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Music</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">News</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Pop Culture</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Social Media</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Sports</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Technology</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Travel</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">Gaming</label>
+                <div ng-repeat="interest in info.interests" class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox" value="">{{interest}}</label>
                 </div>
             </div>
 
@@ -171,121 +105,40 @@
             <div class="row">
                 <div class="demographics-headers col-xs-12">Life Stage</div>
 
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Single Adult</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Married Adult</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Kids in Elementary</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Kids in High School</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Kids in College</label>
+                <div ng-repeat="stage in info.lifeStage" class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">{{stage}}</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="demographics-headers col-xs-12">Annual Income</div>
 
-                <div class="col-md-4 form-checks">
-                    <label class="radio-inline"><input type="radio" name="income">Under $20K</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="radio-inline"><input type="radio" name="income">$20K - $40K</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="radio-inline"><input type="radio" name="income">$40K - $50K</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="radio-inline"><input type="radio" name="income">$50K - $75K</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="radio-inline"><input type="radio" name="income">$75K - $100K</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="radio-inline"><input type="radio" name="income">$100K +</label>
+                <div ng-repeat="income in info.income" class="col-md-4 form-checks">
+                    <label class="radio-inline"><input type="radio" name="income">{{income}}</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="demographics-headers col-xs-12">Education</div>
 
-                <div class="col-md-3 form-checks">
-                    <label class="radio-inline"><input type="radio" name="education">High School</label>
-                </div>
-                <div class="col-md-3 form-checks">
-                    <label class="radio-inline"><input type="radio" name="education">Some College</label>
-                </div>
-                <div class="col-md-3 form-checks">
-                    <label class="radio-inline"><input type="radio" name="education">College Degree</label>
-                </div>
-                <div class="col-md-3 form-checks">
-                    <label class="radio-inline"><input type="radio" name="education">Graduate Degree</label>
+                <div ng-repeat="education in info.education" class="col-md-3 form-checks">
+                    <label class="radio-inline"><input type="radio" name="education">{{education}}</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="demographics-headers col-xs-12">Ethnicity</div>
 
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">White</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Black/African American</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Hispanic/Latino</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Native American/Alaskan Native</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Asian</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Hawaiian Native</label>
-                </div>
-                <div class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Other</label>
+                <div ng-repeat="ethnic in info.ethnicity" class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">{{ethnic}}</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="demographics-headers col-xs-12">Language</div>
 
-                <div class="col-md-3 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Arabic</label>
-                </div>
-                <div class="col-md-3 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Chinese</label>
-                </div>
-                <div class="col-md-3 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">English</label>
-                </div>
-                <div class="col-md-3 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">French</label>
-                </div>
-                <div class="col-md-3 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">German</label>
-                </div>
-                <div class="col-md-3 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Hindi</label>
-                </div>
-                <div class="col-md-3 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Japanese</label>
-                </div>
-                <div class="col-md-3 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Portugese</label>
-                </div>
-                <div class="col-md-3 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Russian</label>
-                </div>
-                <div class="col-md-3 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">Spanish</label>
+                <div ng-repeat="language in info.tongues" class="col-md-3 form-checks">
+                    <label class="checkbox-inline"><input type="checkbox">{{language}}</label>
                 </div>
             </div>
 

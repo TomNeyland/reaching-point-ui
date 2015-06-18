@@ -4,6 +4,8 @@ angular.module('baseangular')
 
 .controller('ProfileCtrl', function($scope, $http, userFactory, $state) {
 
+    $scope.info = userFactory;
+    console.log($scope.info);
 
 
     $http.get('https://reaching-point.firebaseio.com/user.json')
