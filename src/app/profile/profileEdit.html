@@ -88,7 +88,7 @@
         <div class="panel-heading">Interests</div>
         <div class="panel-body">
 
-            <pre>{{interests|json}}</pre>
+            <!-- <pre>{{interests|json}}</pre> -->
             <div class="row">
                 <div ng-repeat="interest in interests" class="col-md-4 form-checks">
                     <label class="checkbox-inline"><input ng-model="interest.selected" type="checkbox" value="">{{interest.name}}</label>
@@ -107,8 +107,8 @@
             <div class="row">
                 <div class="demographics-headers col-xs-12">Life Stage</div>
 
-                <div ng-repeat="stage in info.lifeStage" class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">{{stage}}</label>
+                <div ng-repeat="stage in lifeStage" class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input ng-model="stage.selected" type="checkbox">{{stage.name}}</label>
                 </div>
             </div>
 

@@ -2,29 +2,31 @@
 
 angular.module('baseangular')
 
-.controller('BrandCtrl', function($scope, $http) {
+.controller('BrandCtrl', function($scope, $http, $state) {
 
     $scope.user = {
-        name: null,
-        email: null,
-        password: null,
-        location: null,
-        bio: null,
+        name: '',
+        email: '',
+        password: '',
+        location: '',
+        bio: '',
         interests: [],
         demographics: {
             lifeStage: [],
-            income: null,
-            education: null,
-            ethnicity: null,
-            language: null
+            income: '',
+            education: '',
+            ethnicity: '',
+            language: ''
         }
     };
 
     $scope.login = function() {
 
-        $http.post('https://reaching-point.firebaseio.com/user.json')
+        $http.post('https://reaching-point.firebaseio.com/user.json', $scope.user)
             .success(function(data){
+                
                 console.log("posted successfully");
+                $state.go('home.dashboard')
             })
             .error(function(error){
                 console.log(error, "you suck");
