@@ -82,14 +82,16 @@
     </div>
 </div> <!-- Social media reports -->
 
-<div class="interests col-xs-12 col-md-9">
+<div class="demographics-wrap col-xs-12 col-md-9">
+<div class="interests">
     <div class="panel panel-default">
         <div class="panel-heading">Interests</div>
         <div class="panel-body">
 
+            <pre>{{interests|json}}</pre>
             <div class="row">
-                <div ng-repeat="interest in info.interests" class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox" value="">{{interest}}</label>
+                <div ng-repeat="interest in interests" class="col-md-4 form-checks">
+                    <label class="checkbox-inline"><input ng-model="interest.selected" type="checkbox" value="">{{interest.name}}</label>
                 </div>
             </div>
 
@@ -97,7 +99,7 @@
     </div>
 </div>
 
-<div class="interests col-xs-12 col-md-9">
+<div class="interests">
     <div class="panel panel-default">
         <div class="panel-heading interests-heading">Demographics</div>
         <div class="panel-body">
@@ -144,5 +146,6 @@
 
         </div>
     </div>
+</div>
 </div>
 </form>
