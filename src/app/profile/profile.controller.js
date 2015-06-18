@@ -4,11 +4,53 @@ angular.module('baseangular')
 
 .controller('ProfileCtrl', function($scope, $http, userFactory, $state) {
 
+    $scope.startJoyRide = false;
+
+    $scope.config = [{
+            type: "title",
+            heading: "Welcome to Reaching Point!",
+            text: 'Let us show you how to get started!'
+
+        }, {
+            type: "element",
+            selector: "#editProfile",
+            heading: "Edit your profile",
+            text: "The first thing you should do is edit your profile!",
+            placement: "left",
+            scroll: false
+        }, {
+            type: "location_change",
+            path: "/profileEdit"
+        }
+
+    ];
+
+    $scope.continueJoyRide = false;
+
+    $scope.config2 = [{
+            type: "title",
+            heading: "Welcome to Reaching Point!",
+            text: 'Let us show you how to get started!'
+
+        }, {
+            type: "element",
+            selector: "#editProfile",
+            heading: "Edit your profile",
+            text: "The first thing you should do is edit your profile!",
+            placement: "left",
+            scroll: false
+        }, {
+            type: "location_change",
+            path: "/profileEdit"
+        }
+
+    ];
+
     $scope.info = userFactory;
 
 
     $http.get('https://reaching-point.firebaseio.com/user.json')
-        .success(function(data){
+        .success(function(data) {
             console.log("data acquired", data);
             for (var key in data) {
                 // console.log(data[key]);
@@ -29,7 +71,7 @@ angular.module('baseangular')
                 $scope.interests.push(interestObj);
             });
         })
-        .error(function(error){
+        .error(function(error) {
             console.log(error)
         });
 
@@ -46,11 +88,11 @@ angular.module('baseangular')
         console.log($scope.user);
 
         $http.post('https://reaching-point.firebaseio.com/user.json', $scope.user)
-            .success(function(data){
+            .success(function(data) {
                 console.log(data);
                 $state.go('home.profile');
             })
-            .error(function(error){
+            .error(function(error) {
                 console.log(error);
             })
     };
