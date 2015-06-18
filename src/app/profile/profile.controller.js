@@ -59,6 +59,20 @@ angular.module('baseangular')
                     $scope.ethnicity.push(ethnicObj);
                 });
 
+            $scope.languages = [];
+            angular.forEach($scope.info.tongues, function(tongue) {
+                var tongueObj = {
+                    name: tongue,
+                    selected: false
+                };
+                angular.forEach($scope.user.demographics.languages, function(userTongues) {
+                    if(userTongues === tongue) {
+                        tongueObj.selected = true;
+                    }
+                });
+                $scope.languages.push(tongueObj);
+            })
+
 
         })
         .error(function(error){
@@ -91,6 +105,14 @@ angular.module('baseangular')
             }
         });
         $scope.user.demographics.ethnicity = newUserEthnicity;
+
+        var newUserLanguage = [];
+        angular.forEach($scope.languages, function(tongue) {
+            if (tongue.selected) {
+                newUserLanguage.push(tongue.name);
+            }
+        });
+        $scope.user.demographics.languages = newUserLanguage;
 
 
 

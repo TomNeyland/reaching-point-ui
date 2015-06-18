@@ -141,8 +141,8 @@
             <div class="row">
                 <div class="demographics-headers col-xs-12">Language</div>
 
-                <div ng-repeat="language in info.tongues" class="col-md-3 form-checks">
-                    <label class="checkbox-inline"><input type="checkbox">{{language}}</label>
+                <div ng-repeat="language in languages" class="col-md-3 form-checks">
+                    <label class="checkbox-inline"><input ng-model="language.selected" type="checkbox">{{language.name}}</label>
                 </div>
             </div>
 
