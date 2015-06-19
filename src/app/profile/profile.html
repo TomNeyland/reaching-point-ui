@@ -1,6 +1,6 @@
 <!-- PROFILE TOUR -->
 <div ng-joy-ride="startJoyRide" config="config" on-finish="onFinish()"  on-skip="onFinish()">
-    
+
     <!-- PAGE HEADER -->
     <div id="page-heading">
         <h3 class="page-title">Profile</h3>
@@ -9,7 +9,7 @@
     <!-- PROFILE HEADER -->
     <div class="col-xs-12">
         <div class="publisher widget widget-lg">
-            
+
             <!-- USER HEADER IMAGE -->
             <div ng-if="!user.header_image" class="widget-heading" style="background-color:#00acee;"></div>
             <div ng-if="user.header_image" class="widget-heading" ng-style="{'background-image': 'url(' + user.header_image + ')'}"></div>
@@ -17,11 +17,11 @@
             <div class="widget-body">
                 <div class="row">
                     <div class="col-md-3 col-xs-4 text-center title" style="height:135px;">
-                        
+
                         <!-- USER AVATAR -->
                         <img ng-if="!user.avatar" src="../../assets/images/default-avatar-green.png" class="profile-avatar">
                         <img ng-if="user.avatar" ng-src="{{user.avatar}}" class="profile-avatar">
-                        
+
                         <!-- USER NAME & LOCATION -->
                         <h4 class="text-info" ng-if="user.name">{{user.name}}</h4>
                         <p class="text-muted" ng-if="user.location">{{user.location}}</p>
@@ -44,7 +44,7 @@
     </div>
 
     <!-- USER SOCIAL NETWORKS -->
-    <div class="social-count col-xs-4 col-md-3" ng-if="networks">
+    <div class="social-count col-xs-4 col-md-3" ng-if="user">
         <div class="panel panel-default">
             <div class="panel-body text-center">Total Reach: <b>4.5K</b></div>
         </div>
@@ -81,7 +81,7 @@
     </div>
 
     <!-- USER INFO NO DATA -->
-    <div class="col-xs-12" ng-if="!userstuff">
+    <div class="col-xs-12" ng-if="!user">
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="well text-center">
@@ -95,15 +95,12 @@
     </div>
 
     <!-- USER INFO -->
-    <div class="col-xs-8 col-md-9" ng-if="userstuff">
+    <div class="col-xs-8 col-md-9" ng-if="user">
         <div class="interests">
         <div class="panel panel-default">
             <div class="panel-heading">Interests</div>
             <div class="panel-body profile-labels">
-                <div class="label label-danger">Health</div>
-                <div class="label label-primary">Sports</div>
-                <div class="label label-success">Lifestyle</div>
-                <div class="label label-default">Travel</div>
+                <div ng-repeat="interest in user.interests" class="label label-danger">{{interest}}</div>
             </div>
         </div>
         </div>
