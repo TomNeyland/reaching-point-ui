@@ -5,7 +5,7 @@ angular.module('baseangular')
         restrict: 'A',
         link: function(scope, element, attrs) {
             element.click(function(){
-                console.log("hey yall");
+                console.log("clicked on banner");
                 $('#banner-upload').click();
             });
         }
