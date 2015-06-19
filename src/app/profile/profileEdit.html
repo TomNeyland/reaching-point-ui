@@ -4,14 +4,15 @@
 <form>
 <div class="publisher widget widget-lg">
 
-    <div class="widget-heading" style="background-image:url('../../assets/images/avatar200.png')"></div>
+<!-- <pre>{{header.image|json}}</pre> -->
+    <div class="widget-heading" ng-style="{'background-image': 'url(' + header.image + ')'}"></div>
     <div banner-upload class="banner-img-edit">
         <div class="edit-banner-wrap">
             <i class="edit-banner-photo fa fa-camera"></i>
             <p>Edit Image</p>
         </div>
     </div>
-    <input id="banner-upload" type="file">
+    <input id="banner-upload" type="file" onchange="angular.element(this).scope().fileNameChanged(this)" ng-model="file">
 
     <div class="widget-body">
         <div class="row">
