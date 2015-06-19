@@ -12,17 +12,17 @@ angular.module('baseangular')
        var file=element.files[0];
 
        var reader = new FileReader();
-         
+
         reader.readAsDataURL(file);
 
-        reader.onload = function(event) {  
-          
+        reader.onload = function(event) {
+
           $timeout(function(){
             $scope.header.image = event.target.result;
           });
           console.log('$scope.headerImage',$scope.header.image)
           // $scope.setHeaderImage($scope.headerImage);
-        }; 
+        };
     }
 
     $scope.fileNameChanged2 = function(element) {
@@ -30,17 +30,17 @@ angular.module('baseangular')
        var file=element.files[0];
 
        var reader = new FileReader();
-         
+
         reader.readAsDataURL(file);
 
-        reader.onload = function(event) {  
-          
+        reader.onload = function(event) {
+
           $timeout(function(){
             $scope.avatar.image = event.target.result;
           });
           console.log('$scope.headerImage',$scope.avatar.image)
           // $scope.setHeaderImage($scope.headerImage);
-        }; 
+        };
     }
 
 
@@ -90,9 +90,9 @@ angular.module('baseangular')
     $scope.info = userFactory;
 
 
-    $http.get('https://reaching-point.firebaseio.com/user.json')
+    $http.get('https://reaching-point-ui.firebaseio.com/user.json')
         .success(function(data) {
-            console.log("data acquired");
+            console.log("data acquired", data);
             for (var key in data) {
                 // console.log(data[key]);
                 $scope.user = data[key];
@@ -204,7 +204,7 @@ angular.module('baseangular')
 
 
 
-        $http.put('https://reaching-point.firebaseio.com/user/' + $scope.manipulated + '.json', $scope.user)
+        $http.put('https://reaching-point-ui.firebaseio.com/user/' + $scope.manipulated + '.json', $scope.user)
             .success(function(data) {
                 console.log("Put successfully");
                 $state.go('home.profile');

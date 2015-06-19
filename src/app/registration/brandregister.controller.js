@@ -22,9 +22,9 @@ angular.module('baseangular')
 
     $scope.login = function() {
 
-        $http.post('https://reaching-point.firebaseio.com/user.json', $scope.user)
+        $http.post('https://reaching-point-ui.firebaseio.com/user.json', $scope.user)
             .success(function(data){
-                
+
                 console.log("posted successfully");
                 $state.go('home.dashboard')
             })
