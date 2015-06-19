@@ -2,47 +2,42 @@
     <h3 class="page-title">Profile</h3>
 </div>
 <form>
-<div class="publisher widget widget-lg">
+<div class="col-xs-12">
+    <div class="publisher widget widget-lg">
 
 <!-- <pre>{{header.image|json}}</pre> -->
     <div class="widget-heading" ng-style="{'background-image': 'url(' + header.image + ')'}"></div>
-    <div banner-upload class="banner-img-edit">
-        <div class="edit-banner-wrap">
-            <i class="edit-banner-photo fa fa-camera"></i>
-            <p>Edit Image</p>
+        <div banner-upload class="banner-img-edit">
+            <div class="edit-banner-wrap">
+                <i class="edit-banner-photo fa fa-camera"></i>
+                <p>Edit Image</p>
+            </div>
         </div>
-    </div>
     <input id="banner-upload" type="file" onchange="angular.element(this).scope().fileNameChanged(this)" ng-model="file">
 
-    <div class="widget-body">
-        <div class="row">
-            <div class="col-md-3 col-xs-12 text-center title">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="230px" height="230px" viewBox="0 0 230 230">
-                    <defs>
-                        <mask id="mask1" x="0" y="0" width="200" height="200">
-                            <path fill="#fff" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
-                        </mask>
-                    </defs>
-                    <g>
-                        <image x="0" y="10" width="230" height="230" xlink:href="../../assets/images/avatar200.png" style="mask:url(#mask1);" />
-                        <path fill="#fff" d="M116.128,19.572c5.27,2.409,22.242,15.56,49.901,43.779c23.378,23.852,38.753,42.554,42.787,49.235
-                            c-3.956,6.25-18.6,23.593-43.896,48.868c-25.187,25.167-42.496,39.793-48.803,43.823c-6.436-3.999-24.206-18.657-49.001-43.113
-                            c-27.674-27.295-41.03-44.065-43.919-49.563c2.983-5.978,17.438-24.394,42.817-49.953C92.23,36.246,110.426,22.07,116.128,19.572
-                             M116.166,10.333c-14.834,0-102.333,89-102.333,102.333C13.833,126,105.667,215,116.167,215S218.5,123.333,218.5,112.666
-                            C218.5,102,131,10.333,116.166,10.333L116.166,10.333z" stroke-width="2" stroke="#fff" />
-                            <div class="profile-pic-edit"></div>
-                    </g>
-                </svg>
-                <input ng-model="user.name" id="username" type="text" value="John Smith">
-                <input ng-model="user.location" id="userlocation" type="text" value="Orlando, Fl">
-            </div>
-            <div class="col-md-9 col-xs-8 content">
-                <div class="col-xs-12 text-right edit-profile"><span ui-sref="home.profile" class="cancel-edit btn btn-blocked">Cancel</span><span ng-click="updateUser()" class="btn btn-primary">Save Changes</span></div>
-                <textarea ng-model="user.bio" id="user.bio" class="form-control" rows="2" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae unde sapiente ..."></textarea>
+        <div class="widget-body">
+            <div class="row">
+                <div class="col-md-3 col-xs-12 text-center title">
+                    <img src="../../assets/images/default-avatar-green.png" class="profile-avatar">
+                    <div avatar-upload class="profile-avatar-overlay">
+                        <i class="edit-profile-avatar fa fa-camera fa-2x"></i>
+                        <p>Edit Image</p>
+                    </div>
+                    <input id="avatar-upload" type="file">
+
+                    <div class="form-group">
+                        <input class="form-control" ng-model="user.name" id="username" type="text" value="" placeholder="First Name">
+                        <input class="form-control" ng-model="user.location" id="userlocation" type="text" value='' placeholder="Location">
+                    </div>
+                </div>
+                <div class="col-md-9 col-xs-8 content">
+                    <div class="col-xs-12 text-right edit-profile"><span ui-sref="home.profile" class="cancel-edit btn btn-blocked">Cancel</span><span ng-click="updateUser()" class="btn btn-primary">Save Changes</span></div>
+                    <textarea ng-model="user.bio" id="user.bio" class="form-control" rows="2" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae unde sapiente ..."></textarea>
+                </div>
             </div>
         </div>
+        <!-- End widget body -->
     </div>
-    <!-- End widget body -->
 </div>
 
 <div class="social-count col-xs-12 col-md-3">
