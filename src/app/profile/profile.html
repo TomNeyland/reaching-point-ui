@@ -1,48 +1,49 @@
-<!-- Profile Tour -->
+<!-- PROFILE TOUR -->
 <div ng-joy-ride="startJoyRide" config="config" on-finish="onFinish()"  on-skip="onFinish()">
+    
+    <!-- PAGE HEADER -->
     <div id="page-heading">
         <h3 class="page-title">Profile</h3>
     </div>
-    <!-- <pre>{{user.header_img | json}}</pre> -->
+
+    <!-- PROFILE HEADER -->
     <div class="col-xs-12">
         <div class="publisher widget widget-lg">
-            <!-- No image uploaded yet. Heres a nice pretty color to look at :) -->
-            <div ng-if="!user.header_image" class="widget-heading" style="background-color:#00acee;">
-            </div>
-            <div ng-if="user.header_image" class="widget-heading" ng-style="{'background-image': 'url(' + user.header_image + ')'}">
-                <!-- <a href class="hashtag">#creative</a> -->
-            </div>
+            
+            <!-- USER HEADER IMAGE -->
+            <div ng-if="!user.header_image" class="widget-heading" style="background-color:#00acee;"></div>
+            <div ng-if="user.header_image" class="widget-heading" ng-style="{'background-image': 'url(' + user.header_image + ')'}"></div>
+
             <div class="widget-body">
                 <div class="row">
                     <div class="col-md-3 col-xs-4 text-center title" style="height:135px;">
+                        
+                        <!-- USER AVATAR -->
                         <img ng-if="!user.avatar" src="../../assets/images/default-avatar-green.png" class="profile-avatar">
                         <img ng-if="user.avatar" ng-src="{{user.avatar}}" class="profile-avatar">
-                        <!-- <h4 ng-if="!user.name" class="text-info">Company Name</h4> -->
+                        
+                        <!-- USER NAME & LOCATION -->
                         <h4 class="text-info" ng-if="user.name">{{user.name}}</h4>
-                        <!-- <p class="text-muted" ng-if="!user.location">Your location</p> -->
                         <p class="text-muted" ng-if="user.location">{{user.location}}</p>
                     </div>
-                    <div class="col-md-9 col-xs-8 content">
-                        <div class="col-md-10 col-xs-12">
-                            <!-- <p class="text-muted" ng-if="!user.bio">
-                                <b>Click that 'Edit Profile' button to the right to tell us about your company!</b>
-                                <br>(This is where you you can add your company bio to let influencers know a little about your brand, link to your website and stuff like that!)
-                            </p> -->
-                        </div>
 
+                    <!-- USER BIO -->
+                    <div class="col-md-9 col-xs-8 content">
+                        <div class="col-md-10 col-xs-12"></div>
                         <p class="text-muted col-md-10 col-xs-12" ng-if="user.bio">{{user.bio}}</p>
-                        <div id="editProfile" class="col-md-2 col-xs-12 edit-profile"><span ui-sref="home.profileEdit" class="btn btn-primary pull-right">Edit Profile</span></div>
+
+                        <!-- EDIT PROFILE BTN -->
+                        <div id="editProfile" class="col-md-2 col-xs-12 edit-profile">
+                            <span ui-sref="home.profileEdit" class="btn btn-primary pull-right">Edit Profile</span>
+                        </div>
                     </div>
                 </div>
             </div>
             <!-- End widget body -->
         </div>
     </div>
-    <!-- <div class="social-count col-xs-4 col-md-3" ng-if="!networks">
-        <div class="panel panel-default">
-            <div class="panel-body text-center">Edit your profile to add your social networks!</div>
-        </div>
-    </div> -->
+
+    <!-- USER SOCIAL NETWORKS -->
     <div class="social-count col-xs-4 col-md-3" ng-if="networks">
         <div class="panel panel-default">
             <div class="panel-body text-center">Total Reach: <b>4.5K</b></div>
@@ -78,7 +79,8 @@
             <span class="log-out fa fa-times"></span>
         </div>
     </div>
-    <!-- Social media reports -->
+
+    <!-- USER INFO NO DATA -->
     <div class="col-xs-12" ng-if="!userstuff">
         <div class="panel panel-default">
             <div class="panel-body">
@@ -87,12 +89,12 @@
                     <div class="row">
                         <h5 class="col-md-6 col-md-offset-3">We are so glad you're here! The first thing you'll want to do is complete your profile so that Reaching Point can match you up with the right brands and you can start earning money! $$$</h5>
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
+
+    <!-- USER INFO -->
     <div class="col-xs-8 col-md-9" ng-if="userstuff">
         <div class="interests">
         <div class="panel panel-default">
