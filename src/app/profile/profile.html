@@ -3,16 +3,20 @@
     <div id="page-heading">
         <h3 class="page-title">Profile</h3>
     </div>
+    <!-- <pre>{{user.header_img | json}}</pre> -->
     <div class="col-xs-12">
         <div class="publisher widget widget-lg">
             <!-- No image uploaded yet. Heres a nice pretty color to look at :) -->
-            <div class="widget-heading" style="background-color:#00acee;">
+            <div ng-if="!user.header_image" class="widget-heading" style="background-color:#00acee;">
+            </div>
+            <div ng-if="user.header_image" class="widget-heading" ng-style="{'background-image': 'url(' + user.header_image + ')'}">
                 <!-- <a href class="hashtag">#creative</a> -->
             </div>
             <div class="widget-body">
                 <div class="row">
                     <div class="col-md-3 col-xs-4 text-center title" style="height:135px;">
-                        <img src="../../assets/images/default-avatar-green.png" class="profile-avatar">
+                        <img ng-if="!user.avatar" src="../../assets/images/default-avatar-green.png" class="profile-avatar">
+                        <img ng-if="user.avatar" ng-src="{{user.avatar}}" class="profile-avatar">
                         <!-- <h4 ng-if="!user.name" class="text-info">Company Name</h4> -->
                         <h4 class="text-info" ng-if="user.name">{{user.name}}</h4>
                         <!-- <p class="text-muted" ng-if="!user.location">Your location</p> -->

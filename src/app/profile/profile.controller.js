@@ -5,14 +5,8 @@ angular.module('baseangular')
 .controller('ProfileCtrl', function($scope, $http, userFactory, $state, $timeout) {
 
     $scope.header = {image : null};
+    $scope.avatar = {image : null};
 
-    // $scope.setHeaderImage = function(img){
-    //     var retObj =  { 'background': 'url('+img+')'};
-    //     console.log(retObj);
-    //     return retObj
-    // }
-
-    var files = [];
     $scope.fileNameChanged = function(element) {
 
        var file=element.files[0];
@@ -31,24 +25,23 @@ angular.module('baseangular')
         }; 
     }
 
-    // Code taken from MatthewCrumley (http://stackoverflow.com/a/934925/298479)
-// function getBase64Image(img) {
-//     // Create an empty canvas element
-//     var canvas = document.createElement("canvas");
-//     canvas.width = img.width;
-//     canvas.height = img.height;
+    $scope.fileNameChanged2 = function(element) {
 
-//     // Copy the image contents to the canvas
-//     var ctx = canvas.getContext("2d");
-//     ctx.drawImage(img, 0, 0);
+       var file=element.files[0];
 
-//     // Get the data-URL formatted image
-//     // Firefox supports PNG and JPEG. You could check img.src to guess the
-//     // original format, but be aware the using "image/jpg" will re-encode the image.
-//     var dataURL = canvas.toDataURL("image/png");
+       var reader = new FileReader();
+         
+        reader.readAsDataURL(file);
 
-//     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-// }
+        reader.onload = function(event) {  
+          
+          $timeout(function(){
+            $scope.avatar.image = event.target.result;
+          });
+          console.log('$scope.headerImage',$scope.avatar.image)
+          // $scope.setHeaderImage($scope.headerImage);
+        }; 
+    }
 
 
 
@@ -204,7 +197,8 @@ angular.module('baseangular')
         });
         $scope.user.demographics.languages = newUserLanguage;
 
-
+        $scope.user.avatar = $scope.avatar.image;
+        $scope.user.header_image = $scope.header.image;
 
         console.log("return from put request: ", $scope.user);
 
