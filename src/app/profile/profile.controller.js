@@ -4,47 +4,47 @@ angular.module('baseangular')
 
 .controller('ProfileCtrl', function($scope, $http, userFactory, $state) {
 
-    // $scope.startJoyRide = false;
-    //
-    // $scope.config = [{
-    //         type: "title",
-    //         heading: "Welcome to Reaching Point!",
-    //         text: 'Let us show you how to get started!'
-    //
-    //     }, {
-    //         type: "element",
-    //         selector: "#editProfile",
-    //         heading: "Edit your profile",
-    //         text: "The first thing you should do is edit your profile!",
-    //         placement: "left",
-    //         scroll: false
-    //     }, {
-    //         type: "location_change",
-    //         path: "/profileEdit"
-    //     }
-    //
-    // ];
-    //
-    // $scope.continueJoyRide = false;
-    //
-    // $scope.config2 = [{
-    //         type: "title",
-    //         heading: "Welcome to Reaching Point!",
-    //         text: 'Let us show you how to get started!'
-    //
-    //     }, {
-    //         type: "element",
-    //         selector: "#editProfile",
-    //         heading: "Edit your profile",
-    //         text: "The first thing you should do is edit your profile!",
-    //         placement: "left",
-    //         scroll: false
-    //     }, {
-    //         type: "location_change",
-    //         path: "/profileEdit"
-    //     }
-    //
-    // ];
+    $scope.startJoyRide = false;
+
+    $scope.config = [{
+            type: "title",
+            heading: "Welcome to Reaching Point!",
+            text: 'Let us show you how to get started!'
+
+        }, {
+            type: "element",
+            selector: "#editProfile",
+            heading: "Edit your profile",
+            text: "The first thing you should do is edit your profile!",
+            placement: "left",
+            scroll: false
+        }, {
+            type: "location_change",
+            path: "/profileEdit"
+        }
+
+    ];
+
+    $scope.continueJoyRide = false;
+
+    $scope.config2 = [{
+            type: "title",
+            heading: "Welcome to Reaching Point!",
+            text: 'Let us show you how to get started!'
+
+        }, {
+            type: "element",
+            selector: "#editProfile",
+            heading: "Edit your profile",
+            text: "The first thing you should do is edit your profile!",
+            placement: "left",
+            scroll: false
+        }, {
+            type: "location_change",
+            path: "/profileEdit"
+        }
+
+    ];
 
     $scope.info = userFactory;
 

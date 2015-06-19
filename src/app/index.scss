@@ -228,7 +228,7 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
 
 //PROFILE VIEW
 .widget.widget-lg {
-    
+
     height: 340px !important;
 }
 
@@ -241,6 +241,31 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
   border-radius: 15px;
   margin-left: 50%;
   border: 5px solid #fff;
+}
+
+.profile-avatar-overlay {
+    @extend .profile-avatar;
+    background-color: rgba(0,0,0,.4);
+    cursor: pointer;
+    transition: .2s all ease;
+
+    &:hover {
+        background-color: rgba(0,0,0,.7);
+        transition: .2s all ease;
+    }
+
+    .edit-profile-avatar {
+        color: white;
+        position: absolute;
+        top: 30%;
+        left: 40%;
+    }
+
+    p {
+        color: white;
+        font-size: 1.3em;
+        margin-top: 4.5em;
+    }
 }
 
 .edit-profile {
@@ -257,7 +282,7 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
     }
 }
 
-#banner-upload {
+#banner-upload, #avatar-upload {
     display: none;
 }
 
@@ -267,7 +292,13 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
     width: 100%;
     position: absolute !important;
     top: 0;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.5);
+    transition: .2s all ease;
+
+    &:hover {
+        background-color: rgba(0,0,0,.7);
+        transition: .2s all ease;
+    }
 
 
     &:hover {
