@@ -1,149 +1,166 @@
+<!-- PAGE HEADER -->
 <div id="page-heading">
     <h3 class="page-title">Profile</h3>
 </div>
+
 <form>
-<div class="col-xs-12">
-    <div class="publisher widget widget-lg">
 
-    <div class="widget-heading" ng-style="{'background-image': 'url(' + header.image + ')'}"></div>
-        <div banner-upload class="banner-img-edit">
-            <div class="edit-banner-wrap">
-                <i class="edit-banner-photo fa fa-camera"></i>
-                <p>Edit Image</p>
+    <!-- PROFILE HEADER -->
+    <div class="col-xs-12">
+        <div class="publisher widget widget-lg">
+            
+            <!-- USER HEADER IMAGE -->
+            <div class="widget-heading" ng-style="{'background-image': 'url(' + header.image + ')'}"></div>
+            <div banner-upload class="banner-img-edit">
+                <div class="edit-banner-wrap">
+                    <i class="edit-banner-photo fa fa-camera"></i>
+                    <p>Edit Image</p>
+                </div>
             </div>
-        </div>
-    <input id="banner-upload" type="file" onchange="angular.element(this).scope().fileNameChanged(this)">
+            <!-- HIDDEN UPLOAD INPUT -->
+            <input id="banner-upload" type="file" onchange="angular.element(this).scope().fileNameChanged(this)">
 
-        <div class="widget-body">
-            <div class="row">
-                <div class="col-md-3 col-xs-12 text-center title">
-                    <img ng-if="!avatar.image" src="../../assets/images/default-avatar-green.png" class="profile-avatar">
-                    <img ng-if="avatar.image" ng-src="{{avatar.image}}" class="profile-avatar">
-                    <div avatar-upload class="profile-avatar-overlay">
-                        <i class="edit-profile-avatar fa fa-camera fa-2x"></i>
-                        <p>Edit Image</p>
+            <div class="widget-body">
+                <div class="row">
+                    <div class="col-md-3 col-xs-12 text-center title">
+
+                        <!-- USER AVATAR -->
+                        <img ng-if="!avatar.image" src="../../assets/images/default-avatar-green.png" class="profile-avatar">
+                        <img ng-if="avatar.image" ng-src="{{avatar.image}}" class="profile-avatar">
+                        <div avatar-upload class="profile-avatar-overlay">
+                            <i class="edit-profile-avatar fa fa-camera fa-2x"></i>
+                            <p>Edit Image</p>
+                        </div>
+
+                        <!-- HIDDEN UPLOAD INPUT -->
+                        <input id="avatar-upload" type="file" onchange="angular.element(this).scope().fileNameChanged2(this)">
+
+                        <!-- USER NAME & LOCATION -->
+                        <div class="form-group">
+                            <input class="form-control" ng-model="user.name" id="username" type="text" value="" placeholder="First Name">
+                            <input class="form-control" ng-model="user.location" id="userlocation" type="text" value='' placeholder="Location">
+                        </div>
                     </div>
-                    <input id="avatar-upload" type="file" onchange="angular.element(this).scope().fileNameChanged2(this)">
 
-                    <div class="form-group">
-                        <input class="form-control" ng-model="user.name" id="username" type="text" value="" placeholder="First Name">
-                        <input class="form-control" ng-model="user.location" id="userlocation" type="text" value='' placeholder="Location">
+                    <div class="col-md-9 col-xs-8 content">
+
+                        <!-- EDIT PROFILE BTN -->
+                        <div class="col-xs-12 text-right edit-profile"><span ui-sref="home.profile" class="cancel-edit btn btn-blocked">Cancel</span><span ng-click="updateUser()" class="btn btn-primary">Save Changes</span></div>
+
+                        <!-- USER BIO -->
+                        <textarea ng-model="user.bio" id="user.bio" class="form-control" rows="2" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae unde sapiente ..."></textarea>
                     </div>
                 </div>
-                <div class="col-md-9 col-xs-8 content">
-                    <div class="col-xs-12 text-right edit-profile"><span ui-sref="home.profile" class="cancel-edit btn btn-blocked">Cancel</span><span ng-click="updateUser()" class="btn btn-primary">Save Changes</span></div>
-                    <textarea ng-model="user.bio" id="user.bio" class="form-control" rows="2" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae unde sapiente ..."></textarea>
+            </div>
+            <!-- End widget body -->
+        </div>
+    </div>
+
+    <!-- USER SOCIAL NETWORKS -->
+    <div class="social-count col-xs-12 col-md-3">
+
+        <div class="indicator widget bg-info">
+            <span class="fa fa-facebook fa-4x"></span>
+            <p class="title">4,234</p>
+            <span class="subtitle">Followers</span>
+            <span class="log-out fa fa-times"></span>
+        </div>
+
+        <div class="indicator widget bg-blocked">
+            <span class="fa fa-google-plus fa-4x"></span>
+            <p class="title">128</p>
+            <span class="subtitle">New topics published</span>
+            <span class="log-out fa fa-times"></span>
+        </div>
+
+        <div class="indicator widget bg-primary">
+            <span class="fa fa-twitter fa-4x"></span>
+            <p class="title">2,343</p>
+            <span class="subtitle">Tweets</span>
+            <span class="log-out fa fa-times"></span>
+        </div>
+
+        <div class="indicator widget bg-success">
+            <span class="fa fa-linkedin fa-4x"></span>
+            <p class="title">28</p>
+            <span class="subtitle">Things</span>
+            <span class="log-out fa fa-times"></span>
+        </div>
+
+        <div class="indicator widget bg-danger">
+            <span class="fa fa-pinterest-p fa-4x"></span>
+            <p class="title">1,935</p>
+            <span class="subtitle">Followers</span>
+            <span class="log-out fa fa-times"></span>
+        </div>
+    </div> <!-- Social media reports -->
+
+
+    <div class="demographics-wrap col-xs-12 col-md-9">
+
+        <!-- USER INTERESTS -->
+        <div class="interests">
+            <div class="panel panel-default">
+                <div class="panel-heading">Interests</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div ng-repeat="interest in interests" class="col-md-4 form-checks">
+                            <label class="checkbox-inline"><input ng-model="interest.selected" type="checkbox" value="">{{interest.name}}</label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- End widget body -->
-    </div>
-</div>
 
-<div class="social-count col-xs-12 col-md-3">
+        <!-- USER DEMOGRAPHICS -->
+        <div class="interests">
+            <div class="panel panel-default">
+                <div class="panel-heading interests-heading">Demographics</div>
+                <div class="panel-body">
+                    
+                    <!-- LIFE STAGE -->
+                    <div class="row">
+                        <div class="demographics-headers col-xs-12">Life Stage</div>
+                        <div ng-repeat="stage in lifeStage" class="col-md-4 form-checks">
+                            <label class="checkbox-inline"><input ng-model="stage.selected" type="checkbox">{{stage.name}}</label>
+                        </div>
+                    </div>
 
-    <div class="indicator widget bg-info">
-        <span class="fa fa-facebook fa-4x"></span>
-        <p class="title">4,234</p>
-        <span class="subtitle">Followers</span>
-        <span class="log-out fa fa-times"></span>
-    </div>
+                    <!-- INCOME -->
+                    <div class="row">
+                        <div class="demographics-headers col-xs-12">Annual Income</div>
 
-    <div class="indicator widget bg-blocked">
-        <span class="fa fa-google-plus fa-4x"></span>
-        <p class="title">128</p>
-        <span class="subtitle">New topics published</span>
-        <span class="log-out fa fa-times"></span>
-    </div>
+                        <div ng-repeat="income in info.income" class="col-md-4 form-checks">
+                            <label class="radio-inline"><input ng-model="user.demographics.income" type="radio" name="income" ng-value="income">{{income}}</label>
+                        </div>
+                    </div>
 
-    <div class="indicator widget bg-primary">
-        <span class="fa fa-twitter fa-4x"></span>
-        <p class="title">2,343</p>
-        <span class="subtitle">Tweets</span>
-        <span class="log-out fa fa-times"></span>
-    </div>
+                    <!-- EDUCATION -->
+                    <div class="row">
+                        <div class="demographics-headers col-xs-12">Education</div>
+                        <div ng-repeat="education in info.education" class="col-md-3 form-checks">
+                            <label class="radio-inline"><input ng-model="user.demographics.education" type="radio" name="education" ng-value="education">{{education}}</label>
+                        </div>
+                    </div>
 
-    <div class="indicator widget bg-success">
-        <span class="fa fa-linkedin fa-4x"></span>
-        <p class="title">28</p>
-        <span class="subtitle">Things</span>
-        <span class="log-out fa fa-times"></span>
-    </div>
+                    <!-- ETHNICITY -->
+                    <div class="row">
+                        <div class="demographics-headers col-xs-12">Ethnicity</div>
+                        <div ng-repeat="ethnic in ethnicity" class="col-md-4 form-checks">
+                            <label class="checkbox-inline"><input ng-model="ethnic.selected" type="checkbox">{{ethnic.name}}</label>
+                        </div>
+                    </div>
 
-    <div class="indicator widget bg-danger">
-        <span class="fa fa-pinterest-p fa-4x"></span>
-        <p class="title">1,935</p>
-        <span class="subtitle">Followers</span>
-        <span class="log-out fa fa-times"></span>
-    </div>
-</div> <!-- Social media reports -->
+                    <!-- LANGUAGE -->
+                    <div class="row">
+                        <div class="demographics-headers col-xs-12">Language</div>
+                        <div ng-repeat="language in languages" class="col-md-3 form-checks">
+                            <label class="checkbox-inline"><input ng-model="language.selected" type="checkbox">{{language.name}}</label>
+                        </div>
+                    </div>
 
-<div class="demographics-wrap col-xs-12 col-md-9">
-<div class="interests">
-    <div class="panel panel-default">
-        <div class="panel-heading">Interests</div>
-        <div class="panel-body">
-
-            <!-- <pre>{{interests|json}}</pre> -->
-            <div class="row">
-                <div ng-repeat="interest in interests" class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input ng-model="interest.selected" type="checkbox" value="">{{interest.name}}</label>
                 </div>
             </div>
-
         </div>
     </div>
-</div>
-
-<div class="interests">
-    <div class="panel panel-default">
-        <div class="panel-heading interests-heading">Demographics</div>
-        <div class="panel-body">
-
-
-            <div class="row">
-                <div class="demographics-headers col-xs-12">Life Stage</div>
-
-                <div ng-repeat="stage in lifeStage" class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input ng-model="stage.selected" type="checkbox">{{stage.name}}</label>
-                </div>
-            </div>
-
-            <!-- <pre>{{income | json}}</pre> -->
-            <div class="row">
-                <div class="demographics-headers col-xs-12">Annual Income</div>
-
-                <div ng-repeat="income in info.income" class="col-md-4 form-checks">
-                    <label class="radio-inline"><input ng-model="user.demographics.income" type="radio" name="income" ng-value="income">{{income}}</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="demographics-headers col-xs-12">Education</div>
-
-                <div ng-repeat="education in info.education" class="col-md-3 form-checks">
-                    <label class="radio-inline"><input ng-model="user.demographics.education" type="radio" name="education" ng-value="education">{{education}}</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="demographics-headers col-xs-12">Ethnicity</div>
-
-                <div ng-repeat="ethnic in ethnicity" class="col-md-4 form-checks">
-                    <label class="checkbox-inline"><input ng-model="ethnic.selected" type="checkbox">{{ethnic.name}}</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="demographics-headers col-xs-12">Language</div>
-
-                <div ng-repeat="language in languages" class="col-md-3 form-checks">
-                    <label class="checkbox-inline"><input ng-model="language.selected" type="checkbox">{{language.name}}</label>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-</div>
 </form>
