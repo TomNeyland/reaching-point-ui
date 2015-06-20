@@ -4,8 +4,19 @@ angular.module('baseangular')
 
 .controller('ProfileEditCtrl', function($scope, $http, userFactory, $timeout, $state) {
 
-    $scope.header = {image : null};
-    $scope.avatar = {image : null};
+    function init(){
+
+        $scope.info = userFactory;
+        $scope.startJoyRide = false;
+
+        getUser();
+
+        //get user
+        //check if user has profile imgs
+        //if no image, show default
+        //if image, show image
+
+    }
 
     $scope.fileNameChanged = function(element) {
 
@@ -42,61 +53,23 @@ angular.module('baseangular')
     }
 
 
+    //Get User object 
+    //REFACTOR THIS CODE TO USE THE API SERVICE
+    //MOVE THIS TO THE USERFACTORY SO THE USER OBJECT IS ACCESSIBLE TO ALL CONTROLLERS
 
-    $scope.startJoyRide = false;
-
-    $scope.config = [{
-            type: "title",
-            heading: "Welcome to Reaching Point!",
-            text: 'Let us show you how to get started!'
-
-        }, {
-            type: "element",
-            selector: "#editProfile",
-            heading: "Edit your profile",
-            text: "The first thing you should do is edit your profile!",
-            placement: "left",
-            scroll: false
-        }, {
-            type: "location_change",
-            path: "/profileEdit"
-        }
-
-    ];
-
-    $scope.continueJoyRide = false;
-
-    $scope.config2 = [{
-            type: "title",
-            heading: "Welcome to Reaching Point!",
-            text: 'Let us show you how to get started!'
-
-        }, {
-            type: "element",
-            selector: "#editProfile",
-            heading: "Edit your profile",
-            text: "The first thing you should do is edit your profile!",
-            placement: "left",
-            scroll: false
-        }, {
-            type: "location_change",
-            path: "/profileEdit"
-        }
-
-    ];
-
-    $scope.info = userFactory;
-
-
-    $http.get('https://reaching-point.firebaseio.com/user.json')
+    function getUser(){
+        console.log('getting user');
+        $http.get('https://reaching-point.firebaseio.com/user.json')
         .success(function(data) {
+            
+            //remove firebase hash
             for (var key in data) {
-                // console.log(data[key]);
                 $scope.user = data[key];
                 console.log("data acquired, $scope.user is ", $scope.user);
                 $scope.manipulated = [key];
             }
 
+            //convert interest list into object for ng-checkboxes
             $scope.interests = [];
             angular.forEach($scope.info.interests, function(interest) {
                 var interestObj = {
@@ -111,6 +84,7 @@ angular.module('baseangular')
                 $scope.interests.push(interestObj);
             });
 
+            //convert life stage list into object for ng-checkboxes
             $scope.lifeStage = [];
             angular.forEach($scope.info.lifeStage, function(stage) {
                 var lifeStageObj = {
@@ -126,20 +100,22 @@ angular.module('baseangular')
                 $scope.lifeStage.push(lifeStageObj);
             });
 
-                $scope.ethnicity = [];
-                angular.forEach($scope.info.ethnicity, function(ethnicity) {
-                    var ethnicObj = {
-                        name: ethnicity,
-                        selected: false
-                    };
-                    angular.forEach($scope.user.demographics.ethnicity, function(userEthnicity) {
-                        if(userEthnicity === ethnicity) {
-                            ethnicObj.selected = true;
-                        }
-                    });
-                    $scope.ethnicity.push(ethnicObj);
+            //convert life stage list into object for ng-checkboxes
+            $scope.ethnicity = [];
+            angular.forEach($scope.info.ethnicity, function(ethnicity) {
+                var ethnicObj = {
+                    name: ethnicity,
+                    selected: false
+                };
+                angular.forEach($scope.user.demographics.ethnicity, function(userEthnicity) {
+                    if(userEthnicity === ethnicity) {
+                        ethnicObj.selected = true;
+                    }
                 });
+                $scope.ethnicity.push(ethnicObj);
+            });
 
+            //convert llanguages list into object for ng-checkboxes
             $scope.languages = [];
             angular.forEach($scope.info.tongues, function(tongue) {
                 var tongueObj = {
@@ -160,6 +136,9 @@ angular.module('baseangular')
             console.log(error)
         });
 
+    }
+
+    
 
     $scope.updateUser = function() {
 
@@ -215,6 +194,8 @@ angular.module('baseangular')
     $scope.cancelUser = function() {
         console.log($scope.user);
     };
+
+    init();
 
 
 });
