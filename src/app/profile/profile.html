@@ -97,40 +97,39 @@
     <!-- USER INFO -->
     <div class="col-xs-8 col-md-9" ng-if="user">
         <div class="interests">
-        <div class="panel panel-default">
-            <div class="panel-heading">Interests</div>
-            <div class="panel-body profile-labels">
-                <div ng-repeat="interest in user.interests" class="label label-danger">{{interest}}</div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Interests</div>
+                <div class="panel-body profile-labels">
+                    <div random-color ng-repeat="interest in user.interests" class="label-spacing label">{{interest}}</div>
+                </div>
             </div>
-        </div>
         </div>
         <div class="interests">
-        <div class="panel panel-default">
-            <div class="panel-heading">Demographics</div>
-            <div class="panel-body">
-                <div class="col-md-6">
-                    <div class="label-description text-muted">Life Stage</div>
-                    <div class="label label-danger label-sizing">Single Adult</div>
-                </div>
-                <div class="col-md-6">
-                    <div class="label-description text-muted">Annual Income</div>
-                    <div class="label label-success label-sizing">$30K - $45K</div>
-                </div>
-                <div class="col-md-6">
-                    <div class="label-description text-muted">Education</div>
-                    <div class="label label-primary label-sizing">College</div>
-                </div>
-                <div class="col-md-6">
-                    <div class="label-description text-muted">Ethnicity</div>
-                    <div class="label label-default label-sizing">White</div>
-                </div>
-                <div class="col-md-6">
-                    <div class="label-description text-muted">Language</div>
-                    <div class="label label-primary label-sizing">English</div>
-                    <div class="label label-success label-sizing">Spanish</div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Demographics</div>
+                <div class="panel-body">
+                    <div class="col-md-6">
+                        <div class="label-description text-muted">Life Stage</div>
+                        <div random-color ng-repeat="stage in user.demographics.lifeStage" class="label label-spacing label-sizing">{{stage}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="label-description text-muted">Annual Income</div>
+                        <div random-color class="label label-sizing label-spacing">{{user.demographics.income}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="label-description text-muted">Education</div>
+                        <div random-color class="label label-sizing">{{user.demographics.education}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="label-description text-muted">Ethnicity</div>
+                        <div random-color ng-repeat="ethnicity in user.demographics.ethnicity" class="label label-spacing label-sizing">{{ethnicity}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="label-description text-muted">Language</div>
+                        <div random-color ng-repeat="language in user.demographics.languages" class="label label-spacing label-sizing">{{language}}</div>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 </div>

@@ -11,5 +11,4 @@ angular.module('baseangular')
                 console.log("data acquired, $scope.user is ", $scope.user);
             }
         });
-
 });
