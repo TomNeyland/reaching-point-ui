@@ -1,4 +1,8 @@
-app.directive('ngEnter', function () {
+'use strict';
+
+angular.module('baseangular')
+
+.directive('ngEnter', function () {
   return function (scope, element, attrs) {
     element.bind("keydown keypress", function (event) {
       if (event.which === 13) {
@@ -10,9 +14,9 @@ app.directive('ngEnter', function () {
       }
     });
   };
-});
+})
 
-app.directive('onEnter', function () {
+.directive('onEnter', function () {
   return function (scope, elm, attr) {
     elm.bind('keypress', function (e) {
       if (e.keyCode === 13) {
@@ -20,9 +24,9 @@ app.directive('onEnter', function () {
       }
     });
   };
-});
+})
 
-app.directive('onKeyPress', function () {
+.directive('onKeyPress', function () {
 
   return {
     restrict: 'A',
@@ -60,8 +64,9 @@ app.directive('onKeyPress', function () {
       }
     }
   }
-});
-app.directive('onEsc', function () {
+})
+
+.directive('onEsc', function () {
   return function (scope, elm, attr) {
     elm.bind('keydown', function (e) {
       if (e.keyCode === 27) {

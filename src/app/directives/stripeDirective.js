@@ -1,4 +1,8 @@
-angular.module('stripe', []).directive('stripeForm', ['$window',
+'use strict';
+
+angular.module('baseangular')
+
+.directive('stripeForm', ['$window',
 function($window) {
 
   var directive = { restrict: 'A' };

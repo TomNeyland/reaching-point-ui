@@ -2,7 +2,10 @@
  * @class fileSelect
  *
  */
-app.directive('fileSelect', function ($timeout) {
+'use strict';
+angular.module('baseangular')
+
+.directive('fileSelect', function ($timeout) {
   return {
     restrict: 'A',
     scope: {

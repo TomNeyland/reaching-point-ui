@@ -2,7 +2,11 @@
  * @class timezonePicker Directive
  *
  */
-app.directive('timezonePicker', function () {
+'use strict';
+
+angular.module('baseangular')
+
+.directive('timezonePicker', function () {
 
   var zones = [
     {value: 'US/Hawaii', display: "(GMT-10:00) Hawaii"},
