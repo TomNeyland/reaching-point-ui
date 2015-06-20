@@ -2,7 +2,8 @@
  * @class UserService
  *
  */
-angular.module('baseangular').service('UserService', function ($cookieStore, MakePretty) {
+//angular.module('baseangular').service('UserService', function ($cookieStore, MakePretty) {
+angular.module('baseangular').service('UserService', function () {
   var self = this;
 
   var currentToken = null;

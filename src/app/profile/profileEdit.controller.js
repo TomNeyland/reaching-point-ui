@@ -2,7 +2,7 @@
 
 angular.module('baseangular')
 
-.controller('ProfileEditCtrl', function($scope, $http, userFactory, $timeout, $state) {
+.controller('ProfileEditCtrl', function($scope, $http, userFactory, $timeout, $state, UserService) {
 
     function init(){
 
