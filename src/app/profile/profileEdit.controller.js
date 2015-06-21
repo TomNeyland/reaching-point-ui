@@ -11,6 +11,9 @@ angular.module('baseangular')
 
         getUser();
 
+        $scope.header = {};
+        $scope.avatar = {};
+
         //get user
         //check if user has profile imgs
         //if no image, show default
@@ -47,8 +50,6 @@ angular.module('baseangular')
           $timeout(function(){
             $scope.avatar.image = event.target.result;
           });
-          console.log('$scope.headerImage',$scope.avatar.image)
-          // $scope.setHeaderImage($scope.headerImage);
         };
     }
 
@@ -174,8 +175,15 @@ angular.module('baseangular')
         });
         $scope.user.demographics.languages = newUserLanguage;
 
-        $scope.user.avatar = $scope.avatar.image;
-        $scope.user.header_image = $scope.header.image;
+        if($scope.avatar.image){
+            $scope.user.avatar = $scope.avatar.image;
+        }
+
+        if($scope.header.image){
+            $scope.user.header_image = $scope.header.image;    
+        }
+
+        
 
         console.log("return from put request: ", $scope.user);
 

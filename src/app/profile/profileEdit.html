@@ -10,7 +10,14 @@
         <div class="publisher widget widget-lg">
 
             <!-- USER HEADER IMAGE -->
-            <div class="widget-heading" ng-style="{'background-image': 'url(' + header.image + ')'}"></div>
+            <!-- TODO: Move header image logic into controller -->
+            <!-- if no temp header img && no saved header image show color only-->
+            <div ng-if="!header.image && !user.header_image" class="widget-heading" style="background-color:#00acee;"></div>
+            <!-- if temp header image show temp header image-->
+            <div ng-if="header.image"  class="widget-heading" ng-style="{'background-image': 'url(' + header.image + ')'}"></div>
+            <!-- if saved header image & no temp header image show saved header image-->
+            <div ng-if="user.header_image && !header.image"  class="widget-heading" ng-style="{'background-image': 'url(' + user.header_image + ')'}"></div>
+
             <div banner-upload class="banner-img-edit">
                 <div class="edit-banner-wrap">
                     <i class="edit-banner-photo fa fa-camera"></i>
@@ -25,8 +32,13 @@
                     <div class="col-md-3 col-xs-12 text-center title">
 
                         <!-- USER AVATAR -->
-                        <img ng-if="!avatar.image" src="../../assets/images/default-avatar-green.png" class="profile-avatar">
+                        <!-- TODO: Move avatar image logic into controller -->
+                        <!-- if no temp avatar img && no saved avatar image show color only-->
+                        <img ng-if="!avatar.image && !user.avatar" src="../../assets/images/default-avatar-green.png" class="profile-avatar">
+                        <!-- if temp avatar image show temp avatar image-->
                         <img ng-if="avatar.image" ng-src="{{avatar.image}}" class="profile-avatar">
+                        <!-- if saved header image & no temp header image show saved header image-->
+                        <img ng-if="user.avatar && !avatar.image" ng-src="{{user.avatar}}" class="profile-avatar">
                         <div avatar-upload class="profile-avatar-overlay">
                             <i class="edit-profile-avatar fa fa-camera fa-2x"></i>
                             <p>Edit Image</p>
