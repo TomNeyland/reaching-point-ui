@@ -44,39 +44,39 @@
     </div>
 
     <!-- USER SOCIAL NETWORKS -->
-    <div class="social-count col-xs-4 col-md-3" ng-if="user">
-        <div class="panel panel-default">
+    <div class="social-count col-xs-4 col-md-3" >
+        <div class="panel panel-default" ng-if="user.social_networks.facebook || user.social_networks.googleplus">
             <div class="panel-body text-center">Total Reach: <b>4.5K</b></div>
         </div>
-        <div class="indicator widget bg-info">
+
+        <div class="indicator widget" ng-if="!user.social_networks.facebook && !user.social_networks.googleplus">
+            <div class="panel-body text-center">
+            <p><span class="fa fa-facebook fa-2x"></span> <span class="fa fa-twitter fa-2x"></span> <span class="fa fa-google-plus fa-2x"></span> <span class="fa fa-linkedin fa-2x"></span></p>
+            
+                <!-- <p class="title">Show off your total reach!</p> -->
+                <span class="subtitle">Edit your profile to connect your social networks and show off your reach!</span>
+            </div>
+        </div>
+
+        <div class="indicator widget bg-info" ng-if="user.social_networks.facebook">
             <span class="fa fa-facebook fa-4x"></span>
             <p class="title">4,234</p>
             <span class="subtitle">Followers</span>
-            <span class="log-out fa fa-times"></span>
         </div>
-        <div class="indicator widget bg-blocked">
+        <div class="indicator widget bg-blocked" ng-if="user.social_networks.googleplus">
             <span class="fa fa-google-plus fa-4x"></span>
             <p class="title">128</p>
             <span class="subtitle">New topics published</span>
-            <span class="log-out fa fa-times"></span>
         </div>
-        <div class="indicator widget bg-primary">
+        <div class="indicator widget bg-primary" ng-if="user.social_networks.twitter">
             <span class="fa fa-twitter fa-4x"></span>
             <p class="title">2,343</p>
             <span class="subtitle">Tweets</span>
-            <span class="log-out fa fa-times"></span>
         </div>
-        <div class="indicator widget bg-success">
+        <div class="indicator widget bg-success" ng-if="user.social_networks.linkedin">
             <span class="fa fa-linkedin fa-4x"></span>
             <p class="title">28</p>
             <span class="subtitle">Things</span>
-            <span class="log-out fa fa-times"></span>
-        </div>
-        <div class="indicator widget bg-danger">
-            <span class="fa fa-pinterest-p fa-4x"></span>
-            <p class="title">1,935</p>
-            <span class="subtitle">Followers</span>
-            <span class="log-out fa fa-times"></span>
         </div>
     </div>
 
