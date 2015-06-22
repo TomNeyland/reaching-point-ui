@@ -16,6 +16,42 @@ $desktop-width: 768px;
     background-color: darken($color, 8%);
 }
 
+//Social Colors
+$facebook: #3b5998;
+$twitter: #00aced;
+$googleplus: #dd4b39;
+$linkedin: #007bb6;
+
+.color-facebook {
+    color: $facebook;
+}
+.color-twitter {
+    color: $twitter;
+}
+.color-googleplus {
+    color: $googleplus;
+}
+.color-linkedin {
+    color: $linkedin;
+}
+
+.bg-facebook {
+    background-color: $facebook;
+    color: #fff;
+}
+.bg-twitter {
+    background-color: $twitter;
+    color: #fff;
+}
+.bg-googleplus {
+    background-color: $googleplus;
+    color: #fff;
+}
+.bg-linkedin {
+    background-color: $linkedin;
+    color: #fff;
+}
+
 //LOGIN PAGE
 
 .login-wrapper {
@@ -171,34 +207,34 @@ body.contract .nested-home-views {
     }
 
     .fb-button {
-        background-color: #3b5998;
+        background-color: $facebook;
 
         &:hover {
-            @include changeColor(#3b5998);
+            @include changeColor($facebook);
         }
     }
 
     .tweet-button{
-        background-color: #00aced;
+        background-color: $twitter;
 
         &:hover {
-            @include changeColor(#00aced);
+            @include changeColor($twitter);
         }
     }
 
     .goog-button {
-        background-color: #dd4b39;
+        background-color: $googleplus;
 
         &:hover {
-            @include changeColor(#dd4b39);
+            @include changeColor($googleplus);
         }
     }
 
     .li-button {
-        background-color: #007bb6;
+        background-color: $linkedin;
 
         &:hover {
-            @include changeColor(#007bb6);
+            @include changeColor($linkedin);
         }
     }
 }
