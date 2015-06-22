@@ -14,10 +14,10 @@
                             <button class="btn btn-primary">Search</button>
                         </form>
                         <div class="btn-group btn-group-justified" style="margin: 10px 0;">
-                            <p class="btn btn-default active">Inbox</p>
+                            <p ng-click="setTab(1)" ng-class="{active: tab===1}" class="btn btn-default">Inbox</p>
                             <!-- SENT COMING SOOOOOON -->
                             <!-- <p class="btn btn-default">Sent</p> -->
-                            <p class="btn btn-default">Trash</p>
+                            <p ng-click="setTab(2)" ng-class="{active: tab===2}" class="btn btn-default">Trash</p>
                         </div>
                         <!-- <div class="msgs-box"> -->
                         <ul class="list-group">
@@ -75,7 +75,7 @@
                             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            
+
                           </div>
             </div>
         </div>

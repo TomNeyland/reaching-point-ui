@@ -8,7 +8,6 @@ angular.module('baseangular')
         .success(function(data){
             for (var key in data) {
                 $scope.user = data[key];
-                console.log("data acquired, $scope.user is ", $scope.user);
             }
         })
 

@@ -35,6 +35,14 @@ angular.module('baseangular')
 			from: 'Reaching Point',
 			to: 'Company Name'
 		}
-	]
+	];
+
+	$scope.tab = 1;
+
+	$scope.setTab = function(newTab) {
+		$scope.tab = newTab;
+	};
+
+
 
 });
