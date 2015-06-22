@@ -103,7 +103,8 @@ if (getENV() == 'dev') {
 function setEnvToDEV () {
   // DEV
   v5Config.ALLOW_DEBUG = true;
-  v5Config.FIREBASE_URL = 'https://reaching-point.firebaseio.com';
+  v5Config.ADAM_FIREBASE_URL = 'https://reaching-point.firebaseio.com';
+  v5Config.CASS_FIREBASE_URL = 'https://reaching-point-ui.firebaseio.com';
   // v5Config.AUTH_URL = 'https://dev-api.rbmtv.com/v5/int';
   // v5Config.BASE_URL = 'https://dev-api.rbmtv.com/v5/int/';
   // v5Config.EXT_URL = 'https://dev-api.rbmtv.com/v5/';
@@ -114,7 +115,7 @@ function setEnvToDEV () {
   // v5Config.rootLogo = 'content/images/logo_rbmtv.png';
   // v5Config.rootDomain = 'manage.rbmtv.com';
   // v5Config.loginLogo = 'images/logo_login.png';
-  v5Config.rootSupportLink = 'mailto:info@reachingpoint.com';
+  // v5Config.rootSupportLink = 'mailto:info@reachingpoint.com';
   // favIcon('favicon.ico');
 
   // Stripe.setPublishableKey('pk_test_BdhngmE8FuDADsTXhpzQwLVF');

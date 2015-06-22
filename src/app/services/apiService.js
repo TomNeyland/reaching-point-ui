@@ -6,7 +6,8 @@ var responseCodes = [
  * @class ApiService
  *
  */
-angular.module('baseangular').service('ApiService', function ($http, $q, Base64, $dialog, toastr, $cookieStore, $filter, $rootScope, UserService, $location) {
+// angular.module('baseangular').service('ApiService', function ($http, $q, Base64, $dialog, toastr, $cookieStore, $filter, $rootScope, UserService, $location) {
+angular.module('baseangular').service('ApiService', function ($http, $q, $filter, $rootScope, UserService, $location) {
   console.log('api service!!!');
 
   var self = this;
@@ -134,31 +135,31 @@ angular.module('baseangular').service('ApiService', function ($http, $q, Base64,
   }
 
   function addDefaultHttpConfigOptions (httpConfig, method) {
-    var EXT_URLS = ['forgot_password_request', 'forgot_password_update', 'packages', 'new_account', 'account/activate', 'reactivate_account', 'broadcasts'];
-    var AUTH_URLS = ['login'];
-    var RELATIVE_URLS = ['json_data'];
-    var UPLOADER_URLS = ['api/upload'];
+    // var EXT_URLS = ['forgot_password_request', 'forgot_password_update', 'packages', 'new_account', 'account/activate', 'reactivate_account', 'broadcasts'];
+    // var AUTH_URLS = ['login'];
+    // var RELATIVE_URLS = ['json_data'];
+    // var UPLOADER_URLS = ['api/upload'];
 
-    if (urlContainsIn(httpConfig.url, EXT_URLS)) {
-      httpConfig.url = v5Config.EXT_URL + httpConfig.url;
-    } else if (urlContainsIn(httpConfig.url, AUTH_URLS)) {
-      httpConfig.url = v5Config.AUTH_URL;
-    } else if (urlContainsIn(httpConfig.url, UPLOADER_URLS)) {
-      httpConfig.url = v5Config.UPLOADER_URL + httpConfig.url;
-    } else if (!urlContainsIn(httpConfig.url, RELATIVE_URLS)) {
-      httpConfig.url = v5Config.BASE_URL + httpConfig.url;
-    }
+    // if (urlContainsIn(httpConfig.url, EXT_URLS)) {
+    //   httpConfig.url = v5Config.EXT_URL + httpConfig.url;
+    // } else if (urlContainsIn(httpConfig.url, AUTH_URLS)) {
+    //   httpConfig.url = v5Config.AUTH_URL;
+    // } else if (urlContainsIn(httpConfig.url, UPLOADER_URLS)) {
+    //   httpConfig.url = v5Config.UPLOADER_URL + httpConfig.url;
+    // } else if (!urlContainsIn(httpConfig.url, RELATIVE_URLS)) {
+      httpConfig.url = v5Config.CASS_FIREBASE_URL + httpConfig.url;
+    // }
 
     httpConfig.headers = httpConfig.headers || {};
     httpConfig.method = method;
-    httpConfig.withCredentials = true;
-    var token = UserService.getToken();
+    // httpConfig.withCredentials = true;
+    // var token = UserService.getToken();
 
     if (method === 'GET') {
       if (!httpConfig.params) {
         httpConfig.params = {};
       }
-      httpConfig.params.token = token;
+      // httpConfig.params.token = token;
     } else {
       if (!httpConfig.data) {
         httpConfig.data = {};
