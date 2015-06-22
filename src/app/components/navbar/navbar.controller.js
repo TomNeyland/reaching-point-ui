@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('baseangular')
-  .controller('NavbarCtrl', function ($scope) {
-
+  .controller('NavbarCtrl', function ($scope, User) {
+      
   });

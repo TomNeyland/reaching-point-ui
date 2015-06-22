@@ -1,3 +1,135 @@
-<div id="page-heading">
-    <h3 class="page-title">Welcome to your Profile page, coming soon...</h3>
+<!-- PROFILE TOUR -->
+<div ng-joy-ride="startJoyRide" config="config" on-finish="onFinish()"  on-skip="onFinish()">
+
+    <!-- PAGE HEADER -->
+    <div id="page-heading">
+        <h3 class="page-title">Profile</h3>
+    </div>
+
+    <!-- PROFILE HEADER -->
+    <div class="col-xs-12">
+        <div class="publisher widget widget-lg">
+
+            <!-- USER HEADER IMAGE -->
+            <div ng-if="!user.header_image" class="widget-heading" style="background-color:#00acee;"></div>
+            <div ng-if="user.header_image" class="widget-heading" ng-style="{'background-image': 'url(' + user.header_image + ')'}"></div>
+
+            <div class="widget-body">
+                <div class="row">
+                    <div class="col-md-3 col-xs-4 text-center title" style="height:135px;">
+
+                        <!-- USER AVATAR -->
+                        <img ng-if="!user.avatar" src="../../assets/images/default-avatar-green.png" class="profile-avatar">
+                        <img ng-if="user.avatar" ng-src="{{user.avatar}}" class="profile-avatar">
+
+                        <!-- USER NAME & LOCATION -->
+                        <h4 class="text-info" ng-if="user.name">{{user.name}}</h4>
+                        <p class="text-muted" ng-if="user.location">{{user.location}}</p>
+                    </div>
+
+                    <!-- USER BIO -->
+                    <div class="col-md-9 col-xs-8 content">
+                        <div class="col-md-10 col-xs-12"></div>
+                        <p class="text-muted col-md-10 col-xs-12" ng-if="user.bio">{{user.bio}}</p>
+
+                        <!-- EDIT PROFILE BTN -->
+                        <div id="editProfile" class="col-md-2 col-xs-12 edit-profile">
+                            <span ui-sref="home.profileEdit" class="btn btn-primary pull-right">Edit Profile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End widget body -->
+        </div>
+    </div>
+
+    <!-- USER SOCIAL NETWORKS -->
+    <div class="social-count col-xs-4 col-md-3" >
+        <div class="panel panel-default" ng-if="user.social_networks.facebook || user.social_networks.googleplus">
+            <div class="panel-body text-center">Total Reach: <b>4.5K</b></div>
+        </div>
+
+        <div class="indicator widget" ng-if="!user.social_networks.facebook && !user.social_networks.googleplus">
+            <div class="panel-body text-center">
+            <p><span class="fa fa-facebook fa-2x"></span> <span class="fa fa-twitter fa-2x"></span> <span class="fa fa-google-plus fa-2x"></span> <span class="fa fa-linkedin fa-2x"></span></p>
+
+                <!-- <p class="title">Show off your total reach!</p> -->
+                <span class="subtitle">Edit your profile to connect your social networks and show off your reach!</span>
+            </div>
+        </div>
+
+        <div class="indicator widget bg-info" ng-if="user.social_networks.facebook">
+            <span class="fa fa-facebook fa-4x"></span>
+            <p class="title">4,234</p>
+            <span class="subtitle">Followers</span>
+        </div>
+        <div class="indicator widget bg-blocked" ng-if="user.social_networks.googleplus">
+            <span class="fa fa-google-plus fa-4x"></span>
+            <p class="title">128</p>
+            <span class="subtitle">New topics published</span>
+        </div>
+        <div class="indicator widget bg-primary" ng-if="user.social_networks.twitter">
+            <span class="fa fa-twitter fa-4x"></span>
+            <p class="title">2,343</p>
+            <span class="subtitle">Tweets</span>
+        </div>
+        <div class="indicator widget bg-success" ng-if="user.social_networks.linkedin">
+            <span class="fa fa-linkedin fa-4x"></span>
+            <p class="title">28</p>
+            <span class="subtitle">Things</span>
+        </div>
+    </div>
+
+    <!-- USER INFO NO DATA -->
+    <div class="col-xs-12" ng-if="!user">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="well text-center">
+                    <h1>Welcome to Reaching Point!</h1>
+                    <div class="row">
+                        <h5 class="col-md-6 col-md-offset-3">We are so glad you're here! The first thing you'll want to do is complete your profile so that Reaching Point can match you up with the right brands and you can start earning money! $$$</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- USER INFO -->
+    <div class="col-xs-8 col-md-9" ng-if="user">
+        <div class="interests">
+            <div class="panel panel-default">
+                <div class="panel-heading">Interests</div>
+                <div class="panel-body profile-labels">
+                    <div random-color ng-repeat="interest in user.interests" class="label-spacing label">{{interest}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="interests">
+            <div class="panel panel-default">
+                <div class="panel-heading">Demographics</div>
+                <div class="panel-body">
+                    <div class="col-md-6">
+                        <div class="label-description text-muted">Life Stage</div>
+                        <div random-color ng-repeat="stage in user.demographics.lifeStage" class="label label-spacing label-sizing">{{stage}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="label-description text-muted">Annual Income</div>
+                        <div random-color class="label label-sizing label-spacing">{{user.demographics.income}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="label-description text-muted">Education</div>
+                        <div random-color class="label label-sizing">{{user.demographics.education}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="label-description text-muted">Ethnicity</div>
+                        <div random-color ng-repeat="ethnicity in user.demographics.ethnicity" class="label label-spacing label-sizing">{{ethnicity}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="label-description text-muted">Language</div>
+                        <div random-color ng-repeat="language in user.demographics.languages" class="label label-spacing label-sizing">{{language}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

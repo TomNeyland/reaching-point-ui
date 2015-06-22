@@ -13,44 +13,49 @@
 				<div class="panel">
 					<div class="panel-heading">
 						<div class="text-center">
-							<h3>Register as Brand</h3>
+							<h3>Brand Signup</h3>
 						</div>
 					</div>
 					<div class="panel-body">
 
 						<div class="form-group">
+							<!-- <label for="">Full Name:</label> -->
+							<i class="fa fa-question-circle pull-right input-help" tooltip-placement="top" tooltip="Hi there. What's your name? (This information will be kept private)" tooltip-class="input-help-tooltip"></i>
 							<div class="input-group plain-addon">
 								<div class="input-group-addon"><span class="fa fa-user fa-fw"></span></div>
-								<input type="text" class="form-control" placeholder="Enter name">
+								<input type="text" class="form-control" placeholder="Full name">
 							</div>
 						</div>
-                        <div class="form-group">
+                       <!--  <div class="form-group">
 							<div class="input-group plain-addon">
 								<div class="input-group-addon"><span class="fa fa-user fa-fw"></span></div>
 								<input type="text" class="form-control" placeholder="Enter company">
 							</div>
-						</div>
+						</div> -->
 						<div class="form-group">
+							<i class="fa fa-question-circle pull-right input-help" tooltip-placement="top" tooltip="Your email will be used to login and is where we will send your welcome package!" tooltip-class="input-help-tooltip"></i>
 							<div class="input-group plain-addon">
 								<div class="input-group-addon"><span class="fa fa-envelope-o fa-fw"></span></div>
-								<input type="email" class="form-control" placeholder="Enter email">
+								<input ng-model="user.email" type="email" class="form-control" placeholder="Email address">
 							</div>
 						</div>
 						<div class="form-group">
+						<i class="fa fa-question-circle pull-right input-help" tooltip-placement="top" tooltip="Create a stong password." tooltip-class="input-help-tooltip"></i>
 							<div class="input-group plain-addon">
 								<div class="input-group-addon"><span class="fa fa-unlock-alt fa-fw"></span></div>
-								<input type="password" class="form-control" placeholder="Enter password">
+								<input ng-model="user.password" type="password" class="form-control" placeholder="Password">
 							</div>
 						</div>
 						<div class="form-group">
+						<i class="fa fa-question-circle pull-right input-help" tooltip-placement="top" tooltip="Make sure you can remember it!" tooltip-class="input-help-tooltip"></i>
 							<div class="input-group plain-addon">
 								<div class="input-group-addon"><span class="fa fa-repeat fa-fw"></span></div>
-								<input type="password" class="form-control" placeholder="Renter password">
+								<input type="password" class="form-control" placeholder="Confirm password">
 							</div>
 						</div>
 
 						<!-- <button type="button" class="btn btn-link">Registered? Log in here!</button> -->
-						<button type="button" ui-sref="home.dashboard" class="btn btn-success pull-right">Register me</button>
+						<button type="button" ng-click="login()" class="btn btn-success pull-right">Let's go!</button>
 					</div>
 					<div class="panel-footer">
 						<span class="text-center">Already registered? <a href ui-sref="login" class="text-success"><strong>Login now!</strong></a></span>

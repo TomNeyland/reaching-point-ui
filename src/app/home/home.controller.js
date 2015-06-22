@@ -2,7 +2,14 @@
 
 angular.module('baseangular')
 
-.controller('HomeCtrl', function($scope, windowCheck) {
+.controller('HomeCtrl', function($scope, windowCheck, User) {
+
+    User.get()
+        .success(function(data){
+            for (var key in data) {
+                $scope.user = data[key];
+            }
+        })
 
 var $body = $('body');
 

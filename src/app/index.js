@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangular', 'ui.router'])
+angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap', 'ngJoyRide'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('login', {
@@ -26,7 +26,7 @@ angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangu
       .state('forgotpassword', {
           url: '/forgotpassword',
           templateUrl: 'app/passreset/passreset.html',
-          controller: 'PassResetCtrl' 
+          controller: 'PassResetCtrl'
       })
       .state('home', {
         url: '/home',
@@ -42,6 +42,11 @@ angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangu
             url: '/profile',
             templateUrl: 'app/profile/profile.html',
             controller: 'ProfileCtrl'
+          })
+          .state('home.profileEdit', {
+              url: '/profileEdit',
+              templateUrl: 'app/profile/profileEdit.html',
+              controller: 'ProfileEditCtrl'
           })
           .state('home.campaigns', {
               url: '/campaigns',
