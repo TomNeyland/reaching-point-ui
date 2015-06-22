@@ -76,41 +76,59 @@
         <!-- TODO: add username & avatar for each network -->
         
         <!-- FACEBOOK -->
-        <div ng-if="!user.social_networks.facebook" class="indicator widget" style="color:#999;" ng-click="user.social_networks.facebook = true">
-            <span class="fa fa-facebook fa-4x"></span>
-            <p class="title">Connect Facebook</p>
+        <div ng-if="!user.social_networks.facebook" class="indicator widget" style="color:#999;" >
+            <div class="color-facebook">
+                <i class="fa fa-facebook fa-4x" style="padding:10px;"></i>
+            </div>
+            <button class="btn btn-default" ng-click="user.social_networks.facebook = true">Connect Facebook</button>
         </div>
-        <div ng-if="user.social_networks.facebook" class="indicator widget bg-info">
+        <div ng-if="user.social_networks.facebook" class="indicator widget bg-facebook">
             <span class="fa fa-facebook fa-4x"></span>
             <p class="title">4,234</p>
             <span class="subtitle">Followers</span>
             <span class="log-out fa fa-times" ng-click="user.social_networks.facebook = false"></span>
         </div>
 
-        <!-- GOOGLE + -->
-        <div ng-if="!user.social_networks.googleplus" class="indicator widget" style="color:#999;" ng-click="user.social_networks.googleplus = true">
-            <span class="fa fa-google-plus fa-4x"></span>
-            <p class="title">Connect Google+</p>
+        <!-- TWITTER -->
+        <div ng-if="!user.social_networks.twitter" class="indicator widget" style="color:#999;">
+            <div class="color-twitter">
+                <i class="fa fa-twitter fa-4x" style="padding:10px;"></i>
+            </div>
+            <button class="btn btn-default" ng-click="user.social_networks.twitter = true">Connect Twitter</button>
         </div>
-        <div ng-if="user.social_networks.googleplus" class="indicator widget bg-blocked">
+        <div ng-if="user.social_networks.twitter" class="indicator widget bg-twitter">
+            <span class="fa fa-twitter fa-4x"></span>
+            <p class="title">2,343</p>
+            <span class="subtitle">Tweets</span>
+            <span class="log-out fa fa-times" ng-click="user.social_networks.twitter = false"></span>
+        </div>
+
+        <!-- GOOGLE + -->
+        <div ng-if="!user.social_networks.googleplus" class="indicator widget" style="color:#999;">
+            <div class="color-googleplus">
+                <i class="fa fa-google-plus fa-4x" style="padding:10px;"></i>
+            </div>
+            <button class="btn btn-default" ng-click="user.social_networks.googleplus = true">Connect Google+</button>
+        </div>
+        <div ng-if="user.social_networks.googleplus" class="indicator widget bg-googleplus">
             <span class="fa fa-google-plus fa-4x"></span>
             <p class="title">128</p>
             <span class="subtitle">New topics published</span>
             <span class="log-out fa fa-times" ng-click="user.social_networks.googleplus = false"></span>
         </div>
 
-        <div ng-if="user.social_networks.twitter" class="indicator widget bg-primary">
-            <span class="fa fa-twitter fa-4x"></span>
-            <p class="title">2,343</p>
-            <span class="subtitle">Tweets</span>
-            <span class="log-out fa fa-times"></span>
+        <!-- LINKEDIN -->
+        <div ng-if="!user.social_networks.linkedin" class="indicator widget" style="color:#999;">
+            <div class="color-linkedin">
+                <i class="fa fa-linkedin fa-4x" style="padding:10px;"></i>
+            </div>
+            <button class="btn btn-default" ng-click="user.social_networks.linkedin = true">Connect LinkedIn</button>
         </div>
-
-        <div ng-if="user.social_networks.linkedin" class="indicator widget bg-success">
+        <div ng-if="user.social_networks.linkedin" class="indicator widget bg-linkedin">
             <span class="fa fa-linkedin fa-4x"></span>
             <p class="title">28</p>
             <span class="subtitle">Things</span>
-            <span class="log-out fa fa-times"></span>
+            <span class="log-out fa fa-times" ng-click="user.social_networks.linkedin = false"></span>
         </div>
 
     </div> <!-- Social media reports -->
