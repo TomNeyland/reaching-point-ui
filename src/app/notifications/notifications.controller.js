@@ -6,9 +6,9 @@ angular.module('baseangular')
 
 	$scope.notifications = [
 		{
-			subject: 'So and So Joined Your Campaign!',
-			summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-			body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
+			subject: '1 So and So Joined Your Campaign!',
+			summary: '1 Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			body: 'Content 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
 			created: moment(new Date).format('l'),
 			status: 'unread',
 			type: 'campaign',
@@ -16,9 +16,9 @@ angular.module('baseangular')
 			to: 'Company Name'
 		},
 		{
-			subject: 'So and So Joined Your Campaign!',
-			summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-			body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
+			subject: '2 So and So Joined Your Campaign!',
+			summary: '2 Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			body: 'Content 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
 			created: moment(new Date).format('l'),
 			status: 'deleted',
 			type: 'campaign',
@@ -26,9 +26,9 @@ angular.module('baseangular')
 			to: 'Company Name'
 		},
 		{
-			subject: 'So and So Joined Your Campaign!',
-			summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-			body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
+			subject: '3 So and So Joined Your Campaign!',
+			summary: '3 Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			body: '3 Content 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
 			created: moment(new Date).format('l'),
 			status: 'unread',
 			type: 'campaign',

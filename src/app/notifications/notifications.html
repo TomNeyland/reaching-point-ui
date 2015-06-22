@@ -41,42 +41,54 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
+
+
+        <!-- Display this if there are no messages selected.  Just an empty panel body -->
+        <div ng-if="thereAreNoMessages" class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-body">
-                            <div class="btn-group btn-group-sm pull-right" role="group" aria-label="...">
+                    <h1 class="text-muted">Sorry, you haven't selected a message!</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Display this if there ARE messages selected -->
+        <div ng-if="!thereAreMessages" class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                        <div class="btn-group btn-group-sm pull-right" role="group" aria-label="...">
                             <div class="btn btn-default">Reply</div>
                             <div class="btn btn-default">Delete</div>
                         </div>
                         <div class="clearfix"></div>
 
-                            <div class="media-left">
-                                <a href="#">
-                                <img class="media-object" src="http://placehold.it/60x60" alt="...">
-                              </a>
-                            </div>
-                            <div class="media-body">
-                              Date<br>
-                            <strong>From</strong><br>
-                            To
-                            </div><br>
-                            <p><strong>Message Title</strong></p>
+                        <div class="media-left">
+                            <a href="#">
+                            <img class="media-object" src="http://placehold.it/60x60" alt="...">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          Date<br>
+                        <strong>From</strong><br>
+                        To
+                        </div><br>
+                        <p><strong>Message Title</strong></p>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-                          </div>
+                      </div>
             </div>
         </div>
     </div>
