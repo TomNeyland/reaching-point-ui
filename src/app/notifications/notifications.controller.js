@@ -43,6 +43,9 @@ angular.module('baseangular')
 		$scope.tab = newTab;
 	};
 
+	$scope.setMessage = function(msg) {
+		$scope.selected = msg;
+	}
 
 
 });
