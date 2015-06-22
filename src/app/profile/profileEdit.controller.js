@@ -77,11 +77,6 @@ angular.module('baseangular')
                     name: interest,
                     selected: false
                 };
-                angular.forEach($scope.user.interests, function(userInterest) {
-                    if (userInterest === interest) {
-                        interestObj.selected = true;
-                    }
-                });
                 $scope.interests.push(interestObj);
             });
 
@@ -92,12 +87,6 @@ angular.module('baseangular')
                     name: stage,
                     selected: false
                 };
-
-                angular.forEach($scope.user.demographics.lifeStage, function(userStage) {
-                    if(userStage === stage) {
-                        lifeStageObj.selected = true;
-                    }
-                });
                 $scope.lifeStage.push(lifeStageObj);
             });
 
@@ -108,11 +97,6 @@ angular.module('baseangular')
                     name: ethnicity,
                     selected: false
                 };
-                angular.forEach($scope.user.demographics.ethnicity, function(userEthnicity) {
-                    if(userEthnicity === ethnicity) {
-                        ethnicObj.selected = true;
-                    }
-                });
                 $scope.ethnicity.push(ethnicObj);
             });
 
@@ -123,13 +107,31 @@ angular.module('baseangular')
                     name: tongue,
                     selected: false
                 };
+                $scope.languages.push(tongueObj);
+            })
+
+            if($scope.user){
+                angular.forEach($scope.user.interests, function(userInterest) {
+                    if (userInterest === interest) {
+                        interestObj.selected = true;
+                    }
+                });
+                angular.forEach($scope.user.demographics.lifeStage, function(userStage) {
+                    if(userStage === stage) {
+                        lifeStageObj.selected = true;
+                    }
+                });
+                angular.forEach($scope.user.demographics.ethnicity, function(userEthnicity) {
+                    if(userEthnicity === ethnicity) {
+                        ethnicObj.selected = true;
+                    }
+                });
                 angular.forEach($scope.user.demographics.languages, function(userTongues) {
                     if(userTongues === tongue) {
                         tongueObj.selected = true;
                     }
                 });
-                $scope.languages.push(tongueObj);
-            })
+            }
 
 
         })

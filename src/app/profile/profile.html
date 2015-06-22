@@ -81,7 +81,7 @@
     </div>
 
     <!-- USER INFO NO DATA -->
-    <div class="col-xs-12" ng-if="!user">
+    <div class="col-xs-12" ng-if="!user.interests && !user.demographics">
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="well text-center">
@@ -95,7 +95,7 @@
     </div>
 
     <!-- USER INFO -->
-    <div class="col-xs-8 col-md-9" ng-if="user">
+    <div class="col-xs-8 col-md-9" ng-if="user.interests && user.demographics">
         <div class="interests">
             <div class="panel panel-default">
                 <div class="panel-heading">Interests</div>
