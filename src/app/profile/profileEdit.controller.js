@@ -2,7 +2,7 @@
 
 angular.module('baseangular')
 
-.controller('ProfileEditCtrl', function($scope, $http, userFactory, $timeout, $state, UserService) {
+.controller('ProfileEditCtrl', function($scope, $http, userFactory, $timeout, $state, UserService, retrieveUser) {
 
     function init(){
 
@@ -54,15 +54,15 @@ angular.module('baseangular')
     }
 
 
-    //Get User object 
+    //Get User object
     //REFACTOR THIS CODE TO USE THE API SERVICE
     //MOVE THIS TO THE USERFACTORY SO THE USER OBJECT IS ACCESSIBLE TO ALL CONTROLLERS
 
     function getUser(){
         console.log('getting user');
-        $http.get('https://reaching-point.firebaseio.com/user.json')
-        .success(function(data) {
-            
+        retrieveUser.get()
+            .success(function(data) {
+
             //remove firebase hash
             for (var key in data) {
                 $scope.user = data[key];
@@ -139,7 +139,7 @@ angular.module('baseangular')
 
     }
 
-    
+
 
     $scope.updateUser = function() {
 
@@ -180,10 +180,10 @@ angular.module('baseangular')
         }
 
         if($scope.header.image){
-            $scope.user.header_image = $scope.header.image;    
+            $scope.user.header_image = $scope.header.image;
         }
 
-        
+
 
         console.log("return from put request: ", $scope.user);
 
@@ -199,9 +199,6 @@ angular.module('baseangular')
             })
     };
 
-    $scope.cancelUser = function() {
-        console.log($scope.user);
-    };
 
     init();
 

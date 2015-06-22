@@ -2,9 +2,9 @@
 
 angular.module('baseangular')
 
-.controller('ProfileCtrl', function($scope, $http) {
+.controller('ProfileCtrl', function($scope, $http, retrieveUser) {
 
-    $http.get('https://reaching-point.firebaseio.com/user.json')
+    retrieveUser.get()
         .success(function(data) {
             for (var key in data) {
                 $scope.user = data[key];
