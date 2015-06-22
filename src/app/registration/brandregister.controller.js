@@ -7,7 +7,9 @@ angular.module('baseangular')
     $scope.user = {
         name: '',
         email: '',
-        password: ''
+        password: '',
+        type: 'brand'
+
     };
 
     $scope.login = function() {
