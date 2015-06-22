@@ -14,14 +14,14 @@
                             <button class="btn btn-primary">Search</button>
                         </form>
                         <div class="btn-group btn-group-justified" style="margin: 10px 0;">
-                            <p ng-click="setTab(1)" ng-class="{active: tab===1}" class="btn btn-default">Inbox</p>
+                            <p ng-click="setTab(1)" ng-class="{active: tabIsSet(1)}" class="btn btn-default">Inbox</p>
                             <!-- SENT COMING SOOOOOON -->
                             <!-- <p class="btn btn-default">Sent</p> -->
-                            <p ng-click="setTab(2)" ng-class="{active: tab===2}" class="btn btn-default">Trash</p>
+                            <p ng-click="setTab(2)" ng-class="{active: tabIsSet(2)}" class="btn btn-default">Trash</p>
                         </div>
                         <!-- <div class="msgs-box"> -->
                         <ul class="list-group">
-                            <li ng-repeat="n in notifications" hover-active class="pointer list-group-item">
+                            <li ng-repeat="n in notifications" hover-active ng-click="selMsg(n)" class="pointer list-group-item">
                                 <img class="msg-avatar" src="../../assets/images/avatar200.png" alt="">
                                 <div class="msg-wrap">
                                     <p class="msg-sender">{{n.from}}</p>
@@ -44,7 +44,7 @@
 
 
         <!-- Display this if there are no messages selected.  Just an empty panel body -->
-        <div ng-if="thereAreNoMessages" class="col-md-8">
+        <div ng-if="!selectedMsg" class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h1 class="text-muted">Sorry, you haven't selected a message!</h1>
@@ -53,7 +53,7 @@
         </div>
 
         <!-- Display this if there ARE messages selected -->
-        <div ng-if="!thereAreMessages" class="col-md-8">
+        <div ng-if="selectedMsg" class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-body">
                         <div class="btn-group btn-group-sm pull-right" role="group" aria-label="...">
@@ -68,25 +68,13 @@
                           </a>
                         </div>
                         <div class="media-body">
-                          Date<br>
-                        <strong>From</strong><br>
-                        To
+                          {{selectedMsg.created}}<br>
+                        <strong>From &nbsp;</strong>{{selectedMsg.from}}<br>
+                        {{selectedMsg.to}}
                         </div><br>
-                        <p><strong>Message Title</strong></p>
+                        <p><strong>{{selectedMsg.subject}}</strong></p>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>{{selectedMsg.body}}</p>
 
                       </div>
             </div>
