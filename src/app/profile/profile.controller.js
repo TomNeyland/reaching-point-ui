@@ -2,9 +2,9 @@
 
 angular.module('baseangular')
 
-.controller('ProfileCtrl', function($scope, $http, retrieveUser) {
+.controller('ProfileCtrl', function($scope, $http, User) {
 
-    retrieveUser.get()
+    User.get()
         .success(function(data) {
             for (var key in data) {
                 $scope.user = data[key];

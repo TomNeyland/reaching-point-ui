@@ -2,7 +2,7 @@
 
 angular.module('baseangular')
 
-.controller('ProfileEditCtrl', function($scope, $http, userFactory, $timeout, $state, UserService, retrieveUser) {
+.controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory, $timeout, $state, UserService, User) {
 
     function init(){
 
@@ -60,14 +60,14 @@ angular.module('baseangular')
 
     function getUser(){
         console.log('getting user');
-        retrieveUser.get()
+        User.get()
             .success(function(data) {
 
             //remove firebase hash
             for (var key in data) {
                 $scope.user = data[key];
                 console.log("data acquired, $scope.user is ", $scope.user);
-                $scope.manipulated = [key];
+                $rootScope.manipulated = [key];
             }
 
             //convert interest list into object for ng-checkboxes
@@ -189,7 +189,7 @@ angular.module('baseangular')
 
 
 
-        $http.put('https://reaching-point.firebaseio.com/user/' + $scope.manipulated + '.json', $scope.user)
+        $http.put('https://reaching-point.firebaseio.com/user/' + $rootScope.manipulated + '.json', $scope.user)
             .success(function(data) {
                 console.log("Put successfully");
                 $state.go('home.profile');
