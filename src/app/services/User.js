@@ -13,7 +13,7 @@ angular.module('baseangular')
     var obj = {};
 
     obj.get = function() {
-        return $http.get('https://reaching-point-ui.firebaseio.com/user.json')
+        return $http.get('https://reaching-point.firebaseio.com/user.json')
     };
 
     obj.update = function() {
