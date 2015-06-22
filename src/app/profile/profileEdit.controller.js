@@ -116,7 +116,7 @@ angular.module('baseangular')
                     angular.forEach($scope.interests, function(interest) {
 
                         angular.forEach($scope.user.interests, function(userInterest) {
-                            
+
                             if (userInterest === interest.name) {
                                 interest.selected = true;
                             }
