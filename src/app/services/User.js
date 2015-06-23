@@ -9,29 +9,32 @@ angular.module('baseangular')
 // https://reaching-point.firebaseio.com/user.json
 // https://reaching-point-ui.firebaseio.com/user.json
 
-    console.log('ApiService',ApiService);
+    // console.log('ApiService',ApiService);
 
 
     var obj = {};
 
-    // obj.get = function() {
-    //     return $http.get('https://reaching-point-ui.firebaseio.com/user.json')
-    // };
+    obj.get = function() {
+        return $http.get('https://reaching-point-ui.firebaseio.com/user.json')
+    };
 
-    obj.get = function () {
 
-        // Http Request config object
-          var httpConfig = {
-            url: '/user.json'
-          };
-          return ApiService.get(httpConfig);
-          // .success(function (response) {
-          //   return response;
-          // })
-          // .error(function (response) {
-          //   console.log(error);
-          // });
-    }
+    // WORKING ON HOOKING THIS UP
+    // obj.get = function () {
+
+    //     // Http Request config object
+    //       var httpConfig = {
+    //         url: '/user.json'
+    //       };
+    //       ApiService.get(httpConfig)
+    //       .success(function (response) {
+    //         return response;
+    //       })
+    //       .error(function (response) {
+    //         console.log(response);
+    //         return response;
+    //       });
+    // }
 
     obj.update = function() {
         console.log("return from put request: ", $scope.user);
