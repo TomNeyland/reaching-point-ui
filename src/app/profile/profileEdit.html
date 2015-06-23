@@ -46,7 +46,7 @@
                         </div>
 
                         <!-- HIDDEN UPLOAD INPUT -->
-                        <input id="avatar-upload" type="file" onchange="angular.element(this).scope().fileNameChanged2(this)">
+                        <input id="avatar-upload" type="file" onchange="angular.element(this).scope().fileNameChanged(this)">
 
                         <!-- USER NAME & LOCATION -->
                         <div class="form-group">
@@ -75,11 +75,11 @@
 
     <!-- USER SOCIAL NETWORKS -->
     <div class="social-count col-xs-12 col-md-3">
-        
+
         <!-- if network saved, display it  if not, display connect button-->
         <!-- TODO: repeat saved networks from user object -->
         <!-- TODO: add username & avatar for each network -->
-        
+
         <!-- FACEBOOK -->
         <div ng-if="!user.social_networks.facebook" class="indicator widget" style="color:#999;" >
             <div class="color-facebook">
