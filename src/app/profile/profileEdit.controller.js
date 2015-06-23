@@ -23,6 +23,7 @@ angular.module('baseangular')
 
     $scope.fileNameChanged = function(element) {
 
+
        var file=element.files[0];
 
        var reader = new FileReader();
@@ -31,25 +32,15 @@ angular.module('baseangular')
 
         reader.onload = function(event) {
 
+        if (element.id == "avatar-upload") {
+          $timeout(function(){
+            $scope.avatar.image = event.target.result;
+          });
+        }else if(element.id == "banner-upload"){
           $timeout(function(){
             $scope.header.image = event.target.result;
           });
         };
-    }
-
-    $scope.fileNameChanged2 = function(element) {
-
-       var file=element.files[0];
-
-       var reader = new FileReader();
-
-        reader.readAsDataURL(file);
-
-        reader.onload = function(event) {
-
-          $timeout(function(){
-            $scope.avatar.image = event.target.result;
-          });
         };
     }
 
