@@ -1,6 +1,7 @@
 <!-- PAGE HEADER -->
 <div id="page-heading">
-    <h3 class="page-title">Edit Profile</h3>
+    <h3 class="page-title" ng-if="user.type=='influencer'">Edit My Influencer Profile</h3>
+        <h3 class="page-title" ng-if="user.type=='brand'">Edit My Brand Profile</h3>
 </div>
 
 <form>

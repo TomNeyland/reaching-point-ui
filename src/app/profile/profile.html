@@ -3,7 +3,8 @@
 
     <!-- PAGE HEADER -->
     <div id="page-heading">
-        <h3 class="page-title">Profile</h3>
+        <h3 class="page-title" ng-if="user.type=='influencer'">My Influencer Profile</h3>
+        <h3 class="page-title" ng-if="user.type=='brand'">My Brand Profile</h3>
     </div>
 
     <!-- PROFILE HEADER -->

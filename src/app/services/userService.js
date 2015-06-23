@@ -10,22 +10,22 @@ angular.module('baseangular').service('UserService', function () {
   var currentUser = null;
   var currentRememberMe = null;
 
-  var TOKEN_KEY = "rbm-session-token";
-  var REMEMBER_ME_KEY = "rbm-remember-me";
-  var adminRoles = ['admin', 'editor'];
-  var otherRoles = ['user'];
+  // var TOKEN_KEY = "rbm-session-token";
+  // var REMEMBER_ME_KEY = "rbm-remember-me";
+  // var adminRoles = ['admin', 'editor'];
+  // var otherRoles = ['user'];
 
-  this.getToken = function () {
-    if (!currentToken) {
-      currentToken = $cookieStore.get(TOKEN_KEY);
-    }
-    return currentToken;
-  };
+  // this.getToken = function () {
+  //   if (!currentToken) {
+  //     currentToken = $cookieStore.get(TOKEN_KEY);
+  //   }
+  //   return currentToken;
+  // };
 
-  this.setToken = function (token) {
-    currentToken = token;
-    $cookieStore.put(TOKEN_KEY, token);
-  };
+  // this.setToken = function (token) {
+  //   currentToken = token;
+  //   $cookieStore.put(TOKEN_KEY, token);
+  // };
 
   this.getUser = function () {
 
