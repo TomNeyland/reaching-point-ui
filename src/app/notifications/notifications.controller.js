@@ -20,7 +20,7 @@ angular.module('baseangular')
 			summary: 'You just acquired a lot of more many lots of people influencing for you.',
 			body: 'Content 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
 			created: moment(new Date).format('l'),
-			status: 'deleted',
+			status: 'unread',
 			type: 'campaign',
 			from: 'Reaching Point',
 			to: 'Cassie Wilcox'
@@ -30,7 +30,7 @@ angular.module('baseangular')
 			summary: '3 Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			body: '3 Content 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
 			created: moment(new Date).format('l'),
-			status: 'unread',
+			status: 'read',
 			type: 'campaign',
 			from: 'Reaching Point',
 			to: 'Adam Karbiener'
@@ -55,13 +55,19 @@ angular.module('baseangular')
 		$scope.selectedMsg = msg;
 	};
 
+	$scope.markRead = function(msg) {
+		msg.status = 'read';
+	};
+
 	// change the status property of the selectedMsg to `deleted`
 	$scope.deleteMsg = function(msg) {
 		msg.status = 'deleted';
 	};
 
+	// change the status property of selectedMsg to `read`
 	$scope.unTrash = function(msg) {
 		msg.status = 'read';
-	}
+	};
+
 
 });
