@@ -2,7 +2,7 @@
 
 angular.module('baseangular')
 
-.controller('NotificationsCtrl', function($scope) {
+.controller('NotificationsCtrl', function($scope, searchAndFilterFactory2) {
 
 	$scope.notifications = [
 		{
@@ -68,6 +68,32 @@ angular.module('baseangular')
 	$scope.unTrash = function(msg) {
 		msg.status = 'read';
 	};
+
+
+	// Try to use searchAndFilterFactory2
+
+	    var searchControls = {
+			controllerName: 'NotificationsCtrl',
+			query: '',
+			itemsPerPage: 5,
+			sortingOrder: 'title',
+			reverse: false,
+			currentPage: 1
+		};
+
+		// if ($stateParams.tab && $scope.tabs[$stateParams.tab]) {
+		// $scope.tabs[$stateParams.tab].active = true;
+		// }
+
+		// Get a SearchFactory instance and attach it to the scope
+		$scope.searcher = searchAndFilterFactory2.getFactoryInstance(searchControls);
+		console.log($scope.searcher)
+		// console.log("scope.searcher is : ", $scope.searcher)
+		// initializeGetNotificationProfilesCallbacks();
+		// loadNotificationProfiles(true);
+		$scope.search = function (caller) {
+			$scope.searcher.search($scope.notificationProfiles, caller);
+		};
 
 
 });
