@@ -37,20 +37,31 @@ angular.module('baseangular')
 		}
 	];
 
+	// initialize the page with the first tab active
 	$scope.tab = 1;
 
+	// set the tab properly
 	$scope.setTab = function(newTab) {
 		$scope.tab = newTab;
 	};
 
+	// check which tab is set
 	$scope.tabIsSet = function(tab) {
 		return $scope.tab === tab;
-	}
+	};
 
+	// choose a message to view
 	$scope.selMsg = function(msg) {
-			$scope.selectedMsg = msg;
-		}
+		$scope.selectedMsg = msg;
+	};
 
+	// change the status property of the selectedMsg to `deleted`
+	$scope.deleteMsg = function(msg) {
+		msg.status = 'deleted';
+	};
 
+	$scope.unTrash = function(msg) {
+		msg.status = 'read';
+	}
 
 });

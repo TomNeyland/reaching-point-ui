@@ -59,7 +59,8 @@
                         <div class="btn-group btn-group-sm pull-right" role="group" aria-label="...">
                             <!-- The reply button is hidden just for the moment -->
                             <div ng-hide="true" class="btn btn-default">Reply</div>
-                            <div class="btn btn-default">Delete</div>
+                            <div ng-hide="selectedMsg.status==='deleted'" ng-click="deleteMsg(selectedMsg)" class="btn btn-default">Delete</div>
+                            <div ng-show="selectedMsg.status==='deleted'" ng-click="unTrash(selectedMsg)" class="btn btn-default">Remove from Trash</div>
                         </div>
                         <div class="clearfix"></div>
 
