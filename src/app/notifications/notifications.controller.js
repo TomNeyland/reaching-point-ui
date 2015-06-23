@@ -62,7 +62,7 @@ angular.module('baseangular')
 			summary: '3 Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			body: '3 Content 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
 			created: moment(new Date).format('l'),
-			status: 'read',
+			status: 'unread',
 			type: 'campaign',
 			from: 'Reaching Point',
 			to: 'Adam Karbiener'
@@ -100,6 +100,9 @@ angular.module('baseangular')
 		}
 	];
 
+
+
+
 	// initialize the page with the first tab active
 	$scope.tab = 1;
 
@@ -129,7 +132,7 @@ angular.module('baseangular')
 
 	// change the status property of selectedMsg to `read`
 	$scope.unTrash = function(msg) {
-		msg.status = 'read';
+		msg.status = 'read';	
 	};
 
 
