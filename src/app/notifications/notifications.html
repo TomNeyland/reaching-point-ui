@@ -9,7 +9,7 @@
                     <div class="msg-container ">
                         <form class="form-inline">
                             <div class="form-group">
-                                <input ng-model="searcher.controls.query" type="text" class="form-control form-control-primary" placeholder="Search Notifications">
+                                <input ng-model="searcher.controls.query" ng-change="search()" type="text" class="form-control form-control-primary" placeholder="Search Notifications">
                             </div>
                             <button class="btn btn-primary">Search</button>
                         </form>
@@ -21,7 +21,8 @@
                         </div>
                         <!-- <div class="msgs-box"> -->
                         <ul class="list-group">
-                            <li searcher="searcher" ng-repeat="n in notifications" hover-active ng-click="selMsg(n);markRead(n)" ng-class="{msgRead:n.status==='read', msgUnread:n.status==='unread'}" class="pointer list-group-item">
+                            <!-- ng-repeat="n in searcher.pagedItems[searcher.controls.currentPage-1]" -->
+                            <li ng-repeat="n in searcher.originalArray" hover-active ng-click="selMsg(n);markRead(n)" ng-class="{msgRead:n.status==='read', msgUnread:n.status==='unread'}" class="pointer list-group-item">
                                 <img class="msg-avatar" src="../../assets/images/avatar200.png" alt="">
                                 <div class="msg-wrap">
                                     <p class="msg-sender">{{n.from}}</p>

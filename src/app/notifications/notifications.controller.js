@@ -9,7 +9,70 @@ angular.module('baseangular')
 			subject: '1 So and So Joined Your Campaign!',
 			summary: 'Some people totally just joined your campaign',
 			body: 'Content 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
+			created: '6/1/15',
+			// created: moment(new Date).format('l'),
+			status: 'unread',
+			type: 'campaign',
+			from: 'Point of reach',
+			to: 'Jim bob'
+		},
+		{
+			subject: 'You now have 456 influencers',
+			summary: 'You just acquired a lot of more many lots of people influencing for you.',
+			body: 'Content 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
 			created: moment(new Date).format('l'),
+			status: 'unread',
+			type: 'campaign',
+			from: 'Reaching Point',
+			to: 'Cassie Wilcox'
+		},
+		{
+			subject: 'You now have 3 brands working with you',
+			summary: '3 Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			body: '3 Content 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
+			created: moment(new Date).format('l'),
+			status: 'read',
+			type: 'campaign',
+			from: 'Reaching Point',
+			to: 'Adam Karbiener'
+		},
+		{
+			subject: '1 So and So Joined Your Campaign!',
+			summary: 'Some people totally just joined your campaign',
+			body: 'Content 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
+			created: '6/1/15',
+			// created: moment(new Date).format('l'),
+			status: 'unread',
+			type: 'campaign',
+			from: 'Point of reach',
+			to: 'Jim bob'
+		},
+		{
+			subject: 'You now have 456 influencers',
+			summary: 'You just acquired a lot of more many lots of people influencing for you.',
+			body: 'Content 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
+			created: moment(new Date).format('l'),
+			status: 'unread',
+			type: 'campaign',
+			from: 'Reaching Point',
+			to: 'Cassie Wilcox'
+		},
+		{
+			subject: 'You now have 3 brands working with you',
+			summary: '3 Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			body: '3 Content 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
+			created: moment(new Date).format('l'),
+			status: 'read',
+			type: 'campaign',
+			from: 'Reaching Point',
+			to: 'Adam Karbiener'
+		},
+		{
+			subject: '1 So and So Joined Your Campaign!',
+			summary: 'Some people totally just joined your campaign',
+			body: 'Content 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolor quis fugiat sed reiciendis saepe consequuntur consectetur rem itaque est, facilis ipsa obcaecati necessitatibus blanditiis praesentium nisi, maxime perspiciatis, quod.',
+			created: '6/1/15',
+			// created: moment(new Date).format('l'),
 			status: 'unread',
 			type: 'campaign',
 			from: 'Point of reach',
@@ -71,29 +134,32 @@ angular.module('baseangular')
 
 
 	// Try to use searchAndFilterFactory2
-
-	    var searchControls = {
+		var searchControls = {
 			controllerName: 'NotificationsCtrl',
 			query: '',
-			itemsPerPage: 5,
-			sortingOrder: 'title',
+			itemsPerPage: 10,
+			sortingOrder: 'created',
 			reverse: false,
 			currentPage: 1
 		};
 
-		// if ($stateParams.tab && $scope.tabs[$stateParams.tab]) {
-		// $scope.tabs[$stateParams.tab].active = true;
-		// }
-
 		// Get a SearchFactory instance and attach it to the scope
 		$scope.searcher = searchAndFilterFactory2.getFactoryInstance(searchControls);
 		console.log($scope.searcher)
-		// console.log("scope.searcher is : ", $scope.searcher)
-		// initializeGetNotificationProfilesCallbacks();
-		// loadNotificationProfiles(true);
+
 		$scope.search = function (caller) {
-			$scope.searcher.search($scope.notificationProfiles, caller);
+			$scope.searcher.search($scope.notifications, caller);
 		};
+
+		$scope.$watch('searcher.controls', function () {
+			savePrefs($scope.searcher.controls);
+		}, true);
+
+		$scope.$watch('notifications', function (newVal) {
+			if ($scope.notifications) {
+				$scope.search('$watch(notifications)');
+			}
+		});
 
 
 });
