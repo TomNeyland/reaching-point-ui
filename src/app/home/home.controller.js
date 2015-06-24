@@ -4,10 +4,6 @@ angular.module('baseangular')
 
 .controller('HomeCtrl', function($scope, windowCheck, User, $rootScope, $state) {
 
-    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-        $scope.state = toState.name;
-    });
-
     User.get()
         .then(function(data){
             for (var key in data) {
