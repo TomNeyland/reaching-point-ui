@@ -4,6 +4,14 @@ angular.module('baseangular')
 
 .controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory, $timeout, $state, UserService, User) {
 
+    var limit = 3;
+$('input.single-checkbox').on('click', function (evt) {
+    if ($('.single-checkbox:checked').length > limit) {
+        this.checked = false;
+    }
+});
+
+
     function init(){
 
         $scope.info = userFactory;
