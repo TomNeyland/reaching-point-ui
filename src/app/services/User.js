@@ -2,39 +2,20 @@
 
 angular.module('baseangular')
 
-.factory('User', function($http, $rootScope, ApiService) {
+.factory('User', function($http, $rootScope, Restangular) {
 
 
 // THERE ARE 2 FIREBASES FOR TESTING PURPOSES
 // https://reaching-point.firebaseio.com/user.json
 // https://reaching-point-ui.firebaseio.com/user.json
 
-    // console.log('ApiService',ApiService);
-
-
     var obj = {};
 
     obj.get = function() {
-        return $http.get('https://reaching-point-ui.firebaseio.com/user.json')
+        return Restangular.one('user').get()
+        // return $http.get('https://reaching-point-ui.firebaseio.com/user.json')
     };
 
-
-    // WORKING ON HOOKING THIS UP
-    // obj.get = function () {
-
-    //     // Http Request config object
-    //       var httpConfig = {
-    //         url: '/user.json'
-    //       };
-    //       ApiService.get(httpConfig)
-    //       .success(function (response) {
-    //         return response;
-    //       })
-    //       .error(function (response) {
-    //         console.log(response);
-    //         return response;
-    //       });
-    // }
 
     obj.update = function() {
         console.log("return from put request: ", $scope.user);

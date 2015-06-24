@@ -1,7 +1,14 @@
 'use strict';
 
 angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap', 'ngJoyRide'])
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, RestangularProvider) {
+
+
+      RestangularProvider.setBaseUrl('https://reaching-point.firebaseio.com/');
+      RestangularProvider.setRequestSuffix('.json');
+
+
+
     $stateProvider
       .state('login', {
         url: '/',
@@ -87,5 +94,4 @@ angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangu
       //Access states in html via `ui-sref={stateName}`
 
     $urlRouterProvider.otherwise('/');
-  })
-;
+});

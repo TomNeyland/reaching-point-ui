@@ -238,7 +238,7 @@ body.contract .nested-home-views {
     }
 }
 
-.input-help{
+.input-help {
     padding: 7px;
     font-size: 14px !important;
 }
@@ -247,8 +247,18 @@ body.contract .nested-home-views {
 }
 
 //Sidebar extra styles
+
+
 nav.side-bar ul.nav-menu > li:hover > a > i {
     color: $success;
+}
+
+li.onState > a {
+    border-left: 2px solid #8bc53d !important;
+}
+
+li.onstate > a > i {
+    color: #8bc53d !important;
 }
 
 .side-bar > .brand {
@@ -265,6 +275,25 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
 .widget.widget-lg {
 
     height: 340px !important;
+}
+
+.social-widget{
+    height: auto !important;
+}
+
+.social.widget > :first-child {
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
+}
+
+.social.widget > .title
+{
+    font-size:28px;margin:0; font-weight:bold;
+}
+
+.social.widget .media img
+{
+    margin-left: 5px;
 }
 
 .profile-avatar{
