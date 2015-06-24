@@ -2,7 +2,7 @@
 
 angular.module('baseangular')
 
-.controller('InfluenceRegisterCtrl', function($scope, $http, $state) {
+.controller('InfluenceRegisterCtrl', function($scope, $http, $state, Restangular) {
 
 	$scope.user = {
         name: '',
@@ -14,15 +14,13 @@ angular.module('baseangular')
 
     $scope.login = function() {
 
-        $http.post('https://reaching-point-ui.firebaseio.com/user.json', $scope.user)
-            .success(function(data){
-
-                console.log("posted successfully");
-                $state.go('home.dashboard')
-            })
-            .error(function(error){
-                console.log(error, "you suck");
-            })
-    }
+		Restangular.all('user').post($scope.user)
+            .then(function(response) {
+                console.log("Successful post ", response)
+            }, //error handling below
+                function(error) {
+                    console.log("Post error = ", error)
+            });
+	};
 
 });

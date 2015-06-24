@@ -155,7 +155,7 @@ angular.module('baseangular')
 
 
             })
-            
+
 
     }
 
@@ -206,6 +206,7 @@ angular.module('baseangular')
 
 
         console.log("return from put request: ", $scope.user);
+
 
 
 
