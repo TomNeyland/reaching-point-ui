@@ -248,6 +248,14 @@ body.contract .nested-home-views {
 }
 
 //Sidebar extra styles
+li.onState > a {
+    border-left: 2px solid #8bc53d !important;
+}
+
+li.onstate > a > i {
+    color: #8bc53d !important;
+}
+
 nav.side-bar ul.nav-menu > li:hover > a > i {
     color: $success;
 }
@@ -422,7 +430,7 @@ nav.side-bar ul.nav-menu > li:hover > a > i {
 }
 
 .msgDeleted {
-    
+
 }
 
 .pointer {

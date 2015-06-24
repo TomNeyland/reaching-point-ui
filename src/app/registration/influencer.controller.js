@@ -3,7 +3,7 @@
 angular.module('baseangular')
 
 .controller('InfluenceRegisterCtrl', function($scope, $http, $state, Restangular) {
-
+console.log($state)
 	$scope.user = {
         name: '',
         email: '',
