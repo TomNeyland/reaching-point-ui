@@ -9,7 +9,6 @@ angular.module('baseangular')
         email: '',
         password: '',
         type: 'brand'
-
     };
 
     $scope.login = function() {
@@ -17,6 +16,7 @@ angular.module('baseangular')
         Restangular.all('user').post($scope.user)
             .then(function(response) {
                 console.log("Successful post ", response)
+                $state.go('home.dashboard')
             }, //error handling below
                 function(error) {
                     console.log("Post error = ", error)

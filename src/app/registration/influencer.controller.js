@@ -16,7 +16,8 @@ angular.module('baseangular')
 
 		Restangular.all('user').post($scope.user)
             .then(function(response) {
-                console.log("Successful post ", response)
+                console.log("Successful post ", response);
+				$state.go('home.dashboard');
             }, //error handling below
                 function(error) {
                     console.log("Post error = ", error)

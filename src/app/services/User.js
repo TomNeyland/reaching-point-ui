@@ -2,7 +2,7 @@
 
 angular.module('baseangular')
 
-.factory('User', function($http, $rootScope, ApiService, Restangular) {
+.factory('User', function($http, $rootScope, Restangular) {
 
 
 // THERE ARE 2 FIREBASES FOR TESTING PURPOSES
