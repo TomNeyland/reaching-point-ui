@@ -9,6 +9,7 @@ angular.module('baseangular')
         .then(function(data){
             for (var key in data) {
                 $scope.user = data[key];
+                return;
             }
         })
 

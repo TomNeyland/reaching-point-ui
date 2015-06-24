@@ -48,13 +48,14 @@ angular.module('baseangular')
     function getUser() {
         console.log('getting user');
         User.get()
-            .success(function(data) {
+            .then(function(data) {
 
                 //remove firebase hash
                 for (var key in data) {
                     $scope.user = data[key];
-                    console.log("data acquired, $scope.user is ", $scope.user);
                     $rootScope.manipulated = [key];
+                    console.log("data acquired, $scope.user is ", $scope.user);
+                    return;
                 }
 
                 //convert interest list into object for ng-checkboxes
@@ -154,9 +155,7 @@ angular.module('baseangular')
 
 
             })
-            .error(function(error) {
-                console.log(error)
-            });
+            
 
     }
 
