@@ -2,7 +2,7 @@
 
 angular.module('baseangular')
 
-.factory('User', function($http, $rootScope, ApiService) {
+.factory('User', function($http, $rootScope, ApiService, Restangular) {
 
 
 // THERE ARE 2 FIREBASES FOR TESTING PURPOSES
@@ -15,7 +15,8 @@ angular.module('baseangular')
     var obj = {};
 
     obj.get = function() {
-        return $http.get('https://reaching-point-ui.firebaseio.com/user.json')
+        return Restangular.one('user').get()
+        // return $http.get('https://reaching-point-ui.firebaseio.com/user.json')
     };
 
 

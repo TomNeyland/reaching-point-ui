@@ -4,9 +4,9 @@ angular.module('baseangular')
 
 .controller('HomeCtrl', function($scope, windowCheck, User) {
 
-    
+
     User.get()
-        .success(function(data){
+        .then(function(data){
             for (var key in data) {
                 $scope.user = data[key];
             }
