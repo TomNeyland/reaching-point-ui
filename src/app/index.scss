@@ -278,6 +278,25 @@ li.onstate > a > i {
     height: 340px !important;
 }
 
+.social-widget{
+    height: auto !important;
+}
+
+.social.widget > :first-child {
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
+}
+
+.social.widget > .title
+{
+    font-size:28px;margin:0; font-weight:bold;
+}
+
+.social.widget .media img
+{
+    margin-left: 5px;
+}
+
 .profile-avatar{
       position: absolute;
   top: -120px;

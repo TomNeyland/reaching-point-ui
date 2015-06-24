@@ -87,11 +87,19 @@
             </div>
             <button class="btn btn-default" ng-click="user.social_networks.facebook = true">Connect Facebook</button>
         </div>
-        <div ng-if="user.social_networks.facebook" class="indicator widget bg-facebook">
+        <div ng-if="user.social_networks.facebook" class="social-widget social widget bg-facebook">
             <span class="fa fa-facebook fa-4x"></span>
             <p class="title">4,234</p>
             <span class="subtitle">Followers</span>
             <span class="log-out fa fa-times" ng-click="user.social_networks.facebook = false"></span>
+            <div class="media">
+              <div class="media-left media-middle">
+                  <img style="border:1px solid #fff;" class="media-object" src="https://placeimg.com/20/20/people" alt="Facebook Username">
+              </div>
+              <div class="media-body">
+                Facebook Username
+              </div>
+            </div>
         </div>
 
         <!-- TWITTER -->
@@ -101,11 +109,19 @@
             </div>
             <button class="btn btn-default" ng-click="user.social_networks.twitter = true">Connect Twitter</button>
         </div>
-        <div ng-if="user.social_networks.twitter" class="indicator widget bg-twitter">
+        <div ng-if="user.social_networks.twitter" class="social-widget social widget bg-twitter">
             <span class="fa fa-twitter fa-4x"></span>
             <p class="title">2,343</p>
             <span class="subtitle">Tweets</span>
             <span class="log-out fa fa-times" ng-click="user.social_networks.twitter = false"></span>
+            <div class="media">
+              <div class="media-left media-middle">
+                  <img style="border:1px solid #fff;" class="media-object" src="https://placeimg.com/20/20/people" alt="Facebook Username">
+              </div>
+              <div class="media-body">
+                @Twitter_Username
+              </div>
+            </div>
         </div>
 
         <!-- GOOGLE + -->
@@ -115,11 +131,19 @@
             </div>
             <button class="btn btn-default" ng-click="user.social_networks.googleplus = true">Connect Google+</button>
         </div>
-        <div ng-if="user.social_networks.googleplus" class="indicator widget bg-googleplus">
+        <div ng-if="user.social_networks.googleplus" class="social-widget social widget bg-googleplus">
             <span class="fa fa-google-plus fa-4x"></span>
             <p class="title">128</p>
-            <span class="subtitle">New topics published</span>
-            <span class="log-out fa fa-times" ng-click="user.social_networks.googleplus = false"></span>
+            <p class="subtitle">Connections</p>
+            <p class="log-out fa fa-times" ng-click="user.social_networks.googleplus = false"></p>
+            <div class="media">
+              <div class="media-left media-middle">
+                  <img class="media-object" src="https://placeimg.com/20/20/people" alt="Facebook Username">
+              </div>
+              <div class="media-body">
+                Google+ Name
+              </div>
+            </div>
         </div>
 
         <!-- LINKEDIN -->
@@ -129,11 +153,21 @@
             </div>
             <button class="btn btn-default" ng-click="user.social_networks.linkedin = true">Connect LinkedIn</button>
         </div>
-        <div ng-if="user.social_networks.linkedin" class="indicator widget bg-linkedin">
+        <div ng-if="user.social_networks.linkedin" class="social-widget social widget bg-linkedin">
             <span class="fa fa-linkedin fa-4x"></span>
-            <p class="title">28</p>
-            <span class="subtitle">Things</span>
+            <p class="title" style="font-size:28px;margin:0; font-weight:bold;">28</p>
+            <p>Connections</p>
             <span class="log-out fa fa-times" ng-click="user.social_networks.linkedin = false"></span>
+            <div class="widget-footer" style="background:#fff;">
+                <div class="media">
+                  <div class="media-left media-middle">
+                      <img class="media-object" src="https://placeimg.com/20/20/people" alt="Facebook Username">
+                  </div>
+                  <div class="media-body">
+                    LinkedIn Name
+                  </div>
+                </div>
+            </div>
         </div>
 
     </div> <!-- Social media reports -->
