@@ -4,6 +4,10 @@ angular.module('baseangular')
 
 .controller('HomeCtrl', function($scope, windowCheck, User, $rootScope, $state) {
 
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+        $scope.state = toState.name;
+    });
+
     User.get()
         .then(function(data){
             for (var key in data) {
@@ -11,15 +15,6 @@ angular.module('baseangular')
                 return;
             }
         });
-
-    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-        // console.table(toState);
-        console.table(fromState)
-        // $scope.state = $state.current.name;
-    })
-
-
-    // console.log($state);
 
 
 var $body = $('body');

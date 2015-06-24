@@ -239,7 +239,7 @@ body.contract .nested-home-views {
     }
 }
 
-.input-help{
+.input-help {
     padding: 7px;
     font-size: 14px !important;
 }
@@ -248,16 +248,18 @@ body.contract .nested-home-views {
 }
 
 //Sidebar extra styles
+
+
+nav.side-bar ul.nav-menu > li:hover > a > i {
+    color: $success;
+}
+
 li.onState > a {
     border-left: 2px solid #8bc53d !important;
 }
 
 li.onstate > a > i {
     color: #8bc53d !important;
-}
-
-nav.side-bar ul.nav-menu > li:hover > a > i {
-    color: $success;
 }
 
 .side-bar > .brand {
