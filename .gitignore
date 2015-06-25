@@ -6,3 +6,11 @@ dist/
 wire-prototype/
 .strong-pm/
 firebase.json
+
+# Ignore npm install error logs
+npm-debug.log
+
+# Ignore Webstorm private settings
+.idea/workspace.xml
+.idea/dictionaries
+.idea/tasks.xml

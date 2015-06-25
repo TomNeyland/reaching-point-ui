@@ -1,0 +1,50 @@
+## Customize the test machine
+machine:
+
+  # Version of ruby to use
+  node:
+    version: 0.10.22
+
+  # Override /etc/hosts
+  hosts:
+    circlehost: 127.0.0.1
+    dev.mycompany.com: 127.0.0.1
+
+  # Add some environment variables
+  environment:
+    CIRCLE_ENV: test
+
+## Customize general stuff
+general:
+  artifacts:
+    - "dist/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar" # relative to the build directory
+
+## Customize dependencies
+dependencies:
+  pre:
+    - bower install
+
+  override:
+    - docker info
+    - docker pull ubuntu
+
+## Customize test commands
+test:
+  post:
+    - npm run build
+
+## Customize deployment commands
+deployment:
+  dev:
+    branch: dev
+    commands:
+      - echo $CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
+      - tar -cvf dist/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar dist
+      - scp dist/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar root@dev.reachingpoint.com:/var/www/$CIRCLE_PROJECT_REPONAME
+      - ssh root@dev.reachingpoint.com "tar -xf /var/www/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar -C /var/www/$CIRCLE_PROJECT_REPONAME"
+
+## Custom notifications
+notify:
+  webhooks:
+    # A list of hashes representing hooks. Only the url field is supported.
+    # - url: https://someurl.com/hooks/circle

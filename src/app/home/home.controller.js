@@ -4,6 +4,8 @@ angular.module('baseangular')
 
 .controller('HomeCtrl', function($scope, windowCheck, User) {
 
+    $scope.unitTestExample = 'I am a lovely string';
+
     User.get()
         .success(function(data){
             for (var key in data) {
