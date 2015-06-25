@@ -6,15 +6,12 @@ angular.module('baseangular')
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {
-            // window.onbeforeunload = function() {
-            //     if (!scope.profileForm.$dirty) {
-            //         return "The form is dirty, do you want to stay on the page?";
-            //     }
-            // }
-            // $('#banner-upload, #avatar-upload').change(function() {
-            //     scope.checkChange = true;
-            //     console.log('things changed')
-            // })
+
+            $('#banner-upload, #avatar-upload').change(function() {
+                scope.checkChange = true;
+            });
+
+
             scope.$on('$stateChangeStart', function(event) {
                 if (scope.profileForm.$dirty || scope.checkChange) {
                     if (confirm('The form has unsaved changes, press ok to stay on page!')) {
@@ -25,6 +22,7 @@ angular.module('baseangular')
                     }
                 }
             });
+
         }
     }
 })
