@@ -9,7 +9,7 @@ angular.module('baseangular')
     User.get()
         .then(function(data) {
             for (var key in data) {
-                console.log("reponse:",data);
+                console.log("reponse:",response);
                     $scope.user = data[key];
                     $rootScope.manipulated = [key]
                     var interestdata = data[key].interests.length;

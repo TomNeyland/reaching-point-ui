@@ -8,7 +8,39 @@ console.log($state)
         name: '',
         email: '',
         password: '',
-        type: 'influencer'
+        type: 'influencer',
+		created: moment(new Date).format('l'),
+		lastLoggedIn: moment(new Date).format('l'),
+		socialNetworks: [
+			{
+				twitter: {
+					username: '',
+					followers: '',
+					profilePic: ''
+				}
+			},
+			{
+				facebook: {
+					username: '',
+					followers: '',
+					profilePic: ''
+				}
+			},
+			{
+				linkedIn: {
+					username: '',
+					followers: '',
+					profilePic: ''
+				}
+			},
+			{
+				googlePlus: {
+					username: '',
+					followers: '',
+					profilePic: ''
+				}
+			}
+		]
 
     };
 
