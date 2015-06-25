@@ -13,7 +13,7 @@ angular.module('baseangular')
 
     obj.get = function() {
         return Restangular.one('user').get()
-        // return $http.get('https://reaching-point-ui.firebaseio.com/user.json')
+        //return $http.get('https://reaching-point-ui.firebaseio.com/user.json')
     };
 
 

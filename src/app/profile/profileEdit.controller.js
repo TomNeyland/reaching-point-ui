@@ -4,13 +4,15 @@ angular.module('baseangular')
 
 .controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory, $timeout, $state, UserService, User) {
 
-// THIS NEEDS TO BE MOVED TO A DIRECTIVE
-//     var limit = 3;
-// $('input.single-checkbox').on('click', function (evt) {
-//     if ($('.single-checkbox:checked').length > limit) {
-//         this.checked = false;
-//     }
-// });
+
+    // limits the amount of checkboxes in interests
+    $scope.limit = 5;
+    $scope.checked = 0;
+
+    $scope.checkChanged = function(interest){
+        if(interest.selected) $scope.checked++;
+        else $scope.checked--;
+    }
 
 
     function init(){
