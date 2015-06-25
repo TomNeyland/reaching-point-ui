@@ -55,7 +55,10 @@ angular.module('baseangular')
                     $rootScope.manipulated = [key];
                     console.log("data acquired, $scope.user is ", $scope.user);
                     break;
-                }
+                }, //error handler
+                function(error) {
+                    console.log(error);
+                };
 
                 //convert interest list into object for ng-checkboxes
                 $scope.interests = [];

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap', 'ngJoyRide'])
+angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap', 'ngJoyRide', 'ngInputModified'])
   .config(function ($stateProvider, $urlRouterProvider, RestangularProvider) {
 
 
