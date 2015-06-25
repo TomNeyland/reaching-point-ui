@@ -132,7 +132,7 @@ angular.module('baseangular')
 
 	// change the status property of selectedMsg to `read`
 	$scope.unTrash = function(msg) {
-		msg.status = 'read';	
+		msg.status = 'read';
 	};
 
 

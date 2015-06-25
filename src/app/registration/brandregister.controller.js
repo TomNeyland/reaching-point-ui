@@ -8,7 +8,39 @@ angular.module('baseangular')
         name: '',
         email: '',
         password: '',
-        type: 'brand'
+        type: 'brand',
+        created: moment(new Date).format('l'),
+        lastLoggedIn: moment(new Date).format('l'),
+        socialNetworks: [
+			{
+				twitter: {
+					username: '',
+					followers: '',
+					profile-pic: ''
+				}
+			},
+			{
+				facebook: {
+					username: '',
+					followers: '',
+					profile-pic: ''
+				}
+			},
+			{
+				linkedIn: {
+					username: '',
+					followers: '',
+					profile-pic: ''
+				}
+			},
+			{
+				google-plus: {
+					username: '',
+					followers: '',
+					profile-pic: ''
+				}
+			}
+		]
     };
 
     $scope.login = function() {
