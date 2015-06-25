@@ -16,28 +16,28 @@ console.log($state)
 				twitter: {
 					username: '',
 					followers: '',
-					profile-pic: ''
+					profilePic: ''
 				}
 			},
 			{
 				facebook: {
 					username: '',
 					followers: '',
-					profile-pic: ''
+					profilePic: ''
 				}
 			},
 			{
 				linkedIn: {
 					username: '',
 					followers: '',
-					profile-pic: ''
+					profilePic: ''
 				}
 			},
 			{
-				google-plus: {
+				googlePlus: {
 					username: '',
 					followers: '',
-					profile-pic: ''
+					profilePic: ''
 				}
 			}
 		]
