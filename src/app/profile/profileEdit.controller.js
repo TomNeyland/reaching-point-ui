@@ -5,18 +5,20 @@ angular.module('baseangular')
 .controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory, $timeout, $state, UserService, User) {
 
 
-    User.get()
-        .then(function(response) {
-            for (var key in data) {
-                console.log("reponse:",response);
-                    $scope.user = data[key];
-                console.log("key", key);
-                    $rootScope.manipulated = [key]
-                    break;
-                }
-        });
+    // User.get()
+    //     .then(function(response) {
+    //         for (var key in data) {
+    //             console.log("reponse:",response);
+    //                 $scope.user = data[key];
+    //             console.log("key", data[key].demographics);
+    //                 $rootScope.manipulated = [key]
+    //                 break;
+    //             }
+    //     });
 
     // limits the amount of checkboxes in interests
+
+
     $scope.limit = 5;
     $scope.checked = 0;
 
