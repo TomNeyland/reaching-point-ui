@@ -1,13 +1,11 @@
 'use strict';
 
-angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap', 'ngJoyRide', 'ngInputModified'])
+angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap', 'ngJoyRide'])
   .config(function ($stateProvider, $urlRouterProvider, RestangularProvider) {
 
 
       RestangularProvider.setBaseUrl('https://reaching-point-ui.firebaseio.com/');
       RestangularProvider.setRequestSuffix('.json');
-
-
 
     $stateProvider
       .state('login', {
