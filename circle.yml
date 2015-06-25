@@ -24,10 +24,6 @@ dependencies:
   pre:
     - bower install
 
-  override:
-    - docker info
-    - docker pull ubuntu
-
 ## Customize test commands
 test:
   post:
