@@ -4,7 +4,7 @@ angular.module('baseangular')
 
 .controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory, $timeout, $state, UserService, User) {
 
-<<<<<<< HEAD
+// THIS NEEDS TO BE MOVED TO A DIRECTIVE
     var limit = 3;
 $('input.single-checkbox').on('click', function (evt) {
     if ($('.single-checkbox:checked').length > limit) {
@@ -14,9 +14,6 @@ $('input.single-checkbox').on('click', function (evt) {
 
 
     function init(){
-=======
-    function init() {
->>>>>>> 1a244bcfc0ea3b948d81c26bb2dbfaedd45e63e2
 
         $scope.info = userFactory;
         $scope.startJoyRide = false;
