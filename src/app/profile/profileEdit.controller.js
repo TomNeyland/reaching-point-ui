@@ -5,21 +5,18 @@ angular.module('baseangular')
 .controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory, $timeout, $state, UserService, User, $location) {
     //Gives us access to $state in view
     $scope.$state = $state;
-    
-    // User.get()
-    //     .then(function(response) {
-    //         for (var key in data) {
-    //             console.log("reponse:",response);
-    //                 $scope.user = data[key];
-    //             console.log("key", data[key].demographics);
-    //                 $rootScope.manipulated = [key]
-    //                 break;
-    //             }
-    //     });
 
+    User.get()
+        .then(function(data) {
+            for (var key in data) {
+                console.log("reponse:",data);
+                    $scope.user = data[key];
+                    $rootScope.manipulated = [key]
+                    var interestdata = data[key].interests.length;
+                    break;
+                }
+        });
     // limits the amount of checkboxes in interests
-
-
     $scope.limit = 5;
     $scope.checked = 0;
 
@@ -228,14 +225,10 @@ angular.module('baseangular')
             $scope.user.header_image = $scope.header.image;
         }
 
-
-
         console.log("return from put request: ", $scope.user);
 
 
-
-
-        $http.put('https://reaching-point.firebaseio.com/user/' + $rootScope.manipulated + '.json', $scope.user)
+        $http.put('https://reaching-point-ui.firebaseio.com/user/' + $rootScope.manipulated + '.json', $scope.user)
             .success(function(data) {
                 console.log("Put successfully");
                 $scope.profileForm.$setPristine();

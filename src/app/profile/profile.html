@@ -1,6 +1,5 @@
 <!-- PROFILE TOUR -->
-<div ng-joy-ride="startJoyRide" config="config" on-finish="onFinish()"  on-skip="onFinish()">
-
+<div ng-joy-ride="startJoyRide" config="config" on-finish="onFinish()" on-skip="onFinish()">
     <!-- PAGE HEADER -->
     <div id="page-heading">
         <h3 class="page-title" ng-if="user.type=='influencer'">My Influencer Profile</h3>
@@ -106,7 +105,7 @@
                 <div class="panel-heading" ng-if="user.type === 'brand'">Target Audience Interests</div>
                 <div class="panel-heading" ng-if="user.type === 'influencer'">Interests</div>
                 <div class="panel-body profile-labels">
-                    <div ng-repeat="interest in user.interests" class="label-spacing label">{{interest}}</div>
+                    <div random-color ng-repeat="interest in user.interests" class="label-spacing label">{{interest}}</div>
                 </div>
             </div>
         </div>

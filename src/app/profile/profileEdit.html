@@ -148,7 +148,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div ng-repeat="interest in interests" class="col-md-4 form-checks">
-                            <label class="checkbox-inline"><input ng-model="interest.selected" type="checkbox" ng-change="checkChanged(interest)" ng-disabled="checked==limit && !interest.selected" class="single-checkbox" value="">{{interest.name}}</label>
+                            <label class="checkbox-inline"><input ng-model="interest.selected" type="checkbox" ng-change="checkChanged(interest)"ng-disabled="checked==limit && !interest.selected" class="single-checkbox" value="">{{interest.name}}</label>
                         </div>
                     </div>
                 </div>
@@ -163,9 +163,9 @@
 
                     <!-- LIFE STAGE -->
                     <div class="row">
-                        <div class="demographics-headers col-xs-12">Life Stage</div>
+                        <div class="demographics-headers col-xs-12">Life Stage</div><div class="has-error" ng-if="checked==limit">You can only select 5 interests</div>
                         <div ng-repeat="stage in lifeStage" class="col-md-4 form-checks">
-                            <label class="checkbox-inline"><input ng-model="stage.selected" type="checkbox">{{stage.name}}</label>
+                            <label class="checkbox-inline"><input ng-model="stage.selected" ng-change="checkChanged(interest)"ng-disabled="checked==limit && !interest.selected" type="checkbox">{{stage.name}}</label>
                         </div>
                     </div>
 
@@ -188,17 +188,17 @@
 
                     <!-- ETHNICITY -->
                     <div class="row">
-                        <div class="demographics-headers col-xs-12">Ethnicity</div>
+                        <div class="demographics-headers col-xs-12">Ethnicity</div><div class="has-error" ng-if="checked==limit">You can only select 5 interests</div>
                         <div ng-repeat="ethnic in ethnicity" class="col-md-4 form-checks">
-                            <label class="checkbox-inline"><input ng-model="ethnic.selected" type="checkbox">{{ethnic.name}}</label>
+                            <label class="checkbox-inline"><input ng-model="ethnic.selected" ng-change="checkChanged(interest)" ng-disabled="checked==limit && !interest.selected" type="checkbox">{{ethnic.name}}</label>
                         </div>
                     </div>
 
                     <!-- LANGUAGE -->
                     <div class="row">
-                        <div class="demographics-headers col-xs-12">Language</div>
+                        <div class="demographics-headers col-xs-12">Language</div><div class="has-error" ng-if="checked==limit">You can only select 5 interests</div>
                         <div ng-repeat="language in languages" class="col-md-3 form-checks">
-                            <label class="checkbox-inline"><input ng-model="language.selected" type="checkbox">{{language.name}}</label>
+                            <label class="checkbox-inline"><input ng-model="language.selected" ng-change="checkChanged(interest)" ng-disabled="checked==limit && !interest.selected" type="checkbox">{{language.name}}</label>
                         </div>
                     </div>
 
