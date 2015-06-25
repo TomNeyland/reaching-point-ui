@@ -234,6 +234,10 @@ angular.module('baseangular')
         $http.put('https://reaching-point.firebaseio.com/user/' + $rootScope.manipulated + '.json', $scope.user)
             .success(function(data) {
                 console.log("Put successfully");
+                //Unsustainable if more scopes get injected
+                $scope.$parent.user.avatar = $scope.avatar.image;
+                //Unsustainable if more scopes get injected
+                
                 $scope.profileForm.$setPristine();
                 $scope.checkChange = false;
                 $state.go('home.profile');
