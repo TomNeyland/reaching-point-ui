@@ -5,12 +5,12 @@ angular.module('baseangular')
 .controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory, $timeout, $state, UserService, User) {
 
 // THIS NEEDS TO BE MOVED TO A DIRECTIVE
-    var limit = 3;
-$('input.single-checkbox').on('click', function (evt) {
-    if ($('.single-checkbox:checked').length > limit) {
-        this.checked = false;
-    }
-});
+//     var limit = 3;
+// $('input.single-checkbox').on('click', function (evt) {
+//     if ($('.single-checkbox:checked').length > limit) {
+//         this.checked = false;
+//     }
+// });
 
 
     function init(){
@@ -64,10 +64,7 @@ $('input.single-checkbox').on('click', function (evt) {
                     $rootScope.manipulated = [key];
                     console.log("data acquired, $scope.user is ", $scope.user);
                     break;
-                }, //error handler
-                function(error) {
-                    console.log(error);
-                };
+                }
 
                 //convert interest list into object for ng-checkboxes
                 $scope.interests = [];
@@ -165,7 +162,10 @@ $('input.single-checkbox').on('click', function (evt) {
                 }
 
 
-            })
+            }, //error handler
+            function(error) {
+                console.log(error);
+            });
 
 
     }

@@ -7,7 +7,7 @@ angular.module('baseangular')
         restrict: 'A',
         link: function(scope, element, attrs) {
 
-<<<<<<< HEAD
+
             var classArray = ['default', 'primary', 'success', 'info', 'warning', 'danger'];
 
             function randomClass(min, max) {
@@ -28,7 +28,7 @@ angular.module('baseangular')
             //     element.addClass('lable-' + classArray[i])
             // }
 
-=======
+
 //             var classArray = ['default', 'primary', 'success', 'info', 'warning', 'danger'];
 //
 //             function randomClass(min, max) {
@@ -51,7 +51,7 @@ angular.module('baseangular')
 //             //     element.addClass('lable-' + classArray[i])
 //             // }
 //
->>>>>>> 1a244bcfc0ea3b948d81c26bb2dbfaedd45e63e2
+
         }
     }
 })
