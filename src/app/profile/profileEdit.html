@@ -51,18 +51,18 @@
                         <!-- USER NAME & LOCATION -->
                         <div class="form-group">
                             <!-- Influencer Name -->
-                            <input class="form-control" ng-model="user.name" id="username" type="text" value="user.name" placeholder="Full name" ng-if="user.type == 'influencer'">
+                            <input class="form-control" ng-model="user.name" id="username" type="text" value="" placeholder="Full name" ng-if="user.type == 'influencer'">
                             <!-- Brand Name -->
-                            <input class="form-control" ng-model="user.name" id="username" type="text" value="user.name" placeholder="Brand name" ng-if="user.type == 'brand'">
+                            <input class="form-control" ng-model="user.name" id="username" type="text" value="" placeholder="Brand name" ng-if="user.type == 'brand'">
                             <!-- Location -->
-                            <input class="form-control userlocation" ng-model="user.location" type="text" value='user.location' placeholder="Location">
+                            <input class="form-control userlocation" ng-model="user.location" type="text" value='' placeholder="Location">
                         </div>
                     </div>
 
                     <div class="col-md-9 col-xs-8 content">
 
                         <!-- EDIT PROFILE BTN -->
-                        <div class="col-xs-12 text-right edit-profile"><span ui-sref="home.profile" class="cancel-edit btn btn-blocked">Cancel</span><span ng-click="updateUser();window.opener.location.reload(false);" class="btn btn-primary">Save Changes</span></div>
+                        <div class="col-xs-12 text-right edit-profile"><span ui-sref="home.profile" class="cancel-edit btn btn-blocked">Cancel</span><span ng-click="updateUser()" class="btn btn-primary">Save Changes</span></div>
 
                         <!-- USER BIO -->
                         <textarea ng-model="user.bio" id="user.bio" class="form-control" rows="2" placeholder="This is your biography, tell the world about yourself!"></textarea>
@@ -87,19 +87,11 @@
             </div>
             <button class="btn btn-default" ng-click="user.social_networks.facebook = true">Connect Facebook</button>
         </div>
-        <div ng-if="user.social_networks.facebook" class="social-widget social widget bg-facebook">
+        <div ng-if="user.social_networks.facebook" class="indicator widget bg-facebook">
             <span class="fa fa-facebook fa-4x"></span>
             <p class="title">4,234</p>
             <span class="subtitle">Followers</span>
             <span class="log-out fa fa-times" ng-click="user.social_networks.facebook = false"></span>
-            <div class="media">
-              <div class="media-left media-middle">
-                  <img style="border:1px solid #fff;" class="media-object" src="https://placeimg.com/20/20/people" alt="Facebook Username">
-              </div>
-              <div class="media-body">
-                Facebook Username
-              </div>
-            </div>
         </div>
 
         <!-- TWITTER -->
@@ -109,19 +101,11 @@
             </div>
             <button class="btn btn-default" ng-click="user.social_networks.twitter = true">Connect Twitter</button>
         </div>
-        <div ng-if="user.social_networks.twitter" class="social-widget social widget bg-twitter">
+        <div ng-if="user.social_networks.twitter" class="indicator widget bg-twitter">
             <span class="fa fa-twitter fa-4x"></span>
             <p class="title">2,343</p>
             <span class="subtitle">Tweets</span>
             <span class="log-out fa fa-times" ng-click="user.social_networks.twitter = false"></span>
-            <div class="media">
-              <div class="media-left media-middle">
-                  <img style="border:1px solid #fff;" class="media-object" src="https://placeimg.com/20/20/people" alt="Facebook Username">
-              </div>
-              <div class="media-body">
-                @Twitter_Username
-              </div>
-            </div>
         </div>
 
         <!-- GOOGLE + -->
@@ -131,19 +115,11 @@
             </div>
             <button class="btn btn-default" ng-click="user.social_networks.googleplus = true">Connect Google+</button>
         </div>
-        <div ng-if="user.social_networks.googleplus" class="social-widget social widget bg-googleplus">
+        <div ng-if="user.social_networks.googleplus" class="indicator widget bg-googleplus">
             <span class="fa fa-google-plus fa-4x"></span>
             <p class="title">128</p>
-            <p class="subtitle">Connections</p>
-            <p class="log-out fa fa-times" ng-click="user.social_networks.googleplus = false"></p>
-            <div class="media">
-              <div class="media-left media-middle">
-                  <img class="media-object" src="https://placeimg.com/20/20/people" alt="Facebook Username">
-              </div>
-              <div class="media-body">
-                Google+ Name
-              </div>
-            </div>
+            <span class="subtitle">New topics published</span>
+            <span class="log-out fa fa-times" ng-click="user.social_networks.googleplus = false"></span>
         </div>
 
         <!-- LINKEDIN -->
@@ -153,21 +129,11 @@
             </div>
             <button class="btn btn-default" ng-click="user.social_networks.linkedin = true">Connect LinkedIn</button>
         </div>
-        <div ng-if="user.social_networks.linkedin" class="social-widget social widget bg-linkedin">
+        <div ng-if="user.social_networks.linkedin" class="indicator widget bg-linkedin">
             <span class="fa fa-linkedin fa-4x"></span>
-            <p class="title" style="font-size:28px;margin:0; font-weight:bold;">28</p>
-            <p>Connections</p>
+            <p class="title">28</p>
+            <span class="subtitle">Things</span>
             <span class="log-out fa fa-times" ng-click="user.social_networks.linkedin = false"></span>
-            <div class="widget-footer" style="background:#fff;">
-                <div class="media">
-                  <div class="media-left media-middle">
-                      <img class="media-object" src="https://placeimg.com/20/20/people" alt="Facebook Username">
-                  </div>
-                  <div class="media-body">
-                    LinkedIn Name
-                  </div>
-                </div>
-            </div>
         </div>
 
     </div> <!-- Social media reports -->
@@ -182,7 +148,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div ng-repeat="interest in interests" class="col-md-4 form-checks">
-                            <label class="checkbox-inline"><input ng-model="interest.selected" type="checkbox" name="interests[]" class="single-checkbox" value="">{{interest.name}}</label>
+                            <label class="checkbox-inline"><input ng-model="interest.selected" type="checkbox" ng-change="checkChanged(interest)" ng-disabled="checked==limit" class="single-checkbox" value="">{{interest.name}}</label>
                         </div>
                     </div>
                 </div>
