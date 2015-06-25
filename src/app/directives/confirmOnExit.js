@@ -11,7 +11,6 @@ angular.module('baseangular')
                 scope.checkChange = true;
             });
 
-
             scope.$on('$stateChangeStart', function(event) {
                 if (scope.profileForm.$dirty || scope.checkChange) {
                     if (confirm('The form has unsaved changes, press ok to stay on page!')) {

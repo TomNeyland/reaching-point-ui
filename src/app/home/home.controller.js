@@ -2,7 +2,9 @@
 
 angular.module('baseangular')
 
-.controller('HomeCtrl', function($scope, windowCheck, User, $rootScope, $state) {
+.controller('HomeCtrl', function($scope, windowCheck, User, $rootScope, $state, $location) {
+    $scope.$state = $state;
+    $scope.$location = $location;
 
     User.get()
         .then(function(data){

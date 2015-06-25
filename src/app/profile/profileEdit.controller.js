@@ -2,9 +2,10 @@
 
 angular.module('baseangular')
 
-.controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory, $timeout, $state, UserService, User) {
-
-
+.controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory, $timeout, $state, UserService, User, $location) {
+    //Gives us access to $state in view
+    $scope.$state = $state;
+    
     // limits the amount of checkboxes in interests
     $scope.limit = 5;
     $scope.checked = 0;
@@ -227,6 +228,7 @@ angular.module('baseangular')
             .success(function(data) {
                 console.log("Put successfully");
                 $scope.profileForm.$setPristine();
+                $scope.checkChange = false;
                 $state.go('home.profile');
             })
             .error(function(error) {
