@@ -4,7 +4,7 @@ angular.module('baseangular', ['ngAnimate', 'ngCookies', 'ngSanitize', 'restangu
   .config(function ($stateProvider, $urlRouterProvider, RestangularProvider) {
 
 
-      RestangularProvider.setBaseUrl('https://reaching-point-ui.firebaseio.com/');
+      RestangularProvider.setBaseUrl('https://reaching-point.firebaseio.com/');
       RestangularProvider.setRequestSuffix('.json');
 
     $stateProvider

@@ -5,13 +5,11 @@ angular.module('baseangular')
 .controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory, $timeout, $state, UserService, User, $location) {
     //Gives us access to $state in view
     $scope.$state = $state;
-    
+
     User.get()
-        .then(function(response) {
+        .then(function(data) {
             for (var key in data) {
-                console.log("reponse:",response);
                     $scope.user = data[key];
-                console.log("key", key);
                     $rootScope.manipulated = [key]
                     break;
                 }
