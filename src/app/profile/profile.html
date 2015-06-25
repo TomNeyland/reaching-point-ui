@@ -105,13 +105,13 @@
             <div class="panel panel-default">
                 <div class="panel-heading" ng-if="user.type === 'brand'">Target Audience Interests</div>
                 <div class="panel-heading" ng-if="user.type === 'influencer'">Interests</div>
-                <div random-color class="panel-body profile-labels">
-                    <div ng-repeat="interest in user.interests" class="label-spacing label">{{interest}}</div>
+                <div class="panel-body profile-labels">
+                    <div random-color ng-repeat="interest in user.interests" class="label-spacing label">{{interest}}</div>
                 </div>
             </div>
         </div>
         <div class="interests">
-            <div class="panel panel-default">
+            <div class="panel panel-size panel-default">
                 <div class="panel-heading" ng-if="user.type === 'brand'">Target Audience Demographics</div>
                 <div class="panel-heading" ng-if="user.type === 'influencer'">Demographics</div>
                 <div class="panel-body">

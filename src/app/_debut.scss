@@ -4148,7 +4148,7 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
     cursor: not-allowed;
 }
 .label {
-    display: inline;
+    display: inline-block;
     padding: .2em .6em .3em;
     font-size: 75%;
     font-weight: 300;
@@ -12377,6 +12377,7 @@ body.freeze {
 .indicator.widget {
     padding: 15px;
     text-align: center;
+    height: 170px;
 }
 .indicator.widget .title {
     font-family: Roboto,sans-serif;

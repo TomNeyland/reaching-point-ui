@@ -175,7 +175,6 @@ body.contract .nested-home-views {
     }
 }
 
-
 //Register as influencer
 .bg-img-wrap {
     background-image: url('../assets/images/header_bg_gradient.jpg');
@@ -414,6 +413,8 @@ li.onstate > a > i {
 
 .profile-labels {
     font-size: 1.8em;
+    display: block;
+    overflow-y: auto;
 }
 
 .label-spacing {
