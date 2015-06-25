@@ -5,6 +5,17 @@ angular.module('baseangular')
 .controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory, $timeout, $state, UserService, User) {
 
 
+    User.get()
+        .then(function(response) {
+            for (var key in data) {
+                console.log("reponse:",response);
+                    $scope.user = data[key];
+                console.log("key", key);
+                    $rootScope.manipulated = [key]
+                    break;
+                }
+        });
+
     // limits the amount of checkboxes in interests
     $scope.limit = 5;
     $scope.checked = 0;
@@ -14,9 +25,7 @@ angular.module('baseangular')
         else $scope.checked--;
     }
 
-
     function init(){
-
         $scope.info = userFactory;
         $scope.startJoyRide = false;
 

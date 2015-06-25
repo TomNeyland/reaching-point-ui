@@ -144,11 +144,11 @@
         <!-- USER INTERESTS -->
         <div class="interests">
             <div class="panel panel-default">
-                <div class="panel-heading">Interests</div>
+                <div class="panel-heading">Interests</div><div class="has-error" ng-if="checked==limit">You can only select 5 interests</div>
                 <div class="panel-body">
                     <div class="row">
                         <div ng-repeat="interest in interests" class="col-md-4 form-checks">
-                            <label class="checkbox-inline"><input ng-model="interest.selected" type="checkbox" ng-change="checkChanged(interest)" ng-disabled="checked==limit" class="single-checkbox" value="">{{interest.name}}</label>
+                            <label class="checkbox-inline"><input ng-model="interest.selected" type="checkbox" ng-change="checkChanged(interest)" ng-disabled="checked==limit && !interest.selected" class="single-checkbox" value="">{{interest.name}}</label>
                         </div>
                     </div>
                 </div>

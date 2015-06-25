@@ -106,7 +106,7 @@
                 <div class="panel-heading" ng-if="user.type === 'brand'">Target Audience Interests</div>
                 <div class="panel-heading" ng-if="user.type === 'influencer'">Interests</div>
                 <div class="panel-body profile-labels">
-                    <div random-color ng-class="{'warning': interest.advertising}" ng-repeat="interest in user.interests" class="label-spacing label">{{interest}}</div>
+                    <div ng-class="['default', 'primary', 'success', 'info', 'warning', 'danger']" ng-repeat="interest in user.interests" class="label-spacing label">{{interest}}</div>
                 </div>
             </div>
         </div>
