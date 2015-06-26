@@ -152,6 +152,7 @@
                             <label class="checkbox-inline"><input ng-model="interest.selected" ng-change="countInterests()" type="checkbox" class="single-checkbox" value="">{{interest.name}}</label>
                         </div>
                     </div>
+                    <div ng-if="countArray.length > 5" class="alert alert-danger alert-dismissable" style="color: white">You may choose a maximum of 5 interests</div>
                 </div>
             </div>
         </div>
