@@ -19,3 +19,5 @@ ssh root@dev.reachingpoint.com "
   mv /var/www/$REV_NAME /var/www/$CIRCLE_PROJECT_REPONAME
   rm -rf /var/www/$CIRCLE_PROJECT_REPONAME_backup
 "
+echo $
+exit $
