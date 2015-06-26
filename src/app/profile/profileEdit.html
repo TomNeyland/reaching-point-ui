@@ -149,7 +149,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div ng-repeat="interest in interests" class="col-md-4 form-checks">
-                            <label class="checkbox-inline"><input ng-model="interest.selected" ng-change="amountOfChecks()" type="checkbox" class="single-checkbox" value="">{{interest.name}}</label>
+                            <label class="checkbox-inline"><input ng-model="interest.selected" ng-change="countInterests()" type="checkbox" class="single-checkbox" value="">{{interest.name}}</label>
                         </div>
                     </div>
                 </div>
@@ -164,9 +164,10 @@
 
                     <!-- LIFE STAGE -->
                     <div class="row">
+                        <pre>{{"How many lifeStages are selected: " + countArrayLife.length}}</pre>
                         <div class="demographics-headers col-xs-12">Life Stage</div>
                         <div ng-repeat="stage in lifeStage" class="col-md-4 form-checks">
-                            <label class="checkbox-inline"><input ng-model="stage.selected" type="checkbox">{{stage.name}}</label>
+                            <label class="checkbox-inline"><input ng-model="stage.selected" ng-change="countLifeStage()" type="checkbox">{{stage.name}}</label>
                         </div>
                     </div>
 
@@ -189,17 +190,19 @@
 
                     <!-- ETHNICITY -->
                     <div class="row">
+                        <pre>{{"How many Ethnicities are selected: " + countArrayE.length}}</pre>
                         <div class="demographics-headers col-xs-12">Ethnicity</div>
                         <div ng-repeat="ethnic in ethnicity" class="col-md-4 form-checks">
-                            <label class="checkbox-inline"><input ng-model="ethnic.selected" type="checkbox">{{ethnic.name}}</label>
+                            <label class="checkbox-inline"><input ng-model="ethnic.selected" ng-change="countEthnicity()" type="checkbox">{{ethnic.name}}</label>
                         </div>
                     </div>
 
                     <!-- LANGUAGE -->
                     <div class="row">
+                        <pre>{{"How many Languages are selected: " + countArrayLang.length}}</pre>
                         <div class="demographics-headers col-xs-12">Language</div>
                         <div ng-repeat="language in languages" class="col-md-3 form-checks">
-                            <label class="checkbox-inline"><input ng-model="language.selected" type="checkbox">{{language.name}}</label>
+                            <label class="checkbox-inline"><input ng-model="language.selected" ng-change="countLanguages()" type="checkbox">{{language.name}}</label>
                         </div>
                     </div>
 

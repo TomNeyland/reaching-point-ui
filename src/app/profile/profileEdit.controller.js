@@ -179,15 +179,42 @@ angular.module('baseangular')
 
     }
 
-    $scope.amountOfChecks = function() {
+
+    $scope.countInterests = function() {
         $scope.countArray = [];
         angular.forEach($scope.interests, function(item) {
             if (item.selected) {
                 $scope.countArray.push(item);
             };
         });
-    }
+    };
 
+    $scope.countLifeStage = function() {
+        $scope.countArrayLife = [];
+        angular.forEach($scope.lifeStage, function(item) {
+            if (item.selected) {
+                $scope.countArrayLife.push(item);
+            };
+        });
+    };
+
+    $scope.countEthnicity = function() {
+        $scope.countArrayE = [];
+        angular.forEach($scope.ethnicity, function(item) {
+            if (item.selected) {
+                $scope.countArrayE.push(item);
+            };
+        });
+    };
+
+    $scope.countLanguages = function() {
+        $scope.countArrayLang = [];
+        angular.forEach($scope.languages, function(item) {
+            if (item.selected) {
+                $scope.countArrayLang.push(item);
+            };
+        });
+    };
 
 
     $scope.updateUser = function() {
