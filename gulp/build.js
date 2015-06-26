@@ -5,6 +5,8 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
 });
+var fs = require('fs'),
+  path  = require('path');
 
 module.exports = function(options) {
   gulp.task('partials', function () {
@@ -82,8 +84,20 @@ module.exports = function(options) {
   });
 
   gulp.task('clean', function (done) {
-    $.del([options.dist + '/', options.tmp + '/'], done);
+    $.del([options.dist + '/', options.tmp + '/', options.artifacts], done);
   });
 
-  gulp.task('build', ['html', 'fonts', 'other']);
+  // Create an empty package directory for the tarball of the
+  gulp.task('artifactsDir', function (done) {
+    // WHY CAN'T GULP DO THIS GAHHH!!!
+    var mkdirpSync = function (dirpath) {
+      var parts = dirpath.split(path.sep);
+      for( var i = 1; i <= parts.length; i++ ) {
+        fs.mkdirSync( path.join.apply(null, parts.slice(0, i)) );
+      }
+    };
+    return mkdirpSync(options.artifacts);
+  });
+
+  gulp.task('build', ['html', 'fonts', 'other', 'artifactsDir']);
 };

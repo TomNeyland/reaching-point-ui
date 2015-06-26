@@ -17,7 +17,7 @@ machine:
 ## Customize general stuff
 general:
   artifacts:
-    - "dist/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar" # relative to the build directory
+    - "artifacts/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar" # relative to the build directory
 
 ## Customize dependencies
 dependencies:
@@ -34,10 +34,7 @@ deployment:
   dev:
     branch: dev
     commands:
-      - echo $CIRCLE_BRANCH-$CIRCLE_BUILD_NUM
-      - tar -cvf dist/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar dist
-      - scp dist/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar root@dev.reachingpoint.com:/var/www/$CIRCLE_PROJECT_REPONAME
-      - ssh root@dev.reachingpoint.com "tar -xf /var/www/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar -C /var/www/$CIRCLE_PROJECT_REPONAME"
+      - ./deploy-dev.sh
 
 ## Custom notifications
 notify:
