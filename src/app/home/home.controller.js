@@ -6,6 +6,8 @@ angular.module('baseangular')
     $scope.$state = $state;
     $scope.$location = $location;
 
+    $scope.unitTestExample = 'I am a lovely string';
+
     User.get()
         .then(function(data){
             for (var key in data) {
