@@ -2,18 +2,19 @@
 
 angular.module('baseangular')
 
-.controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory, $timeout, $state, UserService, User, $location) {
+.controller('ProfileEditCtrl', function($scope, $rootScope, $http, userFactory,
+    $timeout, $state, UserService, User, $location) {
     //Gives us access to $state in view
     $scope.$state = $state;
 
     User.get()
         .then(function(data) {
             for (var key in data) {
-                    $scope.user = data[key];
-                    $rootScope.manipulated = [key]
-                    var interestdata = data[key].interests.length;
-                    break;
-                }
+                $scope.user = data[key];
+                $rootScope.manipulated = [key]
+                    // var interestdata = data[key].interests.length;
+                break;
+            }
         });
     // limits the amount of checkboxes in interests
     // $scope.limit = 5;
@@ -24,7 +25,7 @@ angular.module('baseangular')
     //     else $scope.checked--;
     // }
 
-    function init(){
+    function init() {
         $scope.info = userFactory;
         $scope.startJoyRide = false;
 
@@ -68,113 +69,139 @@ angular.module('baseangular')
         console.log('getting user');
         User.get()
             .then(function(data) {
-                //remove firebase hash
-                for (var key in data) {
-                    $scope.user = data[key];
-                    $rootScope.manipulated = [key];
-                    console.log("data acquired, $scope.user is ", $scope.user);
-                    break;
-                }
-
-                //convert interest list into object for ng-checkboxes
-                $scope.interests = [];
-                angular.forEach($scope.info.interests, function(interest) {
-                    var interestObj = {
-                        name: interest,
-                        selected: false
-                    };
-                    $scope.interests.push(interestObj);
-                });
-
-                //convert life stage list into object for ng-checkboxes
-                $scope.lifeStage = [];
-                angular.forEach($scope.info.lifeStage, function(stage) {
-                    var lifeStageObj = {
-                        name: stage,
-                        selected: false
-                    };
-                    $scope.lifeStage.push(lifeStageObj);
-                });
-
-                //convert life stage list into object for ng-checkboxes
-                $scope.ethnicity = [];
-                angular.forEach($scope.info.ethnicity, function(ethnicity) {
-                    var ethnicObj = {
-                        name: ethnicity,
-                        selected: false
-                    };
-                    $scope.ethnicity.push(ethnicObj);
-                });
-
-                //convert llanguages list into object for ng-checkboxes
-                $scope.languages = [];
-                angular.forEach($scope.info.tongues, function(tongue) {
-                    var tongueObj = {
-                        name: tongue,
-                        selected: false
-                    };
-                    $scope.languages.push(tongueObj);
-                })
-
-                if ($scope.user) {
-                    if ($scope.user.interests) {
-
-                        angular.forEach($scope.interests, function(interest) {
-
-                            angular.forEach($scope.user.interests, function(userInterest) {
-
-                                if (userInterest === interest.name) {
-                                    interest.selected = true;
-                                }
-                            });
-
-                        });
+                    //remove firebase hash
+                    for (var key in data) {
+                        $scope.user = data[key];
+                        $rootScope.manipulated = [key];
+                        console.log("data acquired, $scope.user is ",
+                            $scope.user);
+                        break;
                     }
 
+                    //convert interest list into object for ng-checkboxes
+                    $scope.interests = [];
+                    angular.forEach($scope.info.interests, function(
+                        interest) {
+                        var interestObj = {
+                            name: interest,
+                            selected: false
+                        };
+                        $scope.interests.push(interestObj);
+                    });
 
+                    //convert life stage list into object for ng-checkboxes
+                    $scope.lifeStage = [];
+                    angular.forEach($scope.info.lifeStage, function(
+                        stage) {
+                        var lifeStageObj = {
+                            name: stage,
+                            selected: false
+                        };
+                        $scope.lifeStage.push(lifeStageObj);
+                    });
 
+                    //convert life stage list into object for ng-checkboxes
+                    $scope.ethnicity = [];
+                    angular.forEach($scope.info.ethnicity, function(
+                        ethnicity) {
+                        var ethnicObj = {
+                            name: ethnicity,
+                            selected: false
+                        };
+                        $scope.ethnicity.push(ethnicObj);
+                    });
 
-                    if ($scope.user.demographics && $scope.user.demographics.lifeStage) {
+                    //convert llanguages list into object for ng-checkboxes
+                    $scope.languages = [];
+                    angular.forEach($scope.info.tongues, function(
+                        tongue) {
+                        var tongueObj = {
+                            name: tongue,
+                            selected: false
+                        };
+                        $scope.languages.push(tongueObj);
+                    })
 
-                        angular.forEach($scope.lifeStage, function(stage) {
+                    if ($scope.user) {
+                        if ($scope.user.interests) {
 
-                            angular.forEach($scope.user.demographics.lifeStage, function(userStage) {
+                            angular.forEach($scope.interests, function(
+                                interest) {
 
-                                if (userStage === stage.name) {
-                                    stage.selected = true;
-                                }
+                                angular.forEach($scope.user.interests,
+                                    function(userInterest) {
+
+                                        if (userInterest ===
+                                            interest.name) {
+                                            interest.selected =
+                                                true;
+                                        }
+                                    });
+
                             });
-                        });
-                    };
+                        }
 
 
-                    if ($scope.user.demographics && $scope.user.demographics.ethnicity) {
 
-                        angular.forEach($scope.ethnicity, function(ethnicity) {
-                            angular.forEach($scope.user.demographics.ethnicity, function(userEthnicity) {
-                                if (userEthnicity === ethnicity.name) {
-                                    ethnicity.selected = true;
-                                }
+                        if ($scope.user.demographics && $scope.user.demographics
+                            .lifeStage) {
+
+                            angular.forEach($scope.lifeStage, function(
+                                stage) {
+
+                                angular.forEach($scope.user.demographics
+                                    .lifeStage,
+                                    function(userStage) {
+
+                                        if (userStage ===
+                                            stage.name) {
+                                            stage.selected =
+                                                true;
+                                        }
+                                    });
                             });
-                        });
+                        };
+
+
+                        if ($scope.user.demographics && $scope.user.demographics
+                            .ethnicity) {
+
+                            angular.forEach($scope.ethnicity, function(
+                                ethnicity) {
+                                angular.forEach($scope.user.demographics
+                                    .ethnicity,
+                                    function(userEthnicity) {
+                                        if (userEthnicity ===
+                                            ethnicity.name) {
+                                            ethnicity.selected =
+                                                true;
+                                        }
+                                    });
+                            });
+                        }
+
+                        if ($scope.user.demographics && $scope.user.demographics
+                            .languages) {
+
+                            angular.forEach($scope.languages, function(
+                                tongue) {
+                                angular.forEach($scope.user.demographics
+                                    .languages,
+                                    function(userTongues) {
+                                        if (userTongues ===
+                                            tongue.name) {
+                                            tongue.selected =
+                                                true;
+                                        }
+                                    });
+                            });
+                        };
                     }
 
-                    if ($scope.user.demographics && $scope.user.demographics.languages) {
-
-                        angular.forEach($scope.languages, function(tongue) {
-                            angular.forEach($scope.user.demographics.languages, function(userTongues) {
-                                if (userTongues === tongue.name) {
-                                    tongue.selected = true;
-                                }
-                            });
-                        });
-                    };
-                }
-
-            }, //error handler
-            function(error) {
-                console.log(error);
-            });
+                }, //error handler
+                function(error) {
+                    console.log(error);
+                });
 
 
     }
@@ -259,12 +286,27 @@ angular.module('baseangular')
             $scope.user.header_image = $scope.header.image;
         }
 
-        console.log("return from put request: ", $scope.user);
+        //If any of the input fields are not filled out... cancel
+        if ($scope.user.interests.length && $scope.user.demographics
+            .lifeStage.length && $scope.user.demographics.ethnicity
+            .length && $scope.user.demographics.languages.length &&
+            $scope.user.demographics.education && $scope.user.demographics
+            .income) {
+            console.log("All fields are filled out");
+            //continue in the put request
+        } else {
+            // Get the heck out of this function
+            console.log(
+                'You have a missing form field, exiting the function'
+            );
+            return false;
+        };
 
-
-        $http.put('https://reaching-point.firebaseio.com/user/' + $rootScope.manipulated + '.json', $scope.user)
+        $http.put('https://reaching-point.firebaseio.com/user/' +
+                $rootScope.manipulated + '.json', $scope.user)
             .success(function(data) {
                 console.log("Put successfully");
+
                 //Unsustainable if more scopes get injected
                 $scope.$parent.user.avatar = $scope.avatar.image;
                 //Unsustainable if more scopes get injected
@@ -274,6 +316,7 @@ angular.module('baseangular')
                 $state.go('home.profile');
             })
             .error(function(error) {
+                console.log('Put failed');
                 console.log(error);
             })
     };
