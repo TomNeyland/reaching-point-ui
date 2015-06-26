@@ -16,13 +16,13 @@ angular.module('baseangular')
                 }
         });
     // limits the amount of checkboxes in interests
-    $scope.limit = 5;
-    $scope.checked = 0;
-
-    $scope.checkChanged = function(interest){
-        if(interest.selected) $scope.checked++;
-        else $scope.checked--;
-    }
+    // $scope.limit = 5;
+    // $scope.checked = 0;
+    //
+    // $scope.checkChanged = function(interest){
+    //     if(interest.selected) $scope.checked++;
+    //     else $scope.checked--;
+    // }
 
     function init(){
         $scope.info = userFactory;
@@ -171,13 +171,21 @@ angular.module('baseangular')
                     };
                 }
 
-
             }, //error handler
             function(error) {
                 console.log(error);
             });
 
 
+    }
+
+    $scope.amountOfChecks = function() {
+        $scope.countArray = [];
+        angular.forEach($scope.interests, function(item) {
+            if (item.selected) {
+                $scope.countArray.push(item);
+            };
+        });
     }
 
 
